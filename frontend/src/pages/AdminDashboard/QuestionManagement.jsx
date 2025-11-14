@@ -386,7 +386,7 @@ const AddQuestionFlow = ({ questionToEdit, onUpdateComplete }) => {
 const isPartsBasedQuestion =
   (normalizedSubject === "ml") ||
   (normalizedSubject === "deeplearning" && level !== "1" && level !== "2" && level !== "3") ||
-  (normalizedSubject === "ds" && level && level !== "1" && level !== "2");
+  (normalizedSubject === "ds" && level && level !== "1" );
   // MODIFIED: Exclude deeplearning with level 1 from parts-based questions
 //   const isPartsBasedQuestion =
 //     (normalizedSubject === "ml" || (normalizedSubject === "deeplearning" && level !== "1" && level !== "2" && level !== "3")) ||
@@ -535,7 +535,7 @@ const showDatasetUploads = ["ml", "deeplearning", "ds"].includes(normalizedSubje
 const isPartsBasedQuestion =
   (normalizedSubject === "ml") ||
   (normalizedSubject === "deeplearning" && level !== "1" && level !== "2" && level !== "3") ||
-  (normalizedSubject === "ds" && level && level !== "1" && level !== "2");
+  (normalizedSubject === "ds" && level && level !== "1" );
 
       let questionId = null;
 
@@ -1058,14 +1058,14 @@ const isPartsBasedQuestion =
             </>
           ) : isPartsBasedQuestion ? (
             <>
-              {showDatasetUploads && (
-                <div>
-                  <label className="block font-medium mb-3 text-slate-700 text-sm">
-                    Datasets
-                  </label>
-                  <div className="space-y-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                      {/* Show only one CSV upload for DS Level 3 and 4 */}
-      {normalizedSubject === "ds" && (level === "3" || level === "4") ? (
+             {showDatasetUploads && (
+  <div>
+    <label className="block font-medium mb-3 text-slate-700 text-sm">
+      Datasets
+    </label>
+    <div className="space-y-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
+      {/* Show only one CSV upload for DS Level 3 and 4 */}
+      {normalizedSubject === "ds" && (level === "3" || level === "4" || level === "2" ) ? (
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-2">
             Dataset (CSV)
@@ -1089,43 +1089,43 @@ const isPartsBasedQuestion =
       ) : (
         /* Show both train and test for other subjects */
         <>
-
-<div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
-                        Training Dataset (CSV)
-                      </label>
-                      <input
-                        type="file"
-                        accept=".csv"
-                        onChange={(e) => setTrainFile(e.target.files[0])}
-                        className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
-                      />
-                      {trainFile && (
-                        <p className="mt-1 text-xs text-green-600">
-                          Selected: {trainFile.name}
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
-                        Test Dataset (CSV)
-                      </label>
-                      <input
-                        type="file"
-                        accept=".csv"
-                        onChange={(e) => setTestFile(e.target.files[0])}
-                        className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
-                      />
-                      {testFile && (
-                        <p className="mt-1 text-xs text-green-600">
-                          Selected: {testFile.name}
-                        </p>
-                      )}
-                    </div>
-</>
-      )}                  </div>
-                </div>
-              )}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">
+              Training Dataset (CSV)
+            </label>
+            <input
+              type="file"
+              accept=".csv"
+              onChange={(e) => setTrainFile(e.target.files[0])}
+              className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+            />
+            {trainFile && (
+              <p className="mt-1 text-xs text-green-600">
+                Selected: {trainFile.name}
+              </p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">
+              Test Dataset (CSV)
+            </label>
+            <input
+              type="file"
+              accept=".csv"
+              onChange={(e) => setTestFile(e.target.files[0])}
+              className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+            />
+            {testFile && (
+              <p className="mt-1 text-xs text-green-600">
+                Selected: {testFile.name}
+              </p>
+            )}
+          </div>
+        </>
+      )}
+    </div>
+  </div>
+)}
 
               <div>
                 <label className="block font-medium mb-3 text-slate-700 text-sm">
