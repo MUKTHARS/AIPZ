@@ -1,0 +1,44 @@
+# Core build tools
+setuptools<81
+wheel
+pip>=24.0
+
+# Backend framework
+Flask==3.0.3
+Flask-Cors==4.0.1
+waitress==3.0.0
+
+# Security
+bcrypt==4.2.0
+
+# Jupyter support
+jupyter-client==8.6.2
+ipykernel==6.29.5
+
+# Data & math
+numpy==1.23.5
+pandas==1.5.3
+scipy==1.11.4
+scikit-learn==1.5.2
+
+# Audio processing
+librosa==0.11.0
+soundfile==0.12.1
+soxr==0.3.7
+tts==0.23.0
+
+# Visualization
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# Excel
+openpyxl==3.1.5
+
+# Google AI API
+google-generativeai==0.8.3
+
+
+
+# pip install --upgrade pip setuptools wheel
+# pip install --force-reinstall -r requirements.txt
+

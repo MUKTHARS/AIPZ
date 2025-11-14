@@ -1,0 +1,201 @@
+S.No,Gender,EthnicGroup,ParentEduc,LunchType,TestPrep,MathScore,ReadingScore,WritingScore,Total Score,Average,Rank
+1,Female,group B,bachelor's degree,Standard,none,72,72,74,218,72.66666667,Good Mark
+2,Female,group C,some college,Standard,completed,69,90,88,247,82.33333333,Good Mark
+3,Female,group B,master's degree,Standard,none,90,95,93,278,92.66666667,Good Mark
+4,Male,group A,associate's degree,Free,none,47,57,44,148,49.33333333,Good Mark
+5,Male,group C,some college,Standard,none,76,78,75,229,76.33333333,Good Mark
+6,Female,group B,associate's degree,Standard,none,71,83,78,232,77.33333333,Good Mark
+7,Female,group B,some college,Standard,completed,88,95,92,275,91.66666667,Good Mark
+8,Male,group B,some college,Free,none,40,43,39,122,40.66666667,Need to Improve
+9,Male,group D,high school,Free,completed,64,64,67,195,65,Good Mark
+10,Female,group B,high school,Free,none,38,60,50,148,49.33333333,Good Mark
+11,Male,group C,associate's degree,Standard,none,58,54,52,164,54.66666667,Good Mark
+12,Male,group D,associate's degree,Standard,none,40,52,43,135,45,Need to Improve
+13,Female,group B,high school,Standard,none,65,81,73,219,73,Good Mark
+14,Male,group A,some college,Standard,completed,78,72,70,220,73.33333333,Good Mark
+15,Female,group A,master's degree,Standard,none,50,53,58,161,53.66666667,Good Mark
+16,Female,group C,some high school,Standard,none,69,75,78,222,74,Good Mark
+17,Male,group C,high school,Standard,none,88,89,86,263,87.66666667,Good Mark
+18,Female,group B,some high school,Free,none,18,32,28,78,26,Need to Improve
+19,Male,group C,master's degree,Free,completed,46,42,46,134,44.66666667,Need to Improve
+20,Female,group C,associate's degree,Free,none,54,58,61,173,57.66666667,Good Mark
+21,Male,group D,high school,Standard,none,66,69,63,198,66,Good Mark
+22,Female,group B,some college,Free,completed,65,75,70,210,70,Good Mark
+23,Male,group D,some college,Standard,none,44,54,53,151,50.33333333,Good Mark
+24,Female,group C,some high school,Standard,none,69,73,73,215,71.66666667,Good Mark
+25,Male,group D,bachelor's degree,Free,completed,74,71,80,225,75,Good Mark
+26,Male,group A,master's degree,Free,none,73,74,72,219,73,Good Mark
+27,Male,group B,some college,Standard,none,69,54,55,178,59.33333333,Good Mark
+28,Female,group C,bachelor's degree,Standard,none,67,69,75,211,70.33333333,Good Mark
+29,Male,group C,high school,Standard,none,70,70,65,205,68.33333333,Good Mark
+30,Female,group D,master's degree,Standard,none,62,70,75,207,69,Good Mark
+31,Female,group D,some college,Standard,none,69,74,74,217,72.33333333,Good Mark
+32,Female,group B,some college,Standard,none,63,65,61,189,63,Good Mark
+33,Female,group E,master's degree,Free,none,56,72,65,193,64.33333333,Good Mark
+34,Male,group D,some college,Standard,none,40,42,38,120,40,Need to Improve
+35,Male,group E,some college,Standard,none,97,87,82,266,88.66666667,Good Mark
+36,Male,group E,associate's degree,Standard,completed,81,81,79,241,80.33333333,Good Mark
+37,Female,group D,associate's degree,Standard,none,74,81,83,238,79.33333333,Good Mark
+38,Female,group D,some high school,Free,none,50,64,59,173,57.66666667,Good Mark
+39,Female,group D,associate's degree,Free,completed,75,90,88,253,84.33333333,Good Mark
+40,Male,group B,associate's degree,Free,none,57,56,57,170,56.66666667,Good Mark
+41,Male,group C,associate's degree,Free,none,55,61,54,170,56.66666667,Good Mark
+42,Female,group C,associate's degree,Standard,none,58,73,68,199,66.33333333,Good Mark
+43,Female,group B,associate's degree,Standard,none,53,58,65,176,58.66666667,Good Mark
+44,Male,group B,some college,Free,completed,59,65,66,190,63.33333333,Good Mark
+45,Female,group E,associate's degree,Free,none,50,56,54,160,53.33333333,Good Mark
+46,Male,group B,associate's degree,Standard,none,65,54,57,176,58.66666667,Good Mark
+47,Female,group A,associate's degree,Standard,completed,55,65,62,182,60.66666667,Good Mark
+48,Female,group C,high school,Standard,none,66,71,76,213,71,Good Mark
+49,Female,group D,associate's degree,Free,completed,57,74,76,207,69,Good Mark
+50,Male,group C,high school,Standard,completed,82,84,82,248,82.66666667,Good Mark
+51,Male,group E,some college,Standard,none,53,55,48,156,52,Good Mark
+52,Male,group E,associate's degree,Free,completed,77,69,68,214,71.33333333,Good Mark
+53,Male,group C,some college,Standard,none,53,44,42,139,46.33333333,Good Mark
+54,Male,group D,high school,Standard,none,88,78,75,241,80.33333333,Good Mark
+55,Female,group C,some high school,Free,completed,71,84,87,242,80.66666667,Good Mark
+56,Female,group C,high school,Free,none,33,41,43,117,39,Need to Improve
+57,Female,group E,associate's degree,Standard,completed,82,85,86,253,84.33333333,Good Mark
+58,Male,group D,associate's degree,Standard,none,52,55,49,156,52,Good Mark
+59,Male,group D,some college,Standard,completed,58,59,58,175,58.33333333,Good Mark
+60,Female,group C,some high school,Free,none,0,17,10,27,9,Need to Improve
+61,Male,group E,bachelor's degree,Free,completed,79,74,72,225,75,Good Mark
+62,Male,group A,some high school,Free,none,39,39,34,112,37.33333333,Need to Improve
+63,Male,group A,associate's degree,Free,none,62,61,55,178,59.33333333,Good Mark
+64,Female,group C,associate's degree,Standard,none,69,80,71,220,73.33333333,Good Mark
+65,Female,group D,some high school,Standard,none,59,58,59,176,58.66666667,Good Mark
+66,Male,group B,some high school,Standard,none,67,64,61,192,64,Good Mark
+67,Male,group D,some high school,Free,none,45,37,37,119,39.66666667,Need to Improve
+68,Female,group C,some college,Standard,none,60,72,74,206,68.66666667,Good Mark
+69,Male,group B,associate's degree,Free,none,61,58,56,175,58.33333333,Good Mark
+70,Female,group C,associate's degree,Standard,none,39,64,57,160,53.33333333,Good Mark
+71,Female,group D,some college,Free,completed,58,63,73,194,64.66666667,Good Mark
+72,Male,group D,some college,Standard,completed,63,55,63,181,60.33333333,Good Mark
+73,Female,group A,associate's degree,Free,none,41,51,48,140,46.66666667,Good Mark
+74,Male,group C,some high school,Free,none,61,57,56,174,58,Good Mark
+75,Male,group C,some high school,Standard,none,49,49,41,139,46.33333333,Good Mark
+76,Male,group B,associate's degree,Free,none,44,41,38,123,41,Need to Improve
+77,Male,group E,some high school,Standard,none,30,26,22,78,26,Need to Improve
+78,Male,group A,bachelor's degree,Standard,completed,80,78,81,239,79.66666667,Good Mark
+79,Female,group D,some high school,Standard,completed,61,74,72,207,69,Good Mark
+80,Female,group E,master's degree,Standard,none,62,68,68,198,66,Good Mark
+81,Female,group B,associate's degree,Standard,none,47,49,50,146,48.66666667,Good Mark
+82,Male,group B,high school,Free,none,49,45,45,139,46.33333333,Good Mark
+83,Male,group A,some college,Free,completed,50,47,54,151,50.33333333,Good Mark
+84,Male,group E,associate's degree,Standard,none,72,64,63,199,66.33333333,Good Mark
+85,Male,group D,high school,Free,none,42,39,34,115,38.33333333,Need to Improve
+86,Female,group C,some college,Standard,none,73,80,82,235,78.33333333,Good Mark
+87,Female,group C,some college,Free,none,76,83,88,247,82.33333333,Good Mark
+88,Female,group D,associate's degree,Standard,none,71,71,74,216,72,Good Mark
+89,Female,group A,some college,Standard,none,58,70,67,195,65,Good Mark
+90,Female,group D,some high school,Standard,none,73,86,82,241,80.33333333,Good Mark
+91,Female,group C,bachelor's degree,Standard,none,65,72,74,211,70.33333333,Good Mark
+92,Male,group C,high school,Free,none,27,34,36,97,32.33333333,Need to Improve
+93,Male,group C,high school,Standard,none,71,79,71,221,73.66666667,Good Mark
+94,Male,group C,associate's degree,Free,completed,43,45,50,138,46,Good Mark
+95,Female,group B,some college,Standard,none,79,86,92,257,85.66666667,Good Mark
+96,Male,group C,associate's degree,Free,completed,78,81,82,241,80.33333333,Good Mark
+97,Male,group B,some high school,Standard,completed,65,66,62,193,64.33333333,Good Mark
+98,Female,group E,some college,Standard,completed,63,72,70,205,68.33333333,Good Mark
+99,Female,group D,some college,Free,none,58,67,62,187,62.33333333,Good Mark
+100,Female,group D,bachelor's degree,Standard,none,65,67,62,194,64.66666667,Good Mark
+101,Male,group B,some college,Standard,none,79,67,67,213,71,Good Mark
+102,Male,group D,bachelor's degree,Standard,completed,68,74,74,216,72,Good Mark
+103,Female,group D,associate's degree,Standard,none,85,91,89,265,88.33333333,Good Mark
+104,Male,group B,high school,Standard,completed,60,44,47,151,50.33333333,Good Mark
+105,Male,group C,some college,Standard,completed,98,86,90,274,91.33333333,Good Mark
+106,Female,group C,some college,Standard,none,58,67,72,197,65.66666667,Good Mark
+107,Female,group D,master's degree,Standard,none,87,100,100,287,95.66666667,Good Mark
+108,Male,group E,associate's degree,Standard,completed,66,63,64,193,64.33333333,Good Mark
+109,Female,group B,associate's degree,Free,none,52,76,70,198,66,Good Mark
+110,Female,group B,some high school,Standard,none,70,64,72,206,68.66666667,Good Mark
+111,Female,group D,associate's degree,Free,completed,77,89,98,264,88,Good Mark
+112,Male,group C,high school,Standard,none,62,55,49,166,55.33333333,Good Mark
+113,Male,group A,associate's degree,Standard,none,54,53,47,154,51.33333333,Good Mark
+114,Female,group D,some college,Standard,none,51,58,54,163,54.33333333,Good Mark
+115,Female,group E,bachelor's degree,Standard,completed,99,100,100,299,99.66666667,Good Mark
+116,Male,group C,high school,Standard,none,84,77,74,235,78.33333333,Good Mark
+117,Female,group B,bachelor's degree,Free,none,75,85,82,242,80.66666667,Good Mark
+118,Female,group D,bachelor's degree,Standard,none,78,82,79,239,79.66666667,Good Mark
+119,Female,group D,some high school,Standard,none,51,63,61,175,58.33333333,Good Mark
+120,Female,group C,some college,Standard,none,55,69,65,189,63,Good Mark
+121,Female,group C,bachelor's degree,Standard,completed,79,92,89,260,86.66666667,Good Mark
+122,Male,group B,associate's degree,Standard,completed,91,89,92,272,90.66666667,Good Mark
+123,Female,group C,some college,Standard,completed,88,93,93,274,91.33333333,Good Mark
+124,Male,group D,high school,Free,none,63,57,56,176,58.66666667,Good Mark
+125,Male,group E,some college,Standard,none,83,80,73,236,78.66666667,Good Mark
+126,Female,group B,high school,Standard,none,87,95,86,268,89.33333333,Good Mark
+127,Male,group B,some high school,Standard,none,72,68,67,207,69,Good Mark
+128,Male,group D,some college,Standard,completed,65,77,74,216,72,Good Mark
+129,Male,group D,master's degree,Standard,none,82,82,74,238,79.33333333,Good Mark
+130,Female,group A,bachelor's degree,Standard,none,51,49,51,151,50.33333333,Good Mark
+131,Male,group D,master's degree,Standard,none,89,84,82,255,85,Good Mark
+132,Male,group C,some high school,Free,completed,53,37,40,130,43.33333333,Need to Improve
+133,Male,group E,some college,Free,completed,87,74,70,231,77,Good Mark
+134,Female,group C,some college,Standard,completed,75,81,84,240,80,Good Mark
+135,Male,group D,bachelor's degree,Free,completed,74,79,75,228,76,Good Mark
+136,Male,group C,bachelor's degree,Standard,none,58,55,48,161,53.66666667,Good Mark
+137,Male,group B,some high school,Standard,completed,51,54,41,146,48.66666667,Good Mark
+138,Male,group E,high school,Standard,none,70,55,56,181,60.33333333,Good Mark
+139,Female,group C,associate's degree,Standard,none,59,66,67,192,64,Good Mark
+140,Male,group D,some college,Standard,completed,71,61,69,201,67,Good Mark
+141,Female,group D,some high school,Standard,none,76,72,71,219,73,Good Mark
+142,Female,group C,some college,Free,none,59,62,64,185,61.66666667,Good Mark
+143,Female,group E,some college,Free,completed,42,55,54,151,50.33333333,Good Mark
+144,Male,group A,high school,Standard,none,57,43,47,147,49,Good Mark
+145,Male,group D,some college,Standard,none,88,73,78,239,79.66666667,Good Mark
+146,Female,group C,some college,Free,none,22,39,33,94,31.33333333,Need to Improve
+147,Male,group B,some high school,Standard,none,88,84,75,247,82.33333333,Good Mark
+148,Male,group C,associate's degree,Free,none,73,68,66,207,69,Good Mark
+149,Female,group D,bachelor's degree,Standard,completed,68,75,81,224,74.66666667,Good Mark
+150,Male,group E,associate's degree,Free,completed,100,100,93,293,97.66666667,Good Mark
+151,Male,group A,some high school,Standard,completed,62,67,69,198,66,Good Mark
+152,Male,group A,bachelor's degree,Standard,none,77,67,68,212,70.66666667,Good Mark
+153,Female,group B,associate's degree,Standard,completed,59,70,66,195,65,Good Mark
+154,Male,group D,bachelor's degree,Standard,none,54,49,47,150,50,Good Mark
+155,Male,group D,some high school,Standard,none,62,67,61,190,63.33333333,Good Mark
+156,Female,group C,some college,Standard,completed,70,89,88,247,82.33333333,Good Mark
+157,Female,group E,high school,Free,completed,66,74,78,218,72.66666667,Good Mark
+158,Male,group B,some college,Free,none,60,60,60,180,60,Good Mark
+159,Female,group B,associate's degree,Standard,completed,61,86,87,234,78,Good Mark
+160,Male,group D,associate's degree,Free,none,66,62,64,192,64,Good Mark
+161,Male,group B,associate's degree,Free,completed,82,78,74,234,78,Good Mark
+162,Female,group E,some college,Free,completed,75,88,85,248,82.66666667,Good Mark
+163,Male,group B,master's degree,Free,none,49,53,52,154,51.33333333,Good Mark
+164,Male,group C,high school,Standard,none,52,53,49,154,51.33333333,Good Mark
+165,Female,group E,master's degree,Standard,none,81,92,91,264,88,Good Mark
+166,Female,group C,bachelor's degree,Standard,completed,96,100,100,296,98.66666667,Good Mark
+167,Male,group C,high school,Free,completed,53,51,51,155,51.66666667,Good Mark
+168,Female,group B,master's degree,Free,completed,58,76,78,212,70.66666667,Good Mark
+169,Female,group B,high school,Standard,completed,68,83,78,229,76.33333333,Good Mark
+170,Female,group C,some college,Free,completed,67,75,70,212,70.66666667,Good Mark
+171,Male,group A,high school,Standard,completed,72,73,74,219,73,Good Mark
+172,Male,group E,some high school,Standard,none,94,88,78,260,86.66666667,Good Mark
+173,Female,group D,some college,Standard,none,79,86,81,246,82,Good Mark
+174,Female,group C,associate's degree,Standard,none,63,67,70,200,66.66666667,Good Mark
+175,Female,group C,bachelor's degree,Free,completed,43,51,54,148,49.33333333,Good Mark
+176,Female,group C,master's degree,Standard,completed,81,91,87,259,86.33333333,Good Mark
+177,Female,group B,high school,Free,completed,46,54,58,158,52.66666667,Good Mark
+178,Female,group C,associate's degree,Standard,completed,71,77,77,225,75,Good Mark
+179,Female,group B,master's degree,Free,completed,52,70,62,184,61.33333333,Good Mark
+180,Female,group D,some high school,Standard,completed,97,100,100,297,99,Good Mark
+181,Male,group C,master's degree,Free,completed,62,68,75,205,68.33333333,Good Mark
+182,Female,group C,some college,Free,none,46,64,66,176,58.66666667,Good Mark
+183,Female,group E,high school,Standard,none,50,50,47,147,49,Good Mark
+184,Female,group D,associate's degree,Standard,none,65,69,70,204,68,Good Mark
+185,Male,group C,some high school,Free,completed,45,52,49,146,48.66666667,Good Mark
+186,Male,group C,associate's degree,Free,completed,65,67,65,197,65.66666667,Good Mark
+187,Male,group E,high school,Standard,none,80,76,65,221,73.66666667,Good Mark
+188,Male,group D,some high school,Standard,completed,62,66,68,196,65.33333333,Good Mark
+189,Male,group B,some high school,Free,none,48,52,45,145,48.33333333,Good Mark
+190,Female,group C,bachelor's degree,Standard,none,77,88,87,252,84,Good Mark
+191,Female,group E,associate's degree,Standard,none,66,65,69,200,66.66666667,Good Mark
+192,Male,group D,some college,Standard,completed,76,83,79,238,79.33333333,Good Mark
+193,Female,group B,some high school,Standard,none,62,64,66,192,64,Good Mark
+194,Male,group D,some college,Standard,completed,77,62,62,201,67,Good Mark
+195,Female,group C,master's degree,Standard,completed,69,84,85,238,79.33333333,Good Mark
+196,Male,group D,associate's degree,Standard,none,61,55,52,168,56,Good Mark
+197,Male,group C,some high school,Free,completed,59,69,65,193,64.33333333,Good Mark
+198,Male,group E,high school,Free,none,55,56,51,162,54,Good Mark
+199,Female,group B,some college,Free,none,45,53,55,153,51,Good Mark
+200,Female,group B,bachelor's degree,Free,none,78,79,76,233,77.66666667,Good Mark

@@ -1,0 +1,447 @@
+[
+  {
+    "id": "M_001",
+    "title": "Predict House Prices using Linear Regression",
+    "description": "A real estate company wants to predict house prices based on various property features. You are given a dataset containing columns such as 'price', 'area', 'bedrooms', 'bathrooms', 'stories', 'mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'parking', 'prefarea', and 'furnishingstatus'. Your task is to preprocess the dataset, train a Linear Regression model, and predict prices for the test data.\n\n\n**Note:** All the Shells are Interconnected like a Jupyter Notebook's cells.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_001/train.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "text_similarity",
+        "description": "### Part 1: Data Preprocessing\n\nPerform the following steps on the training dataset:\n1. **Handle missing values** — If any missing values exist, fill them using appropriate strategies (mean for numeric features, mode for categorical).\n2. **Encode categorical features** — Convert all categorical columns (`mainroad`, `guestroom`, `basement`, `hotwaterheating`, `airconditioning`, `prefarea`, and `furnishingstatus`) using one-hot encoding.\n3. **Handle outliers** — Remove extreme outliers in the 'price' and 'area' columns using IQR (Interquartile Range) method where values in ‘price’ or ‘area’ fall outside 1.5 × IQR from Q1 or Q3..\n4. **Feature scaling** — Apply standard scaling (`StandardScaler`) to numeric columns ['area'] to normalize the feature ranges.\n\nFinally, print the **`.info()`** summary of your processed DataFrame to confirm that all preprocessing steps are complete.",
+        "expected_text": "<class 'pandas.core.frame.DataFrame'>\nIndex: 411 entries, 15 to 544\nData columns (total 14 columns):\n #   Column                           Non-Null Count  Dtype  \n---  ------                           --------------  -----  \n 0   price                            411 non-null    float64\n 1   area                             411 non-null    float64\n 2   bedrooms                         411 non-null    int64  \n 3   bathrooms                        411 non-null    int64  \n 4   stories                          411 non-null    int64  \n 5   parking                          411 non-null    int64  \n 6   mainroad_yes                     411 non-null    bool   \n 7   guestroom_yes                    411 non-null    bool   \n 8   basement_yes                     411 non-null    bool   \n 9   hotwaterheating_yes              411 non-null    bool   \n 10  airconditioning_yes              411 non-null    bool   \n 11  prefarea_yes                     411 non-null    bool   \n 12  furnishingstatus_semi-furnished  411 non-null    bool   \n 13  furnishingstatus_unfurnished     411 non-null    bool   \ntypes: bool(8), float64(2), int64(4)\nmemory usage: 32.3 KB",
+        "similarity_threshold": 0.9
+      },
+      {
+        "part_id": "Model Training",
+        "type": "numerical_evaluation",
+        "description": "### Part 2: Model Training and Evaluation **(Use the Preprocessed Data from Part 1)**\n\n\n1. Split the processed training data into train and validation sets **(80%-20%)** Use random_state=42.\n2. Train a Linear Regression model from **`sklearn.linear_model`** using the following:\n   - No regularization (plain LinearRegression model)\n   - Default hyperparameters (`fit_intercept=True`)\n3. Evaluate your model using the **R² (R-squared) score** on the validation set.\n4. Print the R² score in this exact format: `'R-squared Score: xxxx'(Round up to 4 decimal places)`.\n\nNote: Slight variations (±0.02) in the R² score are acceptable due to data randomness.",
+        "evaluation_label": "R-squared Score:",
+        "expected_value": 0.6237,
+        "tolerance": 0.02
+      }
+    ]
+  },
+  {
+    "id": "M_002",
+    "title": "Predict House Prices using Ridge Regression",
+    "description": "A real estate company wants to predict house prices while preventing overfitting by using Ridge Regression. You are given a dataset containing columns such as 'price', 'area', 'bedrooms', 'bathrooms', 'stories', 'mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'parking', 'prefarea', and 'furnishingstatus'. Your task is to preprocess the dataset, train a Ridge Regression model, and predict prices for the test data.\n\n\n**Note:** All the Shells are Interconnected like a Jupyter Notebook's cells.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Model Training",
+        "type": "numerical_evaluation",
+        "description": "### Part 1: Model Training and Evaluation **(No Preprocessig Needed)**\n\n\n1. \n\n Target column **['price']** \n\n\nSplit the processed training data into train and validation sets **(80%-20%)**. Use random_state=42.\n2. Train a Ridge Regression model from **`sklearn.linear_model`** using the following:\n   - Regularization strength `alpha=1.0`\n   - Default hyperparameters (`fit_intercept=True`)\n3. Evaluate your model using the **R² (R-squared) score** on the validation set.\n4. Print the R² score in this exact format: `'R-squared Score: xxxx'(Round up to 4 decimal places)`.\n\nNote: Slight variations (±0.02) in the R² score are acceptable due to data randomness.",
+        "evaluation_label": "R-squared Score:",
+        "expected_value": 0.9137,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "csv_similarity",
+        "description": "### Part 2: Price Prediction **(Use the Trained Model from Part 1)** \n\n1.Predict the house prices for the **test dataset**.\n\n\n3. Save the predictions in a CSV file named `'submission.csv'` with the following columns:\n   - `Id` — the row index or ID from the test dataset\n   - `SalePrice` — the predicted price of the house\n\nYour file must have the same structure as the provided solution file.\n\n**Example Output (first few rows):**\n```\nId,SalePrice\n1,x\n2,y\n3,x\n```\n",
+        "placeholder_filename": "submission.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/solution.csv",
+        "key_columns": [
+          "Id",
+          "SalePrice"
+        ],
+        "similarity_threshold": 0.9
+      }
+    ]
+  },
+  {
+    "id": "M_003",
+    "title": "Bike Rental System",
+    "description": "A city bike rental company wants to predict the number of bikes rented in a given hour based on factors like temperature, humidity, and time of day. Your task is to build a Polynomial Regression model to predict hourly bike rental demand.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/train-day.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/test-hour.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing and model building",
+        "type": "csv_similarity",
+        "description": "You are given two datasets, day.csv and hour.csv, containing information about bike rentals.\nUsing the day dataset, build both Linear Regression and Polynomial Regression (degree = 3) models to predict the total number of bike rentals (cnt) based on environmental factors such as temperature, humidity, and windspeed.\nFinally, use your trained Polynomial Regression model to:\n•\tPredict the number of bike rentals for the test dataset, and\n•\tSave the actual and predicted values into a CSV file named submission.csv.\n\nConstraints:\n1.\tLoad train_day.csv and test_hour.csv; use only day dataset for training.\n2.\tFeatures: temp, hum, windspeed; Target: cnt.\n3.\tSplit data (test size = 0.2, random_state = 42).\n4.\tTrain a Linear Regression model and print R² score.\n5.\tApply PolynomialFeatures(degree=3), train again, and print R² score.\n6.\tPredict using the polynomial model on test data.\n7.\tCreate a DataFrame with Actual_Count and Predicted_Count.\n8.\tSave results to submission.csv.",
+        "placeholder_filename": "submission.csv",
+        "key_columns": [],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/solution_Preprocessing_model_building.csv"
+      },
+      {
+        "part_id": "Prediction",
+        "type": "csv_similarity",
+        "description": "Using the hour.csv dataset, extract the hour information and compute the average number of bike rentals per hour.\nFinally, identify the hour of the day with the highest rental activity.\n\nConstraints:\n1.\tLoad the dataset hour.csv using pd.read_csv().\n2.\tExtract the hr column and rename it as hour.\n3.\tUse groupby('hour')['cnt'].mean() to find the average rentals per hour.\n4.\tUse idxmax() to find the hour with the maximum average rentals.\n5.\tDisplay both the hourly averages and the peak hour with its average count.\n\n",
+        "placeholder_filename": "average.csv",
+        "key_columns": [
+          "index",
+          "hour",
+          "cnt"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/solution_Prediction.csv"
+      }
+    ]
+  },
+  {
+    "id": "M_004",
+    "title": "House Sales Price Prediction",
+    "description": "You are provided with a dataset containing multiple features that describe various aspects of houses. The objective is to develop a Gradient Boosting Regression model to accurately predict house sale prices. The task involves preprocessing the data, performing hyperparameter tuning to optimize the model’s performance, and evaluating the results using appropriate regression metrics.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_005/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_005/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing and Model building",
+        "type": "numerical_evaluation",
+        "description": "Using the given Train.csv dataset, build a Gradient Boosting Regressor model to predict price.\nPerform hyperparameter tuning using GridSearchCV to find the best values for n_estimators, max_depth, and learning_rate.\nPrint the Mean Absolute Error (MAE) for the optimized model.\n\nConstraints:\n\n•\tLoad datasets using train: pd.read_csv() and test: pd.read_excel().\n•\tHandle missing values with fillna() and convert categorical features using get_dummies().\n•\tSplit the data into train and test sets (test_size=0.2, random_state=42).\n•\tInitialize GradientBoostingRegressor(random_state=42).\n•\tDefine parameter grid:\n{'n_estimators':[100,200], 'learning_rate':[0.05,0.1], 'max_depth':[3,4]}\n•\tApply GridSearchCV() with cv=3 and scoring='r2'.\n•\tTrain using fit() and retrieve best_params_.\n•\tEvaluate using mean_absolute_error() and r2_score().\n\n[Sample Output: xxxxxx.xx]",
+        "evaluation_label": "MAE: ",
+        "expected_value": 989272.91,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "You are given a housing dataset containing multiple numerical and categorical features related to house characteristics.\nYour task is to build and compare regression models using Gradient Boosting, Random Forest, and XGBoost algorithms to predict house sale prices.\n\nConstraints:\n\n1.\tSplit the dataset into training and testing sets.\n2.\tImport Gradient Boosting, Random Forest, and XGBoost algorithms and set random_state = 42\n3.\tTrain each regression model on the training data.\n4.\tEvaluate each model using R² Score and MAE.\n5.\tPrint R² Score value for XGBoost algorithm.\n",
+        "evaluation_label": "R²: ",
+        "expected_value": 0.5667,
+        "tolerance": 0.02
+      }
+    ]
+  },
+  {
+    "id": "M_006",
+    "title": "Concrete Strength",
+    "description": "You are given a dataset containing features describing the composition of concrete mixtures and their compressive strength. Your task is to predict the compressive strength based on the features. Use Elastic Net Regression to model the data, taking advantage of its combined L1 and L2 regularization properties to handle feature selection and multicollinearity.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_006/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_006/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing and Model Building",
+        "type": "numerical_evaluation",
+        "description": "Build and evaluate an Elastic Net Regression Model to predict the Compressive Strength of concrete using the given dataset.\nAfter training the model, print the RMSE (Root Mean Squared Error) value for y_test and y_pred.\n\nConstraints:\n\n1.\tRename columns and check for missing values.\n2.\tX = all features except 'CompressiveStrength' and y = 'CompressiveStrength'\n3.\tUse train_test_split() with test_size=0.2, random_state=42.\n4.\tUse ElasticNet(alpha=0.1, l1_ratio=0.5, random_state=42)\n5.\tTrain with fit(X_train, y_train).\n6.\tPredict: y_pred = elastic_net.predict(X_test)\n7.\tCompute R², MAE, and RMSE.\n8.\tPrint RMSE for y_test and y_pred.",
+        "evaluation_label": "RMSE:",
+        "expected_value": 9.8,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "After training an Elastic Net regression model on the concrete dataset, display the feature coefficients.\n\nConstraints:\n\n•\tColumns renamed for clarity\n•\tSplit data (test_size=0.2, random_state=42)\n•\tModel: ElasticNet(alpha=0.1, l1_ratio=0.5)\n•\tExtract and sort feature coefficients after training\n•\tIdentify the feature with the maximum positive coefficient",
+        "evaluation_label": "Feature with highest positive impact on compressive strength:",
+        "expected_value": 0.3044,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_009",
+    "title": "Diabetes Analysis",
+    "description": "You are required to develop a predictive model to estimate the one-year progression of diabetes using Lasso Regression for both regression and feature selection tasks.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_009/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_009/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "text_similarity",
+        "description": "Preprocess the dataset by identifying and handling any missing values.\nAfter completing the preprocessing, display the shape of the training dataset.\n\nConstraints:\n\n1. Load the dataset diabetes_prediction_dataset.csv.\n2. Display the basic dataset information and its initial shape.\n3. Check for missing values in all columns.\n4. Convert all categorical variables into dummy variables using pd.get_dummies() with drop_first=True.\n5. Print the Final Dataset Shape after preprocessing.\n6. The output must show the number of rows and columns separated by a hyphen (-).",
+        "evaluation_label": "",
+        "expected_text": "Final Dataset Shape after preprocessing:100000-14",
+        "similarity_threshold": 0.9
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "Assign “diabetes” as the target variable and perform Principal Component Analysis (PCA) on the feature set. Reduce the dataset to 2 principal components and display the total variance retained by these two components.\nConstraints:\n1.  Display the dataset information and its initial shape.\n2.  Check for missing values in all columns.\n3.  Convert all categorical variables into dummy variables using pd.get_dummies() with drop_first=True.\n4.  Set the target variable as diabetes and separate features (X) and target (y).\n5.  Apply StandardScaler to normalize the feature set before applying PCA.\n6.  Perform Principal Component Analysis (PCA) with 2 components.\n7.  Display the explained variance ratio for each principal component.\n8.  Print the total variance retained by the two PCA components.",
+        "evaluation_label": "Total variance retained by 2 components:",
+        "expected_value": 0.243,
+        "tolerance": 0.02
+      }
+    ]
+  },
+  {
+    "id": "M_010",
+    "title": "Bike Rental using GradientBooster Regression Model",
+    "description": "A city bike rental company wants to predict the number of bikes rented in a given hour based on factors like temperature, humidity, and time of day. Your task is to build a GradientBooster Regression model to predict hourly bike rental demand.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_010/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_010/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "csv_similarity",
+        "description": "You are given two datasets, day.csv and hour.csv, containing information about bike rentals.\nUsing the day dataset, build GradientBooster Regressor model to predict the total number of bike rentals (cnt) based on environmental factors such as temperature, humidity, and windspeed.\n\nFinally, use your trained GradientBooster Regressor model to:\n•\tPredict the number of bike rentals for the test dataset, and\n•\tSave the actual and predicted values into a CSV file named submission.csv.\n\nConstraints:\n\n1.\tLoad train_day.csv and test_hour.csv; use only the day dataset for training.\n2.\tFeatures: temp, hum, windspeed; Target: cnt.\n3.\tSplit the data into training and testing sets (test_size = 0.2, random_state = 42).\n4.\tTrain a Gradient Boosting Regressor model and print the R² score on the test set.\n5.\tPredict the cnt values using the trained Gradient Boosting model on the test data.\n6.\tCreate a DataFrame with columns Actual_Count and Predicted_Count.\n7.\tSave the prediction results to submission.csv.",
+        "placeholder_filename": "submission.csv",
+        "key_columns": [
+          "Actual_Count",
+          "Predicted_Count"
+        ],
+        "similarity_threshold": -1.1,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_010/solution_Preprocessing.csv"
+      },
+      {
+        "part_id": "Prediction",
+        "type": "csv_similarity",
+        "description": "Using the hour.csv dataset, extract the hour information and compute the average number of bike rentals per hour.\n\nFinally, identify the hour of the day with the highest rental activity.\n\nConstraints:\n\n1.\tLoad the dataset hour.csv using pd.read_csv().\n2.\tExtract the hr column and rename it as hour.\n3.\tUse groupby('hour')['cnt'].mean() to find the average rentals per hour.\n4.\tUse idxmax() to find the hour with the maximum average rentals.\n5.\tDisplay both the hourly averages and the peak hour with its average count.",
+        "placeholder_filename": "average.csv",
+        "key_columns": [
+          "index",
+          "hour",
+          "cnt"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_010/solution_Prediction.csv"
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_012",
+    "title": "Bike Rental XGBooster Regression",
+    "description": "A city bike rental company wants to predict the number of bikes rented in a given hour based on factors like temperature, humidity, and time of day. Your task is to build a XGBooster Regression model to predict hourly bike rental demand.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_012/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_012/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "csv_similarity",
+        "description": "You are given two datasets, day.csv and hour.csv, containing information about bike rentals.\nUsing the day dataset, build XGBooster Regressor model to predict the total number of bike rentals (cnt) based on environmental factors such as temperature, humidity, and windspeed.\n\nFinally, use your trained XGBoost Regressor model to:\n•\tPredict the number of bike rentals for the test dataset, and\n•\tSave the actual and predicted values into a CSV file named submission.csv.\n\nConstraints:\n\n1.\tLoad train_day.csv and test_hour.csv; use only the day dataset for training.\n2.\tFeatures: temp, hum, windspeed; Target: cnt.\n3.\tSplit the data into training and testing sets (test_size = 0.2, random_state = 42).\n4.\tTrain a XGBoost Regressor model using the training data. (learning_rate=0.1)\n5.\tEvaluate the model by calculating and displaying the R² score on the test data.\n6.\tPredict the cnt values using the trained XGBoost model on the test dataset.\n7.\tCreate a DataFrame with columns Actual_Count and Predicted_Count.\n8.\tSave the prediction results to a file named submission.csv.",
+        "placeholder_filename": "submission.csv",
+        "key_columns": [
+          "Actual_Count",
+          "Predicted_Count"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_012/solution_Preprocessing.csv"
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "Using the hour.csv dataset, extract the hour information and compute the average number of bike rentals per hour.\n\nConstraints:\n\n1.\tLoad the dataset hour.csv using pd.read_csv().\n2.\tExtract the hr column and rename it as hour.\n3.\tUse groupby('hour')['cnt'].mean() to find the average rentals per hour.\n4.\tUse idxmax() to find the hour with the maximum average rentals.\n5.\tDisplay Highest rental activity average count.",
+        "evaluation_label": "Highest rental activity average count:",
+        "expected_value": 461.45,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_013",
+    "title": "Medical Insurance Cost Prediction",
+    "description": "You are provided with a dataset containing multiple features that describe various demographic and health-related factors of individuals.\r\nThe objective is to develop a Gradient Boosting Regression model to accurately predict medical insurance charges.\r\n",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_013/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_013/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "The task involves preprocessing the data, performing hyperparameter tuning to optimize model performance, and evaluating the results using regression metrics.\n\n1.\tUsing the given Train.csv dataset, build a Gradient Boosting Regressor model to predict insurance charges.\n2.\tPerform hyperparameter tuning using GridSearchCV to find the best values for n_estimators, max_depth, and learning_rate.\n3.\tPrint the Mean Absolute Error (MAE) and R² score for the optimized model.\n\nConstraints:\n\n1.\tHandle missing values with fillna() and convert categorical features using pd.get_dummies().\n2.\tSplit the data into train and test sets using train_test_split(test_size=0.2, random_state=42).\n3.\tInitialize model with GradientBoostingRegressor(random_state=42).\n4.\tDefine parameter grid as:\n5.\t{'n_estimators': [100, 200], 'learning_rate': [0.05, 0.1], 'max_depth': [3, 4]}\n6.\tApply GridSearchCV() with cv=3 and scoring='r2'.\n7.\tTrain the model using fit() and retrieve best_params_.\n8.\tEvaluate using mean_absolute_error().",
+        "evaluation_label": "MAE:",
+        "expected_value": 1942.57,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "You are given a Medical Insurance Cost dataset containing numerical and categorical features such as age, BMI, smoker, and region.\nYour task is to build a model using XGBoost algorithm to predict medical insurance charges.\n\nConstraints:\n\n1.\tSplit the dataset into training and testing sets using train_test_split(test_size=0.2, random_state=42).\n2.\tImport and initialize the following models with random_state=42. (XGBRegressor())\n3.\tTrain each regression model on the training data.\n4.\tEvaluate each model using R² Score and Mean Absolute Error (MAE).\n5.\tPrint the R² Score value for the XGBoost algorithm.",
+        "evaluation_label": "R²:",
+        "expected_value": 0.9542,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_014",
+    "title": "Medical Insurance Charges using Linear Regression and GradientBooster",
+    "description": "You are provided with a dataset containing multiple features that describe various demographic and health-related factors of individuals such as age, BMI, smoking status, and region.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_014/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_014/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "The objective is to develop a Linear Regression model to accurately predict medical insurance charges.\n\nConstraints:\n\n1.\tLoad the dataset medical_insurance.csv.csv using pd.read_csv().\n2.\tFeatures: age, bmi, children, and smoker_yes (after encoding).\n3.\tTarget variable: charges.\n4.\tHandle missing values using fillna() if any are found.\n5.\tConvert categorical variables (like sex, smoker, and region) using pd.get_dummies(drop_first=True).\n6.\tSplit the dataset into training and testing sets with test_size=0.2 and random_state=42.\n7.\tTrain a Linear Regression model and print the MAE: xxxx.xx",
+        "evaluation_label": "MAE:",
+        "expected_value": 4160.25,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "prediction",
+        "type": "numerical_evaluation",
+        "description": "You are given a Medical Insurance Cost dataset containing numerical and categorical features such as age, BMI, smoker, and region.\nYour task is to build a model using GradientBooster algorithm to predict medical insurance charges.\n\nConstraints:\n\n1.\tSplit the dataset into training and testing sets using train_test_split(test_size=0.2, random_state=42).\n2.\tFill missing values with the median for numerical features.\n3.\tConvert categorical features to dummy variables using pd.get_dummies().\n4.\tInitialize the GradientBoostingRegressor with random_state=42.\n5.\tTrain models on X_train, predict on X_test, and evaluate with R² and MAE.\n6.\tPrint the Gradient Boosting R²: x.xx",
+        "evaluation_label": "Gradient Boosting R²:",
+        "expected_value": 0.87,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_015",
+    "title": "Fuel Efficiency MPG using Linear and Polynomial Regression",
+    "description": "You are provided with the Auto MPG dataset, which contains various features about automobiles such as horsepower, weight, and displacement.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_015/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_015/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing and Model Building",
+        "type": "numerical_evaluation",
+        "description": "The goal is to develop a Linear Regression model to predict the car’s fuel efficiency (mpg).\n\nConstraints:\n\n1.\tUse the following features as predictors: horsepower, weight, displacement\n2.\tTarget variable: mpg\n3.\tHandle any missing values by filling with the mean.\n4.\tSplit data into 80% training and 20% testing sets.\n5.\tImport the linear regression model.\n6.\tPrint the Mean Absolute Error (MAE) value.",
+        "evaluation_label": "Mean Absolute Error (MAE):",
+        "expected_value": 3.12,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "The goal is to develop a Polynomial Regression (degree = 3) model to predict the car’s fuel efficiency (mpg).\n\nConstraints:\n\n1.  Use the following features as predictors: horsepower, weight, displacement\n2.  Target variable: mpg\n3.  Handle any missing values by filling with the mean.\n4.  Split data into 80% training and 20% testing sets.\n5.  Import the polynomial regression model.\n6.  Print the R-squared: x.xxxx",
+        "evaluation_label": "R-squared:",
+        "expected_value": 0.7916,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_016",
+    "title": "Student's Performance Prediction",
+    "description": "You are provided with a dataset containing students' demographic information and their performance on math tests.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_016/train.csv",
+      "test": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_016/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "The objective is to predict the math score of students based on categorical and continuous features such as gender, ethnicity, parental education level, lunch type, and whether or not they completed a test preparation course.\nUse One-hot encode the categorical features, implement a Linear Regression and model, then compute and print the Explained Variance Score: (rounded to 3 decimal places).\n\nConstraints:\n\n1.\tUse the following features as predictors: gender, race/ethnicity, parental level of education, lunch, test preparation course\n2.\tTarget variable: math score\n3.\tHandle categorical features (gender, race/ethnicity, parental level of education, lunch, test preparation course) by applying one-hot encoding to convert them into numerical format.\n4.\tSplit the dataset into 80% training and 20% testing sets.\n5.\tUse Linear Regression to predict the math score.\n6.\tExplained Variance Score: Measures how well the model captures the variance in the target variable.\n7.\tPrint the results in the following format: Explained Variance Score: (rounded to 3 decimal places).",
+        "evaluation_label": "Explained Variance Score:",
+        "expected_value": 0.881,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "The objective is to predict the math score of students based on categorical and continuous features such as gender, ethnicity, parental education level, lunch type, and whether or not they completed a test preparation course.\nUse One-hot encode the categorical features, implement a Polynomial Regression and model, then compute and print the Max Error: (rounded to 3 decimal places).\n\nConstraints:\n\n1.\tUse the following features as predictors: gender, race/ethnicity, parental level of education, lunch, test preparation course\n2.\tTarget variable: math score\n3.\tHandle categorical features (gender, race/ethnicity, parental level of education, lunch, test preparation course) by applying one-hot encoding to convert them into numerical format.\n4.\tSplit the dataset into 80% training and 20% testing sets.\n5.\tUse Polynomial Regression (degree = 2) to predict the math score.\n6.\tMax Error: the maximum value of the absolute differences between the predicted values (y) and the true values (y) for all data points.\n7.\tPrint the results in the following format: Max Error: (rounded to 3 decimal places).",
+        "evaluation_label": "Max Error:",
+        "expected_value": 16.61,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_017",
+    "title": "Students Performance using Poly Regression and Linear Regression",
+    "description": "You are provided with a dataset containing students' demographic information and their performance on math tests. ",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_017/train.csv",
+      "test": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_017/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "The objective is to predict the math score of students based on categorical and continuous features such as gender, ethnicity, parental education level, lunch type, and whether or not they completed a test preparation course.\nUse One-hot encode the categorical features, implement a Polynomial Regression and model, then compute and print the Explained Variance Score: (rounded to 2 decimal places).\n\nConstraints:\n\n1.\tUse the following features as predictors: gender, race/ethnicity, parental level of education, lunch, test preparation course\n2.\tTarget variable: math score\n3.\tHandle categorical features (gender, race/ethnicity, parental level of education, lunch, test preparation course) by applying one-hot encoding to convert them into numerical format.\n4.\tSplit the dataset into 80% training and 20% testing sets.\n5.\tUse Polynomial Regression (degree = 2) to predict the math score.\n6.\tExplained Variance Score: Measures how well the model captures the variance in the target variable.\n7.\tPrint the results in the following format: Explained Variance Score: (rounded to 2 decimal places).",
+        "evaluation_label": "Explained Variance Score:",
+        "expected_value": 0.87,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "The objective is to predict the math score of students based on categorical and continuous features such as gender, ethnicity, parental education level, lunch type, and whether or not they completed a test preparation course.\nUse One-hot encode the categorical features, implement a Linear Regression and model, then compute and print the Max Error: (rounded to 2 decimal places).\n\nConstraints:\n\n1.\tUse the following features as predictors: gender, race/ethnicity, parental level of education, lunch, test preparation course\n2.\tTarget variable: math score\n3.\tHandle categorical features (gender, race/ethnicity, parental level of education, lunch, test preparation course) by applying one-hot encoding to convert them into numerical format.\n4.\tSplit the dataset into 80% training and 20% testing sets.\n5.\tUse Linear Regression to predict the math score.\n6.\tMax Error: the maximum value of the absolute differences between the predicted values (y) and the true values (y) for all data points.\n7.\tPrint the results in the following format: Max Error: (rounded to 2 decimal places).",
+        "evaluation_label": "Max Error:",
+        "expected_value": 15.26,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_019",
+    "title": "Iris Classification using Logistic Regression",
+    "description": "You are provided with the Iris dataset, which contains measurements of sepal and petal features for three iris flower species (Setosa, Versicolor, Virginica).",
+    "datasets": {},
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "csv_similarity",
+        "description": "Your task is to apply Logistic Regression using scikit-learn to perform binary and multiclass classification and interpret the odds ratios of the learned model.\n\nConstraints:\n\n1.\tLoad the Iris dataset using load_iris() from sklearn.datasets.\n2.\tSplit the dataset into training and testing sets (test_size=0.3, random_state=42).\n3.\tPerform binary logistic regression to classify Setosa vs Non-Setosa.\n4.\tCompute and perform the odds ratio for each feature (np.exp(coefficients)) and print the saved file odds ratio coefficients in solution.csv. ",
+        "placeholder_filename": "solution.csv",
+        "key_columns": [
+          "Feature",
+          "Odds_Ratio"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_019/solution_Preprocessing.csv"
+      },
+      {
+        "part_id": "Multiclass Logistic Regression using OvR and Softmax",
+        "type": "numerical_evaluation",
+        "description": "Using the same Iris dataset, perform multiclass classification with Logistic Regression to distinguish between all three species (Setosa, Versicolor, and Virginica) using One-vs-Rest (OvR) and Softmax (Multinomial) strategies.\n\nConstraints:\n\n1.\tLoad the Iris dataset using load_iris() from sklearn.datasets.\n2.\tSplit the dataset into training and testing sets (test_size=0.3, random_state=42).\n3.\tTrain two Logistic Regression models:\n4.\tUse solver = 'lbfgs' and max_iter = 1000.\n5.\tPrint One-vs-Rest Logistic Regression accuracy.",
+        "evaluation_label": "Accuracy:",
+        "expected_value": 1,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_020",
+    "title": "Iris prediction using Logistic Regression to print the feature coefficients.",
+    "description": "You are provided with the Iris dataset, which contains measurements of sepal and petal features for three iris flower species (Setosa, Versicolor, Virginica).",
+    "datasets": {},
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "csv_similarity",
+        "description": "Your task is to apply Logistic Regression using scikit-learn to perform binary classification and print the feature coefficients.\n\nConstraints:\n\n1.  \tLoad the Iris dataset using load_iris() from sklearn.datasets.\n2.  \tSplit the dataset into training and testing sets (test_size=0.3, random_state=42).\n3.  \tPerform binary logistic regression to classify Setosa vs Non-Setosa.\n4.  \tCompute the coefficients for binary model (binary_model.coef_[0]).\n5.  \tPrint the feature coefficients saved in the 'feature.csv' file(rounded to 4 decimal values).",
+        "placeholder_filename": "feature.csv",
+        "key_columns": [
+          "Feature",
+          "Coefficients"
+        ],
+        "similarity_threshold": 0.7,
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_020/solution_Preprocessing.csv"
+      },
+      {
+        "part_id": "Multiclass Logistic Regression using OvR and Softmax",
+        "type": "csv_similarity",
+        "description": "Using the same Iris dataset, perform multiclass classification with Logistic Regression to distinguish between all three species (Setosa, Versicolor, and Virginica) using One-vs-Rest (OvR) and Softmax (Multinomial) strategies, print the Classification Report (Softmax).\n\nConstraints:\n\n1.  Load the Iris dataset using load_iris() from sklearn.datasets.\n2.   Split the dataset into training and testing sets (test_size=0.3, random_state=42).\n3.  Train two Logistic Regression models:\n4.  Use solver = 'lbfgs' and max_iter=1000.\n5.  Print the Classification Report (Softmax) saved in the 'classification.csv' file.",
+        "placeholder_filename": "classification.csv",
+        "key_columns": [
+          "sno",
+          "precision",
+          "recall",
+          "f1-score",
+          "support"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_1/M_020/solution_Multiclass Logistic Regression using OvR and Softmax.csv"
+      }
+    ],
+    "isValidated": true
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "G_001",
+    "title": "You’re building a keyword recognition model that requires word-level information from a spoken audio file. Your job is to extract the full transcription and break it into individual words for use in training.",
+    "description": "Write a Python script to process the audio file input.wav. Your program must:\r\n1.\tUse the speech_recognition library to load and process the audio file.\r\n2.\tTranscribe speech using the recognize_google () function.\r\n3.\tSplit the transcription into individual words.\r\n4.\tExport the result to a CSV file named solution.csv, containing a single column listing each word.\r\n5.\tDisplay only the first 5 rows of the output on the screen.",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_001/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "Write a Python script to process the audio file input.wav. Your program must:\r\n1.\tUse the speech_recognition library to load and process the audio file.\r\n2.\tTranscribe speech using the recognize_google () function.\r\n3.\tSplit the transcription into individual words.\r\n4.\tExport the result to a CSV file named solution.csv, containing a single column listing each word.\r\n5.\tDisplay only the first 5 rows of the output on the screen.",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_001/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_005",
+    "title": "Your team is working on a speaker diarization task and needs utterance-level transcriptions to align speech with timestamps. You must divide the audio into smaller time-based chunks and transcribe each one individually.  ",
+    "description": "Write a Python script to process input.wav and generate chunk-based speech transcriptions. Your program must:\r\n1.\tLoad the audio file and divide it into 1-second chunks.\r\n2.\tUse the speech_recognition library with the recognize_google() function to transcribe each chunk.\r\n3.\tHandle silent or unrecognized segments by inserting \"Unrecognized or Silent\" in the transcript field.\r\n4.\tExport the results to a CSV file named solution.csv with the following columns:\r\nChunkID, StartTime (s), EndTime (s), and Transcript.\r\n5.\tDisplay the first 5 rows of the output for verification.\r\n\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_005/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "Write a Python script to process input.wav and generate chunk-based speech transcriptions. Your program must:\r\n1.\tLoad the audio file and divide it into 1-second chunks.\r\n2.\tUse the speech_recognition library with the recognize_google() function to transcribe each chunk.\r\n3.\tHandle silent or unrecognized segments by inserting \"Unrecognized or Silent\" in the transcript field.\r\n4.\tExport the results to a CSV file named solution.csv with the following columns:\r\nChunkID, StartTime (s), EndTime (s), and Transcript.\r\n5.\tDisplay the first 5 rows of the output for verification.\r\n\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_005/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_006",
+    "title": "You are starting with a simple speech recognition task.",
+    "description": "\r\nWrite a Python script to process the audio file input.wav. Your program must:\r\n1.\tLoad the file using the speech_recognition library.\r\n2.\tUse the Google Web Speech API to transcribe the audio.\r\n3.\tPrint the complete transcription text.\r\n4.\tSave the transcription to a text file named solution.csv.\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_006/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "\r\nWrite a Python script to process the audio file input.wav. Your program must:\r\n1.\tLoad the file using the speech_recognition library.\r\n2.\tUse the Google Web Speech API to transcribe the audio.\r\n3.\tPrint the complete transcription text.\r\n4.\tSave the transcription to a text file named solution.csv.\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_006/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_008",
+    "title": "You are building a robust transcription tool.",
+    "description": "\r\nWrite a Python script to process the audio file input.wav. Your program must:\r\n1.\tLoad the audio using speech_recognition.AudioFile().\r\n2.\tTranscribe the speech using recognize_google().\r\n3.\tHandle exceptions such as network errors or unintelligible speech gracefully.\r\n4.\tPrint “No speech detected” if transcription fails.\r\n5.\tSave the recognized text (if available) to solution.csv.\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_008/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "\r\nWrite a Python script to process the audio file input.wav. Your program must:\r\n1.\tLoad the audio using speech_recognition.AudioFile().\r\n2.\tTranscribe the speech using recognize_google().\r\n3.\tHandle exceptions such as network errors or unintelligible speech gracefully.\r\n4.\tPrint “No speech detected” if transcription fails.\r\n5.\tSave the recognized text (if available) to solution.csv.\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_008/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_009",
+    "title": "You are converting spoken content into structured text.",
+    "description": "Write a Python script to process input.wav. Your program must:\r\n1.\tUse speech_recognition to transcribe the full audio file.\r\n2.\tSplit the transcribed text into individual sentences using nltk.sent_tokenize().\r\n3.\tExport each sentence as a separate row in a CSV file named solution.csv.\r\n4.\tDisplay the first 5 sentences as output.\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_009/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "Write a Python script to process input.wav. Your program must:\r\n1.\tUse speech_recognition to transcribe the full audio file.\r\n2.\tSplit the transcribed text into individual sentences using nltk.sent_tokenize().\r\n3.\tExport each sentence as a separate row in a CSV file named solution.csv.\r\n4.\tDisplay the first 5 sentences as output.\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_009/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_010",
+    "title": "You want to identify important terms from an audio transcription.",
+    "description": "\r\nWrite a Python script to process input.wav. Your program must:\r\n1.\tTranscribe the audio using the Google Web Speech API.\r\n2.\tSplit the text into individual words.\r\n3.\tCount word frequencies using collections.Counter.\r\n4.\tPrint the top 5 most frequent keywords and export them to solution.csv.",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_010/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "\r\nWrite a Python script to process input.wav. Your program must:\r\n1.\tTranscribe the audio using the Google Web Speech API.\r\n2.\tSplit the text into individual words.\r\n3.\tCount word frequencies using collections.Counter.\r\n4.\tPrint the top 5 most frequent keywords and export them to solution.csv.",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_010/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_011",
+    "title": "You are developing a Python program to analyze and process an audio file named input.wav. The goal is to divide the file into smaller segments and automatically generate transcriptions for each part.",
+    "description": "\r\nWrite a Python script that must perform the following steps:\r\n1.\tLoad the audio file using the pydub library.\r\n2.\tSplit the audio into 1-second chunks.\r\n3.\tUse the speech_recognition library with the Google Speech API to transcribe each chunk separately.\r\n4.\tHandle silent or unrecognized chunks gracefully by marking them as \"Unrecognized or Silent\".\r\n5.\tSave all results into a CSV file named solution.csv with the columns:\r\no\tChunkID, StartTime(s), EndTime(s), Transcript.\r\n6.\tDisplay the first 3 rows of the CSV output for verification.\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_011/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "\r\nWrite a Python script that must perform the following steps:\r\n1.\tLoad the audio file using the pydub library.\r\n2.\tSplit the audio into 1-second chunks.\r\n3.\tUse the speech_recognition library with the Google Speech API to transcribe each chunk separately.\r\n4.\tHandle silent or unrecognized chunks gracefully by marking them as \"Unrecognized or Silent\".\r\n5.\tSave all results into a CSV file named solution.csv with the columns:\r\no\tChunkID, StartTime(s), EndTime(s), Transcript.\r\n6.\tDisplay the first 3 rows of the CSV output for verification.\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_011/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_012",
+    "title": "You are analyzing a conversation between two speakers.",
+    "description": "Write a Python script to process input.wav. Your program must:\r\n1.\tLoad and split the audio into 2-second chunks.\r\n2.\tUse the Google Web Speech API to transcribe each chunk.\r\n3.\tTag each chunk as “Speaker 1” or “Speaker 2” alternately.\r\n4.\tSave the output to solution.csv with columns: Speaker, StartTime(s), EndTime(s), Transcript.\r\n5.\tDisplay the first 4 rows of the CSV file.",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_012/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "Write a Python script to process input.wav. Your program must:\r\n1.\tLoad and split the audio into 2-second chunks.\r\n2.\tUse the Google Web Speech API to transcribe each chunk.\r\n3.\tTag each chunk as “Speaker 1” or “Speaker 2” alternately.\r\n4.\tSave the output to solution.csv with columns: Speaker, StartTime(s), EndTime(s), Transcript.\r\n5.\tDisplay the first 4 rows of the CSV file.",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_012/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_013",
+    "title": "You are developing a voice-based command detection system that can identify multiple predefined keywords spoken in an audio clip.",
+    "description": "Write a Python script to process an audio file named input.wav and perform the following tasks:\r\n1.\tTranscribe the audio using the speech_recognition library and the Google Speech API.\r\n2.\tDetect all commands from the recognized text that match any of the predefined keywords in the list:\r\n[\"of\", \"the\", \"is\", \"spot\", \"machine\", \"human\", \"voices\"]\r\n3.\tDisplay all detected commands, or show the message \"No valid command found\" if none are detected.\r\n4.\tSave the full recognized text and the detected commands to a CSV file named solution.csv.\r\n5.\tPrint the output in a structured format showing both the transcription and the detected commands.\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_013/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "Write a Python script to process an audio file named input.wav and perform the following tasks:\r\n1.\tTranscribe the audio using the speech_recognition library and the Google Speech API.\r\n2.\tDetect all commands from the recognized text that match any of the predefined keywords in the list:\r\n[\"of\", \"the\", \"is\", \"spot\", \"machine\", \"human\", \"voices\"]\r\n3.\tDisplay all detected commands, or show the message \"No valid command found\" if none are detected.\r\n4.\tSave the full recognized text and the detected commands to a CSV file named solution.csv.\r\n5.\tPrint the output in a structured format showing both the transcription and the detected commands.\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_013/solution.csv"
+      }
+    ]
+  },
+  {
+    "id": "G_014",
+    "title": "You are developing a voice-based command detection system that can identify multiple predefined keywords spoken in an audio clip.",
+    "description": "Write a Python script to process an audio file named input.wav and perform the following tasks:\r\n1.\tTranscribe the audio using the speech_recognition library and the Google Speech API.\r\n2.\tDetect all commands from the recognized text that match any of the predefined keywords in the list:\r\n[\"of\", \"the\", \"is\", \"spot\", \"machine\", \"human\", \"voices\"]\r\n3.\tDisplay all detected commands, or show the message \"No valid command found\" if none are detected.\r\n4.\tSave the full recognized text and the detected commands to a CSV file named solution.csv.\r\n5.\tPrint the output in a structured format showing both the transcription and the detected commands.\r\n",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_014/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "csv_similarity",
+        "description": "Write a Python script to process an audio file named input.wav and perform the following tasks:\r\n1.\tTranscribe the audio using the speech_recognition library and the Google Speech API.\r\n2.\tDetect all commands from the recognized text that match any of the predefined keywords in the list:\r\n[\"of\", \"the\", \"is\", \"spot\", \"machine\", \"human\", \"voices\"]\r\n3.\tDisplay all detected commands, or show the message \"No valid command found\" if none are detected.\r\n4.\tSave the full recognized text and the detected commands to a CSV file named solution.csv.\r\n5.\tPrint the output in a structured format showing both the transcription and the detected commands.\r\n",
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_014/solution.csv"
+      }
+    ]
+  }
+]

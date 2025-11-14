@@ -1,0 +1,510 @@
+[
+  {
+    "id": "D_001",
+    "title": "Web Scraping",
+    "description": "An online price comparison company wants to track the titles, prices, and availability of books from a sample e-commerce website to compare market trends. You have been asked to scrape this data from http://books.toscrape.com/.",
+    "page_link_that_need_to_be_scrapped": "http://books.toscrape.com/catalogue/page-1.html",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "text_similarity",
+        "description": "Write a Python script to scrape data from http://books.toscrape.com/catalogue/page-1.html. Your program must: \\n 1. \t\\t Extract the title, price, and availability of each book listed on the page. \\n 2. \\tStore the data in a CSV file named books_output.csv. \\n 3. \\t Use requests and BeautifulSoup libraries only (no Selenium). \\n4. \\t\tEnsure your script handles at least 20 books.\n",
+        "expected_text": "Title,Price,Availability A Light in the Attic,£51.77,In stock Tipping the Velvet,£53.74,In stock Soumission,£50.10,In stock",
+        "similarity_threshold": 0.9
+      }
+    ]
+  },
+  {
+    "id": "D_002",
+    "title": "Web Scraping",
+    "description": "You are developing an NLP pipeline that analyzes quotes for sentiment, named entity recognition, and thematic clustering. As a first step, you need to build a dataset of famous quotes, authors, and tags from a public source. The site http://quotes.toscrape.com provides structured quote data that can be programmatically collected and used as a textual corpus for downstream tasks.",
+    "page_link_that_need_to_be_scrapped": "http://quotes.toscrape.com",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "text_similarity",
+        "description": "Write a Python script to scrape quotes from http://quotes.toscrape.com/. Your task is to: \\n1. \\t\tCollect the first page of quotes. \\n 2. \\t Extract the following details for each quote: \\n o   The quote text (without outer quotes) \\n o  The author’s name \\n o   The list of tags (joined with commas) \\n 3. \\t\tSave the output to a CSV file named quotes_output.csv. \\n 4. \\t\tUse only requests, BeautifulSoup, and pandas.\n",
+        "expected_text": "Quote,Author,Tags \"The world as we have created it is a process...\",Albert Einstein,\"change,deep-thoughts\" \"It is our choices that show what we truly are...\",J.K. Rowling,\"choices\" \"There are only two ways to live your life...\",Albert Einstein,\"inspirational,life,live",
+        "similarity_threshold": 0.9
+      }
+    ]
+  },
+  {
+    "id": "D_003",
+    "title": "Web Scaping",
+    "description": "A software developer is tasked with analyzing the most popular open-source projects of the week from GitHub. To do this,write Python script using requests and BeautifulSoup to scrape the top 10 trending repositories, extract their names, descriptions, and star counts, and save the data into a CSV file named github_trending.csv. The script uses a for loop to iterate through HTML elements with the tag article.Box-row, and within each, it accesses the <h2> tag for the repository name, the <p> tag for description, and an anchor tag ending in /stargazers for the star count. https://github.com/trending",
+    "page_link_that_need_to_be_scrapped": "https://github.com/trending",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "text_similarity",
+        "description": "A software developer needs to analyze the most popular open-source projects of the week from GitHub. Your task is to: \\n 1. \\t Write a Python script to scrape the top 10 trending repositories from https://github.com/trending. \\n 2. \\t Extract the following details for each repository:  \\n The repository name (from the <h2> tag within each article.Box-row element) \\n The repository description (from the <p> tag with class col-9) \\n The star count (from the anchor tag with an href ending in /stargazers) \\n 3. \\t Save the output to a CSV file named github_trending.csv. \\n 4. \\t Use only the requests, BeautifulSoup, and pandas libraries.\n",
+        "expected_text": "Repository,Description,Stars \"torvalds/linux\",\"Linux kernel source tree\",\"168k\" \"microsoft/vscode\",\"Visual Studio Code\",\"164k\" \"tensorflow/tensorflow\",\"An Open Source Machine Learning Framework for Everyone\",\"186k\"",
+        "similarity_threshold": 0.9
+      }
+    ]
+  },
+  {
+    "id": "D_004",
+    "title": "Scraping",
+    "description": "A developer is building a geography quiz app that requires an up-to-date list of all countries and their capitals. To avoid manual entry and ensure global coverage, they decide to automate the process by scraping data from the Wikipedia page titled \"List of national capitals in alphabetical order.\" The developer uses Python with the requests and BeautifulSoup libraries to send a request to the Wikipedia page, parse the HTML table, extract country-capital pairs, and store the information in a CSV file (countries_capitals.csv) for later use in the app",
+    "page_link_that_need_to_be_scrapped": "https://en.wikipedia.org/wiki/List_of_national_capitals_in_alphabetical_order",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "A developer is creating a geography quiz application that requires a comprehensive list of countries and their capital cities. Your task is to: \\n 1. \\tWrite a Python script to scrape data from the Wikipedia page \"List of national capitals in alphabetical order\" (https://en.wikipedia.org/wiki/List_of_national_capitals_in_alphabetical_order). \\n 2. \\tExtract the following details for each entry from the HTML table: \\nThe country name \\nThe capital city name \\n 3. \\tSave the output to a CSV file named countries_capitals.csv. \\n 4. \\t Use only the requests, BeautifulSoup, and pandas libraries.\n",
+        "placeholder_filename": "countries_capitals.csv",
+        "key_columns": [
+          "Country",
+          "Capital"
+        ],
+        "similarity_threshold": 0.9
+      }
+    ]
+  },
+  {
+    "id": "D_005",
+    "title": "Web Scraping",
+    "description": "A startup company is developing a smart event-planning application that helps users organize outdoor activities such as weddings, sports meets, and concerts. To help users make informed decisions, the app needs access to reliable 10-day weather forecasts for major cities in India. A backend developer is assigned to automate the retrieval of weather forecast data from TimeandDate.com for the city of Chennai. The developer writes a Python script using requests and BeautifulSoup to scrape the next 10 days of weather information, including the date, weather condition, temperature, feels-like temperature, and humidity. The script parses the forecast table on the web page and saves the collected data into a CSV file named chennai_weather.csv, which can later be integrated with the app's weather recommendation module.",
+    "page_link_that_need_to_be_scrapped": "https://www.timeanddate.com/weather/india/chennai/ext",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "A developer is building an event-planning application that requires weather forecast data to assist users in scheduling outdoor activities. Your task is to: \\n 1. \\tWrite a Python script to scrape the 10-day weather forecast for Chennai from the TimeandDate.com weather page (https://www.timeanddate.com/weather/india/chennai/ext). \\n 2. \\tExtract the following details for each day from the forecast table: \\n\nThe date \\n\nThe weather condition \\n\nThe temperature \\n\nThe feels-like temperature \\n\nThe humidity \\n 3. \\t Save the output to a CSV file named chennai_weather.csv. \\n 4. \\tUse only the requests, BeautifulSoup, and pandas libraries.\n",
+        "placeholder_filename": "chennai_weather.csv",
+        "key_columns": [
+          "Date",
+          "Condition",
+          "Temperature",
+          "Feels Like",
+          "Humidity"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_005/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_006",
+    "title": "Web Scraping",
+    "description": "During the COVID-19 pandemic, health organizations, research labs, and governments relied heavily on up-to-date data for planning, forecasting, and policy making. A data science team was tasked with creating an automated system to monitor the top 10 most affected countries based on total COVID-19 cases, deaths, and recoveries.\r\nTo avoid manual data entry and ensure daily updates, a developer on the team wrote a Python script that scrapes real-time COVID-19 statistics from Worldometers.info. The script locates the HTML table with global COVID-19 data, extracts the top 10 rows corresponding to the most impacted countries, and retrieves columns such as country name, total cases, total deaths, and total recovered. The scraped data is stored in a CSV file called covid_top10.csv, which is then visualized on a live health dashboard.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://www.worldometers.info/coronavirus/",
+    "parts": [
+      {
+        "part_id": "scraping",
+        "type": "csv_similarity",
+        "description": "A data science team is developing a global health dashboard to monitor COVID-19 statistics for the top 10 most affected countries. Your task is to: \\n 1. \\t Write a Python script to scrape COVID-19 data from the Worldometers.info coronavirus page (https://www.worldometers.info/coronavirus/). \\n 2. \\t Extract the following details for the top 10 countries from the HTML table containing global COVID-19 statistics: \\n\nCountry name \\n\nTotal cases\\n\nTotal deaths\\n\nTotal recovered\\n 3. \\t Save the output to a CSV file named covid_top10.csv. \\n 4. \\tUse only the requests, BeautifulSoup, and pandas libraries.\n",
+        "placeholder_filename": "covid_top10.csv",
+        "key_columns": [
+          "Country",
+          "Total Cases",
+          "Total Deaths",
+          "Total Recovered"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_006/solution_scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_007",
+    "title": "Web Scraping",
+    "description": "A career development team at a college is creating a simple job alert system to help fresh graduates discover job opportunities for practice and learning. To begin with, they decide to simulate the process using a sample site designed for web scraping learners: https://realpython.github.io/fake-jobs/.\r\nA student developer is assigned the task of building a Python script that scrapes this site to extract the job title, company name, and location of the first 10 jobs listed. The developer uses the requests and BeautifulSoup libraries to parse the HTML content and retrieve the required information. The final output is saved in a CSV file called fake_jobs.csv, which can be used to send weekly notifications or build a search interface.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://realpython.github.io/fake-jobs/",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "A career development team is building a job alert system to help fresh graduates discover entry-level job opportunities. Your task is to: \\n 1. \\t Write a Python script to scrape job listings from the sample site https://realpython.github.io/fake-jobs/. \\n 2. \\t Extract the following details for the first 10 jobs listed: \\n\nJob title \\n\nCompany name \\n\nLocation \\n 3. \\t Save the output to a CSV file named fake_jobs.csv. \\n 4. \\tUse only the requests, BeautifulSoup, and pandas libraries.\n",
+        "placeholder_filename": "fake_jobs.csv",
+        "key_columns": [
+          "Job Title",
+          "Company Name",
+          "Location"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_007/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_008",
+    "title": "Web Scraping",
+    "description": "A space education platform is building a digital archive to teach students about the history of space exploration. As part of the content pipeline, they want to include a list of historical NASA missions with their corresponding launch dates. Instead of manually copying data, a backend developer creates a Python script to scrape the first table from the Wikipedia page: List of NASA missions.\r\nUsing the requests and BeautifulSoup libraries, the script parses the HTML structure, identifies the correct table, and extracts the mission name and launch date for the first 10 missions. The data is saved to a CSV file called nasa_missions.csv, which the platform uses to populate its learning modules, quizzes, and timelines for students.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://en.wikipedia.org/wiki/List_of_NASA_missions",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "A space education platform is developing a digital archive to educate students about NASA’s historical missions. Your task is to: \\n1. \\tWrite a Python script to scrape data from the first table on the Wikipedia page \"List of NASA missions\" (https://en.wikipedia.org/wiki/List_of_NASA_missions). \\n 2. \\t Extract the following details for the first 10 missions listed in the table: \\n\nMission name \\n\nLaunch date \\n 3. \\t Save the output to a CSV file named nasa_missions.csv. \\n 4. \\t Use only the requests, BeautifulSoup, and pandas libraries.\n",
+        "placeholder_filename": "nasa_missions.csv",
+        "key_columns": [
+          "Mission Name",
+          "Launch Date"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_008/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_009",
+    "title": "Web Scraping",
+    "description": "A movie analytics startup wants to collect data from IMDb to build a recommendation engine. The company needs the titles, release years, and IMDb ratings of the top 50 movies listed on the IMDb Top 250 page.\r\n The developer must scrape this data and save it into a CSV file named imdb_top50.csv.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://www.imdb.com/chart/top",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Write a Python script to scrape data from https://www.imdb.com/chart/top. \\n Extract: \\n 1. Movie title \\n 2. Release year \\n 3. IMDb rating \\n\n Save the output to imdb_top50.csv. \\n Use only requests, BeautifulSoup, and pandas\n",
+        "placeholder_filename": "imdb_top50.csv",
+        "key_columns": [
+          "Title",
+          "Year",
+          "Rating"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_009/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_010",
+    "title": "Web Scraping",
+    "description": "An e-commerce analyst wants to monitor the price of top-selling laptops from Amazon.",
+    "page_link_that_need_to_be_scrapped": "https://www.amazon.in/s?k=laptop",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the first page of https://www.amazon.in/s?k=laptop \n and: \\n Extract: \\n 1. \\t Product Title \\n 2. \\t Price \\n 3. \\t Rating \\n Save the data to amazon_laptops.csv. \\n Use requests, BeautifulSoup, and csv only.\n\\n Handle missing fields gracefully.",
+        "placeholder_filename": "amazon_laptops.csv",
+        "key_columns": [
+          "Title",
+          "Price",
+          "Rating"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_010/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_011",
+    "title": "Web Scraping",
+    "description": "A FinTech startup wants to integrate cryptocurrency market data. You are tasked to scrape the top 20 cryptocurrencies from https://www.coingecko.com.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://api.coingecko.com/api/v3/coins/markets",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Write a Python script to extract: \\n 1. \\t Cryptocurrency name \\n 2. \\t Current price \\n 3. \\t 24h change \\n Save to crypto_top20.csv\n",
+        "placeholder_filename": "crypto_top20.csv",
+        "key_columns": [
+          "Name",
+          "Price (USD)",
+          "24h Change (%)"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_011/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_012",
+    "title": "Web Scraping",
+    "description": "A data science student is building a dataset of Nobel Prize laureates for visualization. The student needs to extract details such as the year, laureate’s name, and category of award from Wikipedia’s “List of Nobel laureates” page.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Write a Python script to scrape data from\n 🔗 https://en.wikipedia.org/wiki/List_of_Nobel_laureates\n\\n Your program must: \\n Extract the following details for each laureate entry: \\n 1. \\t \nYear \\n 2. \\t Laureate name \\n 3. \\t Category \\n Save the results to a CSV file named nobel_physics_laureates.csv \\n\nUse only requests, BeautifulSoup, and csv. \\n \nHandle missing or merged cells gracefully.\n",
+        "placeholder_filename": "nobel_physics_laureates.csv",
+        "key_columns": [
+          "Year",
+          "Laureate",
+          "Category"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_012/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_013",
+    "title": "Web Scraping",
+    "description": "A coding mentor wants to analyze the most popular questions on Stack Overflow to identify commonly discussed programming topics.\r\n You are asked to scrape the titles, vote counts, and direct links of the top trending questions.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://stackoverflow.com/questions?sort=votes",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Write a Python program to scrape data from\n 🔗 https://stackoverflow.com/questions?sort=votes \\n\nYour script must: \\n Extract the following details for the first 10 questions: \\n 1. \\t Question title \\n 2. \\t Number of votes \\n 3. \\t Question link \\n \nStore the extracted data in a CSV file named stackoverflow_trending.csv. \\n Use only the requests, BeautifulSoup, and csv libraries. \\n Handle missing or inconsistent data gracefully.",
+        "placeholder_filename": "stackoverflow_trending.csv",
+        "key_columns": [
+          "Title",
+          "Votes",
+          "Link"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_013/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_014",
+    "title": "Web Scraping",
+    "description": "An environmental data analyst is compiling a dataset of endangered and threatened species in the United States.\r\n The goal is to scrape the list of endangered animals and their conservation status from Wikipedia and save it for research analysis.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://en.wikipedia.org/wiki/List_of_domesticated_animals",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the Wikipedia page\n 🔗 https://en.wikipedia.org/wiki/List_of_endangered_and_threatened_species_in_the_United_States\nYour program must: \\n 1. \\t Extract the following details from the table: \\n Species Name \\n Status \\n 2. \\t\nSave the output to a CSV file named animals_classification.csv. \\n 3. \\t Use only the requests, BeautifulSoup, and csv libraries. \\n 4. \\t Handle missing or empty cells gracefully. ",
+        "placeholder_filename": "animals_classification.csv",
+        "key_columns": [
+          "Animal",
+          "Scientific Name / Type"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_014/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_015",
+    "title": "Web Scraping",
+    "description": "A film data analyst wants to gather a list of the highest-rated movies for analysis.\r\n Your task is to scrape movie titles, release years, and IMDb ratings from IMDb’s “Top 250 Movies” list and save the data for future use.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://www.imdb.com/chart/top",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the IMDb Top 250 Movies page\n 🔗 https://www.imdb.com/chart/top\nYour program must: \\n Extract the following details for each movie: \\n 1. \\t Title \\n 2. \\t Release year \\n 3. \\t IMDb rating \\n \nStore the first 20 results in a CSV file named imdb_top_movies.csv.\n\\n Use only the requests, BeautifulSoup, and csv libraries. \\n Handle any missing or irregular data gracefully. ",
+        "placeholder_filename": "imdb_top_movies.csv",
+        "key_columns": [
+          "Title",
+          "Year",
+          "Rating"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_015/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_016",
+    "title": "Web Scraping",
+    "description": "A sports data analyst is preparing a report on Olympic performance.\r\n You must scrape the all-time Olympic medal table from Wikipedia, capturing each country’s medal count and storing it in a CSV file for analysis.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the Wikipedia page\n 🔗 https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour script must: \\n Extract the following details for each country: \\n 1. \\t Country name \\n 2. \\t Gold medals \\n 3. \\t Silver medals \\n 4. \\t Bronze medals \\n 5. \\t Total medals \\n Save the data to a CSV file named olympic_medal_table.csv. \\n Use only the requests, BeautifulSoup, and csv libraries. \\n Handle missing or inconsistent data gracefully.",
+        "placeholder_filename": "olympic_medal_table.csv",
+        "key_columns": [
+          "Country",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_016/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_017",
+    "title": "Web Scraping",
+    "description": "A sports data analyst wants to study which countries have historically won the most Olympic gold medals.\r\n You must scrape only the country name and number of gold medals from the All-time Olympic Games medal table on Wikipedia.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived page\n 🔗 https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour program must: \\n Extract for each country: \\n 1. \\t  Country name \\n 2. \\t  Gold medals\n \\n Save the first 20 records into olympic_gold_medals.csv. \\n Use only requests, BeautifulSoup, and csv. \\n Handle missing data gracefully.",
+        "placeholder_filename": "olympic_gold_medals.csv",
+        "key_columns": [
+          "Country",
+          "Gold"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_017/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_018",
+    "title": "Web Scraping",
+    "description": "A data visualization intern wants to highlight which countries have won the most silver medals in Olympic history.\r\n You must scrape the country names and corresponding silver medal counts from the All-time Olympic Games Medal Table on Wikipedia.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived static Wikipedia page\n 🔗 https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour program must: \\n Extract for each country: \\n 1. \\t Country name \\n 2. \\t Number of silver medals \\n Save the first 20 records into a file named olympic_silver_medals.csv.\n\\n Use only the requests, BeautifulSoup, and csv libraries.\n\\n Ensure the code handles missing or irregular data gracefully.",
+        "placeholder_filename": "olympic_silver_medals.csv",
+        "key_columns": [
+          "Country",
+          "Silver"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_018/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_019",
+    "title": "Web Scraping",
+    "description": "A sports data analyst is preparing a report on Olympic achievements and wants to focus on bronze medal performance by country.\r\n Your task is to extract each country’s name and number of bronze medals from the All-time Olympic Games Medal Table on Wikipedia.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived static Wikipedia page\n 🔗 https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour Python script must: \\n \nExtract for each country: \\n 1. \\t Country name \\n 2. \\t Number of bronze medals\n\\n Save the first 20 results into a file named olympic_bronze_medals.csv.\n\\n Use only requests, BeautifulSoup, and csv.\n\\n Handle missing rows or unexpected columns gracefully.\n",
+        "placeholder_filename": "olympic_bronze_medals.csv",
+        "key_columns": [
+          "Country",
+          "Bronze"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_019/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_020",
+    "title": "Web scraping",
+    "description": "A data analytics researcher is comparing total Olympic achievements across all countries.\r\n You are required to extract the total medal count for each nation from the All-time Olympic Games Medal Table on Wikipedia.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived static Wikipedia page\n 🔗 https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour program must: \\n Extract for each country: \\n 1. \\t Country name \\n 2. \\t Total number of medals\n\\n Save the first 20 results to a CSV file named olympic_total_medals.csv.\n\\n Use only requests, BeautifulSoup, and csv.\n\\n Handle unexpected or missing rows gracefully.\n",
+        "placeholder_filename": "olympic_total_medals.csv",
+        "key_columns": [
+          "Country",
+          "Total"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_020/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_021",
+    "title": "Web Scraping",
+    "description": "A sports statistician wants to analyze the proportion of total Olympic medals won by each country to understand dominance trends.\r\n You must scrape the medal data from Wikipedia, calculate each country’s percentage share of total medals, and save the results.",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived Wikipedia page\n 🔗 https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour program must: \\n Extract for each country: \\n 1. \\t Country name \\n 2. \\t Total number of medals\n\\n Compute each country’s percentage contribution of total medals (based on all countries combined).\n\\n Save the first 20 results to a CSV file named olympic_medal_share.csv.\n\\n Use only requests, BeautifulSoup, and csv.\n\\n Handle missing or irregular rows gracefully.\n",
+        "placeholder_filename": "olympic_medal_share.csv",
+        "key_columns": [
+          "Country",
+          "Total",
+          "Share (%)"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_021/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_022",
+    "title": "Web Scraping",
+    "description": "A sports research team wants to analyze only the Top 10 most successful countries in Olympic history.\r\n You must scrape medal data from the All-time Olympic Games Medal Table on Wikipedia and extract only the top 10 ranked countries based on total medals won",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived Wikipedia page\n 🔗 https://web.archive.org/web/20240201021531/https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table\nYour program must: \\n Extract for each country: \\n 1. \\t \nCountry name \\n 2. \\t Gold medals\n\\n 3. \\t Silver medals\n\\n 4. \\t Bronze medals\n\\n 5. \\t Total medals\n\\n Select only the top 10 countries based on total medal count.\n\\n Save the results into olympic_top10.csv.\n\\n Use only the requests, BeautifulSoup, and csv libraries.\n\\n Handle irregular data or commas in numbers gracefully.",
+        "placeholder_filename": "olympic_top10.csv",
+        "key_columns": [
+          "Rank",
+          "Country",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_022/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_023",
+    "title": "Web Scraping",
+    "description": "A sports historian wants to study the global distribution of Olympic host nations over the years.\r\n Your task is to scrape the year, host city, and host country for all Summer Olympic Games from Wikipedia and store the data in a CSV file.\r\n",
+    "page_link_that_need_to_be_scrapped": "https://en.wikipedia.org/wiki/List_of_Olympic_Games_host_cities",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the Wikipedia page\n 🔗 https://en.wikipedia.org/wiki/List_of_Olympic_Games_host_cities\nYour program must: \\n Extract for each Summer Olympic Games entry: \\n 1. \\t Year \\n 2. \\t Host city \\n 3. \\t Host country \\nSave the data into a CSV file named olympic_hosts.csv.\n\\n Use only the requests, BeautifulSoup, and csv libraries.\n\\n Handle both Summer and Winter tables, but only save the Summer Olympics data.\n",
+        "placeholder_filename": "olympic_hosts.csv",
+        "key_columns": [
+          "Year",
+          "Host City",
+          "Host Country"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_023/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_024",
+    "title": "Web Scraping",
+    "description": "A sports researcher wants a dataset of all sports that have been included in the Olympic Games.\r\n You’ll scrape both current and former Olympic sports from Wikipedia’s mobile HTML (which is static and Colab-friendly).\r\n",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201120000/https://en.wikipedia.org/wiki/Olympic_sports",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape\n 🔗 https://web.archive.org/web/20240201120000/https://en.wikipedia.org/wiki/Olympic_sports\nYour program must: \\n Extract the Current Olympic Sports list. \\n Extract the Former Olympic Sports list. \\n Save the combined results to olympic_sports.csv with two columns: Sport,Category. \\n Use only requests, BeautifulSoup, and csv. ",
+        "placeholder_filename": "olympic_sports.csv",
+        "key_columns": [
+          "Sport",
+          "Category"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_024/solution_Scraping.csv"
+      }
+    ]
+  },
+  {
+    "id": "D_025",
+    "title": "Web Scraping",
+    "description": "A sports analyst is compiling historical Olympic athletics records to study performance evolution over time.\r\n You must scrape athlete names, countries, event names, and record times/distances from a static archived version of the Wikipedia page on Olympic athletics records.",
+    "page_link_that_need_to_be_scrapped": "https://web.archive.org/web/20240201131500/https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics",
+    "parts": [
+      {
+        "part_id": "Scraping",
+        "type": "csv_similarity",
+        "description": "Scrape the archived Wikipedia page\n 🔗 https://web.archive.org/web/20240201131500/https://en.wikipedia.org/wiki/List_of_Olympic_records_in_athletics\nYour Python program must: \\n Extract from the Men’s records table: \\n  1. \\tEvent name \\n 2. \\t Record performance (time/distance) \\n 3. \\t Athlete name \\n 4. \\t Country \\n 5. \\t Year \\n Save the first 20 records into a file named olympic_athletics_records.csv. \\n Use only requests, BeautifulSoup, and csv. \\n Handle missing or multi-row entries gracefully.\n",
+        "placeholder_filename": "olympic_athletics_records.csv",
+        "key_columns": [
+          "Event",
+          "Record",
+          "Athlete",
+          "Country",
+          "Year"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ds/level_2/D_025/solution_Scraping.csv"
+      }
+    ]
+  }
+]

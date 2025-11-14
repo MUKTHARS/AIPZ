@@ -1,0 +1,19 @@
+[
+  {
+    "id": "S_001",
+    "title": "You’re building a keyword recognition model that requires word-level information from a spoken audio file. Your job is to extract the full transcription and break it into individual words for use in training.",
+    "datasets": {
+      "input_file": "/home/student/Desktop/PS/backend/data/datasets/Speech Recognition/level_2/S_001/input.wav"
+    },
+    "parts": [
+      {
+        "part_id": "1",
+        "type": "text_similarity",
+        "description": "Write a Python script to process the audio file. Your program must:\r\n1.\tUse the speech_recognition library to load and process the audio file.\r\n2.\tTranscribe speech using the recognize_google () function.\r\nPrint the transcribed sentence with space seperated words\r\n",
+        "expected_text": "lady I was latest runtime download noisy and fearless",
+        "similarity_threshold": 0.9
+
+      }
+    ]
+  }
+]

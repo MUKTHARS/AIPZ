@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Input Embedding-Customer Support Chatbot",
+    "description": "You are building a Customer Support Chatbot.  The chatbot should identify whether two customer queries have similar meaning even if they use different words.\n [hINT:  use sentence embeddings and compare them with cosine similarity].\n\nSample Input Sentences\n\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n\nExpected Output\nEmbedding Vector Shape: torch.Size([5, 384])\nSimilarity [Refund vs Return Shoes]: 0.xxx\nSimilarity [Refund vs Reset Password]: 0.xxx\nSimilarity [Password vs Cancel Subscription]: 0.xxx\n",
+    "test_cases": [
+      {
+        "input": "\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"",
+        "output": "Embedding Vector Shape: torch.Size([5, 384])\nSimilarity [Refund vs Return Shoes]: 0.485\nSimilarity [Refund vs Reset Password]: 0.229\nSimilarity [Password vs Cancel Subscription]: 0.294"
+      }
+    ],
+    "id": "1"
+  },
+  {
+    "title": "Input Embeddings – Customer Support Chatbot",
+    "description": "A customer support chatbot should identify when different queries mean the same thing. Use embeddings to check similarity.\nSample Input Sentences\n\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n\nExpected Output\nEmbedding Shape: torch.Size([5, 384])\nRefund vs Return: 0.xxx\nRefund vs Password: 0.xxx\nPassword vs Cancel: 0.xxx",
+    "test_cases": [
+      {
+        "input": "\"I need a refund for my order\",\n\"How do I reset my password?\",\n\"What is the weather in New York?\",\n\"Please cancel my subscription\",\n\"I want to return my shoes\"",
+        "output": "Embedding Shape: torch.Size([5, 384])\nRefund vs Return: 0.485\nRefund vs Password: 0.229\nPassword vs Cancel: 0.294"
+      }
+    ],
+    "id": "2"
+  },
+  {
+    "title": "Input Embedding- Movie Recommendation System",
+    "description": "Scenario\nA movie app wants to group similar user queries using embeddings.\nSample Input Sentences\n    1. \"I want to watch a scary movie\"\n    2. \"Show me a horror film\"\n    3. \"Play some comedy shows\"\n    4. \"Find me a thriller movie\"\n    5. \"Give me a documentary\"\n\nExpected Output\nEmbedding Shape: torch.Size([5, 384])\nScary Movie vs Horror Film: 0.xxx\nScary Movie vs Comedy Shows: 0.xxx\nHorror Film vs Thriller Movie: 0.xxx",
+    "test_cases": [
+      {
+        "input": "    1. \"I want to watch a scary movie\"\n    2. \"Show me a horror film\"\n    3. \"Play some comedy shows\"\n    4. \"Find me a thriller movie\"\n    5. \"Give me a documentary\"",
+        "output": "Embedding Shape: torch.Size([5, 384])\nScary Movie vs Horror Film: 0.628\nScary Movie vs Comedy Shows: 0.236\nHorror Film vs Thriller Movie: 0.666"
+      }
+    ],
+    "id": "3"
+  },
+  {
+    "title": "Input Embedding-Customer Support Chatbot",
+    "description": "You are building a Customer Support Chatbot.  The chatbot should identify whether two customer queries have similar meaning even if they use different words.\n [hINT:  use sentence embeddings and compare them with cosine similarity].\n\nSample Input Sentences\n\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n\nExpected Output\nEmbedding Vector Shape: torch.Size([5, 384])\nSimilarity [Refund vs Return Shoes]: 0.xxx\nSimilarity [Refund vs Reset Password]: 0.xxx\nSimilarity [Password vs Cancel Subscription]: 0.xxx\n",
+    "test_cases": [
+      {
+        "input": "\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n1111",
+        "output": "111"
+      }
+    ],
+    "id": "4"
+  }
+]

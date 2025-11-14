@@ -1,0 +1,648 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-03T14:58:03.856172",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "# -----------------------------\n# Part 1: Data Preprocessing\n# -----------------------------\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\n\n# File paths\ntrain_path = \"/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_001/train.csv\"\ntest_path = \"/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_001/test.csv\"\n\n# Load the dataset\ntrain = pd.read_csv(train_path)\n\n# 1. Handle missing values\nfor col in train.columns:\n    if train[col].dtype == 'object':  # categorical\n        mode_val = train[col].mode()[0]\n        train[col] = train[col].fillna(mode_val)\n    else:  # numeric\n        mean_val = train[col].mean()\n        train[col] = train[col].fillna(mean_val)\n\n# 2. Handle outliers in 'price' and 'area' using IQR\ndef remove_outliers(df, column):\n    Q1 = df[column].quantile(0.25)\n    Q3 = df[column].quantile(0.75)\n    IQR = Q3 - Q1\n    lower_bound = Q1 - 1.5 * IQR\n    upper_bound = Q3 + 1.5 * IQR\n    return df[(df[column] >= lower_bound) & (df[column] <= upper_bound)]\n\ntrain = remove_outliers(train, 'price')\ntrain = remove_outliers(train, 'area')\n\n# 3. Encode categorical features using one-hot encoding\ncategorical_cols = ['mainroad', 'guestroom', 'basement', 'hotwaterheating',\n                    'airconditioning', 'prefarea', 'furnishingstatus']\n\ntrain = pd.get_dummies(train, columns=categorical_cols, drop_first=True)\n\n# 4. Feature scaling (StandardScaler) for numeric columns\nscaler = StandardScaler()\ntrain['area'] = scaler.fit_transform(train[['area']])\n\n# 5. Display info summary\nprint(\"\u2705 Preprocessing complete! Here's the summary:\\n\")\nprint(train.info())\n",
+        "passed": true
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "# -----------------------------\n# Part 2: Model Training and Evaluation\n# -----------------------------\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n# Separate features (X) and target (y)\nX = train.drop('price', axis=1)\ny = train['price']\n\n# 1. Split the dataset into train and validation sets (80%-20%)\nX_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 2. Initialize and train Linear Regression model\nmodel = LinearRegression(fit_intercept=True)\nmodel.fit(X_train, y_train)\n\n# 3. Predict on validation data\ny_pred = model.predict(X_val)\n\n# 4. Evaluate model using R\u00b2 score\nr2 = r2_score(y_val, y_pred)\n\n# 5. Print result (rounded to 4 decimal places)\nprint(f\"R-squared Score: {r2:.4f}\")\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-03T16:14:49.392391",
+    "answers": [
+      {
+        "questionId": "M_002",
+        "partId": "Model Training",
+        "code": "# Part 2: Model Training and Evaluation\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import Ridge\nfrom sklearn.metrics import r2_score\n\n# Load the dataset\ntrain_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/train.csv'\ntrain = pd.read_csv(train_path)\n\n# Separate features and target\nX = train.drop(columns=['price'])\ny = train['price']\n\n# Split into training and validation sets (80%-20%)\nX_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Train Ridge Regression model\nridge = Ridge(alpha=1.0, fit_intercept=True)\nridge.fit(X_train, y_train)\n\n# Predict on validation data\ny_pred = ridge.predict(X_val)\n\n# Evaluate using R\u00b2 score\nr2 = r2_score(y_val, y_pred)\n\n# Print R\u00b2 score (rounded to 4 decimals)\nprint(f'R-squared Score: {r2:.4f}')\n",
+        "passed": true
+      },
+      {
+        "questionId": "M_002",
+        "partId": "Prediction",
+        "code": "\ntest_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/test.csv'\n\n\ntest = pd.read_csv(test_path)\n\n\ny_pred_test = ridge.predict(test)\n\n# Create submission DataFrame\nsubmission = pd.DataFrame({\n    'Id': test.index + 1,      # Assuming Id is the row index (1-based)\n    'SalePrice': y_pred_test\n})\n\n# Save to CSV file\nsubmission.to_csv('submission.csv', index=False)\n\nprint(\"\u2705 Predictions saved successfully to 'submission.csv'\")\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T10:28:18.429437",
+    "answers": [
+      {
+        "questionId": "M_002",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_002",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ds",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-04T10:31:59.112658",
+    "answers": [
+      {
+        "questionId": "D_014",
+        "partId": "D_014",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "D_002",
+        "partId": "D_002",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ds",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T10:32:33.231420",
+    "answers": [
+      {
+        "questionId": "22",
+        "partId": "22",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "18",
+        "partId": "18",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "20",
+        "partId": "20",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "6",
+        "partId": "6",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "24",
+        "partId": "24",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T10:43:32.118751",
+    "answers": [
+      {
+        "questionId": "M_002",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_002",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ds",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-04T11:19:24.673185",
+    "answers": [
+      {
+        "questionId": "D_011",
+        "partId": "D_011",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "D_023",
+        "partId": "D_023",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T11:28:09.983222",
+    "answers": [
+      {
+        "questionId": "M_002",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_002",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T11:28:48.235694",
+    "answers": [
+      {
+        "questionId": "M_002",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_002",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T11:32:10.630923",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T14:44:31.611654",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T14:57:16.611522",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T15:45:44.047418",
+    "answers": [
+      {
+        "questionId": "M_003",
+        "partId": "Preprocessing and model building",
+        "code": "a=5",
+        "passed": false
+      },
+      {
+        "questionId": "M_003",
+        "partId": "Prediction",
+        "code": "print(a)",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T15:46:00.378777",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T16:16:59.808206",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "import pandas as pd\nfrom sklearn.preprocessing import StandardScaler\n\n# Load dataset\ntrain = pd.read_csv(\"/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_001/train.csv\")\n\n# 1. Handle missing values safely (avoid inplace=True)\nfor col in train.columns:\n    if train[col].dtype == 'object':\n        mode_val = train[col].mode()[0]\n        train[col] = train[col].fillna(mode_val)\n    else:\n        mean_val = train[col].mean()\n        train[col] = train[col].fillna(mean_val)\n\n# 2. One-hot encode categorical features\ncategorical_cols = [\n    'mainroad', 'guestroom', 'basement', 'hotwaterheating',\n    'airconditioning', 'prefarea', 'furnishingstatus'\n]\ntrain = pd.get_dummies(train, columns=categorical_cols, drop_first=True)\n\n# 3. Handle outliers with IQR\nnumeric_cols = ['price', 'area']\nfor col in numeric_cols:\n    Q1 = train[col].quantile(0.25)\n    Q3 = train[col].quantile(0.75)\n    IQR = Q3 - Q1\n    lower = Q1 - 1.5 * IQR\n    upper = Q3 + 1.5 * IQR\n    train = train[(train[col] >= lower) & (train[col] <= upper)]\n\n# 4. Feature scaling\nscaler = StandardScaler()\ntrain[numeric_cols] = scaler.fit_transform(train[numeric_cols])\n\n# \u2705 Final confirmation\ntrain.info()",
+        "passed": true
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "from sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n# Separate features and target\nX = train.drop(columns=['price'])\ny = train['price']\n\n# Train-validation split (80%-20%)\nX_train, X_val, y_train, y_val = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# \u2705 Initialize Linear Regression (no normalize argument)\nmodel = LinearRegression(fit_intercept=True)\n\n# Train the model\nmodel.fit(X_train, y_train)\n# Predict on validation data\ny_pred = model.predict(X_val)\n\n# Compute R\u00b2 score\nr2 = r2_score(y_val, y_pred)\n\n# Print result in required format\nprint(f\"R-squared Score: {r2:.4f}\")\n\n\nimport pandas as pd\n\n# Load the already preprocessed test dataset\ntest_df = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_001/test_preprocessed.csv')\n# Apply same encoding\n\n\n# Predict using the already trained model\ny_pred_test = model.predict(test_df)\n\n# Create submission file\nsubmission = pd.DataFrame({\n    'Id': range(1, len(y_pred_test) + 1),\n    'SalePrice': y_pred_test\n})\n\nsubmission.to_csv('submission.csv', index=False)\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-04T16:30:20.435910",
+    "answers": [
+      {
+        "questionId": "M_003",
+        "partId": "Preprocessing and model building",
+        "code": "import pandas as pd\r\nimport numpy as np\r\nfrom sklearn.model_selection import train_test_split\r\nfrom sklearn.preprocessing import PolynomialFeatures\r\nfrom sklearn.linear_model import LinearRegression\r\nfrom sklearn.metrics import r2_score\r\n\r\n# Load the dataset (Change file path if needed)\r\nday = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/train.csv')\r\nhour = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/test.csv')\r\n# Display the first few rows\r\nprint(\"Day dataset:\")\r\nprint(day.head())\r\n\r\nprint(\"\\nHour dataset:\")\r\nprint(hour.head())\r\n\r\n# We'll use 'temp', 'hum', 'windspeed' to predict total count 'cnt'\r\nX_day = day[['temp', 'hum', 'windspeed']]\r\ny_day = day['cnt']\r\n\r\n# -------------------------------\r\n# 2\ufe0f\u20e3 Split the dataset\r\n# -------------------------------\r\nX_train, X_test, y_train, y_test = train_test_split(X_day, y_day, test_size=0.2, random_state=42)\r\n\r\n# -------------------------------\r\n# 3\ufe0f\u20e3 Linear Regression\r\n# -------------------------------\r\nlin_reg = LinearRegression()\r\nlin_reg.fit(X_train, y_train)\r\n\r\n# Predict and evaluate\r\ny_pred_linear = lin_reg.predict(X_test)\r\nr2_linear = r2_score(y_test, y_pred_linear)\r\nprint(f\"\\nLinear Regression R\u00b2: {r2_linear:.4f}\")\r\n\r\n# -------------------------------\r\n# 4\ufe0f\u20e3 Polynomial Regression (Degree = 3)\r\n# -------------------------------\r\npoly = PolynomialFeatures(degree=3)\r\nX_train_poly = poly.fit_transform(X_train)\r\nX_test_poly = poly.transform(X_test)\r\n\r\npoly_reg = LinearRegression()\r\npoly_reg.fit(X_train_poly, y_train)\r\n\r\ny_pred_poly = poly_reg.predict(X_test_poly)\r\nr2_poly = r2_score(y_test, y_pred_poly)\r\n\r\nprint(f\"Polynomial R-squared: {r2_poly:.4f}\")\r\n# Predict the number of bike rentals on the test dataset\r\ny_pred = poly_reg.predict(X_test_poly)\r\n# Create a DataFrame with actual and predicted values\r\nsubmission = pd.DataFrame({\r\n    'Actual_Count': y_test.values,\r\n    'Predicted_Count': y_pred\r\n})\r\n# Save the prediction results to submission.csv\r\nsubmission.to_csv('submission.csv', index=False)\r\n\r\n# Print confirmation message\r\nprint(\"Predictions saved successfully to 'submission.csv'\")",
+        "passed": false
+      },
+      {
+        "questionId": "M_003",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T09:37:48.971697",
+    "answers": [
+      {
+        "questionId": "M_003",
+        "partId": "Preprocessing and model building",
+        "code": "import pandas as pd\r\nimport numpy as np\r\nfrom sklearn.model_selection import train_test_split\r\nfrom sklearn.preprocessing import PolynomialFeatures\r\nfrom sklearn.linear_model import LinearRegression\r\nfrom sklearn.metrics import r2_score\r\n\r\n# Load the dataset (Change file path if needed)\r\nday = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/train.csv')\r\nhour = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_003/test.csv')\r\n\r\n# Display the first few rows\r\nprint(\"Day dataset:\")\r\nprint(day.head())\r\n\r\nprint(\"\\nHour dataset:\")\r\nprint(hour.head())\r\n# We'll use 'temp', 'hum', 'windspeed' to predict total count 'cnt'\r\nX_day = day[['temp', 'hum', 'windspeed']]\r\ny_day = day['cnt']\r\n\r\n# -------------------------------\r\n# 2\ufe0f\u20e3 Split the dataset\r\n# -------------------------------\r\nX_train, X_test, y_train, y_test = train_test_split(X_day, y_day, test_size=0.2, random_state=42)\r\n\r\n# -------------------------------\r\n# 3\ufe0f\u20e3 Linear Regression\r\n# -------------------------------\r\nlin_reg = LinearRegression()\r\nlin_reg.fit(X_train, y_train)\r\n\r\n# Predict and evaluate\r\ny_pred_linear = lin_reg.predict(X_test)\r\nr2_linear = r2_score(y_test, y_pred_linear)\r\nprint(f\"\\nLinear Regression R\u00b2: {r2_linear:.4f}\")\r\n\r\n# -------------------------------\r\n# 4\ufe0f\u20e3 Polynomial Regression (Degree = 3)\r\n# -------------------------------\r\npoly = PolynomialFeatures(degree=3)\r\nX_train_poly = poly.fit_transform(X_train)\r\nX_test_poly = poly.transform(X_test)\r\n\r\npoly_reg = LinearRegression()\r\npoly_reg.fit(X_train_poly, y_train)\r\n\r\ny_pred_poly = poly_reg.predict(X_test_poly)\r\nr2_poly = r2_score(y_test, y_pred_poly)\r\n\r\nprint(f\"Polynomial R-squared: {r2_poly:.4f}\")\r\n# Predict the number of bike rentals on the test dataset\r\ny_pred = poly_reg.predict(X_test_poly)\r\n# Create a DataFrame with actual and predicted values\r\nsubmission = pd.DataFrame({\r\n    'Actual_Count': y_test.values,\r\n    'Predicted_Count': y_pred\r\n})\r\n# Save the prediction results to submission.csv\r\nsubmission.to_csv('submission.csv', index=False)\r\n\r\n# Print confirmation message\r\nprint(\"Predictions saved successfully to 'submission.csv'\")",
+        "passed": false
+      },
+      {
+        "questionId": "M_003",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-05T10:07:52.442385",
+    "answers": [
+      {
+        "questionId": "M_001",
+        "partId": "Preprocessing",
+        "code": "import pandas as pd\nfrom sklearn.preprocessing import StandardScaler\n\n# Load dataset\ntrain = pd.read_csv(\"/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_001/train.csv\")\n\n# 1. Handle missing values safely (avoid inplace=True)\nfor col in train.columns:\n    if train[col].dtype == 'object':\n        mode_val = train[col].mode()[0]\n        train[col] = train[col].fillna(mode_val)\n    else:\n        mean_val = train[col].mean()\n        train[col] = train[col].fillna(mean_val)\n\n# 2. One-hot encode categorical features\ncategorical_cols = [\n    'mainroad', 'guestroom', 'basement', 'hotwaterheating',\n    'airconditioning', 'prefarea', 'furnishingstatus'\n]\ntrain = pd.get_dummies(train, columns=categorical_cols, drop_first=True)\n\n# 3. Handle outliers with IQR\nnumeric_cols = ['price', 'area']\nfor col in numeric_cols:\n    Q1 = train[col].quantile(0.25)\n    Q3 = train[col].quantile(0.75)\n    IQR = Q3 - Q1\n    lower = Q1 - 1.5 * IQR\n    upper = Q3 + 1.5 * IQR\n    train = train[(train[col] >= lower) & (train[col] <= upper)]\n\n# 4. Feature scaling\nscaler = StandardScaler()\ntrain[numeric_cols] = scaler.fit_transform(train[numeric_cols])\n\n# \u2705 Final confirmation\ntrain.info()",
+        "passed": true
+      },
+      {
+        "questionId": "M_001",
+        "partId": "Model Training",
+        "code": "# ==========================================\n# Part 2: Model Training and Evaluation\n# ==========================================\n\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n# Separate features and target\nX = train.drop(columns=['price'])\ny = train['price']\n\n# Train-validation split (80%-20%)\nX_train, X_val, y_train, y_val = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# \u2705 Initialize Linear Regression (no normalize argument)\nmodel = LinearRegression(fit_intercept=True)\n\n# Train the model\nmodel.fit(X_train, y_train)\n# Predict on validation data\ny_pred = model.predict(X_val)\n\n# Compute R\u00b2 score\nr2 = r2_score(y_val, y_pred)\n\n# Print result in required format\nprint(f\"R-squared Score: {r2:.4f}\")",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T11:17:52.488910",
+    "answers": [
+      {
+        "questionId": "10",
+        "partId": "10",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T11:22:04.644962",
+    "answers": [
+      {
+        "questionId": "17",
+        "partId": "17",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T12:42:48.004938",
+    "answers": [
+      {
+        "questionId": "M_004",
+        "partId": "Preprocessing and Model building",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_004",
+        "partId": "Prediction",
+        "code": "import pandas as pd\r\nfrom sklearn.model_selection import train_test_split, GridSearchCV\r\nfrom sklearn.ensemble import GradientBoostingRegressor\r\nfrom sklearn.metrics import mean_absolute_error, r2_score\r\n# Load data\r\ntrain = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_005/train.csv')\r\ntest = pd.read_excel('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_005/test.csv')\r\n# Preprocess: fill missing values & encode categorical features\r\ntrain.fillna(train.median(numeric_only=True), inplace=True)\r\ntrain = pd.get_dummies(train, drop_first=True)\r\n# Split features & target\r\nX = train.drop('price', axis=1)\r\ny = train['price']\r\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\r\nfrom sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor\r\nfrom xgboost import XGBRegressor\r\n\r\nmodels = {\r\n    \"XGBoost\": XGBRegressor(random_state=42, verbosity=0)\r\n}\r\n# Train and evaluate each model\r\nfor name, model in models.items():\r\n    model.fit(X_train, y_train)\r\n    y_pred = model.predict(X_test)\r\n    print(f\"{name} -> R\u00b2: {r2_score(y_test, y_pred):.4f}, MAE: {mean_absolute_error(y_test, y_pred):.2f}\")",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "LLM",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T14:07:00.172681",
+    "answers": [
+      {
+        "questionId": "4",
+        "partId": "4",
+        "code": "RG",
+        "passed": false
+      },
+      {
+        "questionId": "30",
+        "partId": "30",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "16",
+        "partId": "16",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "8",
+        "partId": "8",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-06T09:49:30.006432",
+    "answers": [
+      {
+        "questionId": "M_005",
+        "partId": "Preprocessing and Model Building",
+        "code": "# Import required libraries\r\nimport pandas as pd\r\nimport numpy as np\r\nimport seaborn as sns\r\nimport matplotlib.pyplot as plt\r\nfrom sklearn.model_selection import train_test_split\r\nfrom sklearn.linear_model import ElasticNet\r\nfrom sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error\r\n# Step 1: Load the dataset\r\n# -----------------------------\r\ndf = pd.read_excel('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_005/train.csv')\r\n \r\n\r\n# Rename columns for clarity (optional)\r\ndf.columns = [\r\n    'Cement', 'BlastFurnaceSlag', 'FlyAsh', 'Water',\r\n    'Superplasticizer', 'CoarseAggregate', 'FineAggregate',\r\n    'Age', 'CompressiveStrength'\r\n]\r\n# Step 5: Split data\r\n# -----------------------------\r\nX = df.drop('CompressiveStrength', axis=1)\r\ny = df['CompressiveStrength']\r\n\r\nX_train, X_test, y_train, y_test = train_test_split(\r\n    X, y, test_size=0.2, random_state=42\r\n)\r\n\r\n# -----------------------------\r\n# Step 6: Train Elastic Net Model\r\n# -----------------------------\r\nelastic_net = ElasticNet(alpha=0.1, l1_ratio=0.5, random_state=42)\r\nelastic_net.fit(X_train, y_train)\r\n# Step 7: Evaluate the model\r\n# -----------------------------\r\ny_pred = elastic_net.predict(X_test)\r\nr2 = r2_score(y_test, y_pred)\r\nmae = mean_absolute_error(y_test, y_pred)\r\nrmse = np.sqrt(mean_squared_error(y_test, y_pred))\r\n\r\nprint(f\"RMSE: {rmse:.2f}\")",
+        "passed": false
+      },
+      {
+        "questionId": "M_005",
+        "partId": "Prediction",
+        "code": "# Import required libraries\r\nimport pandas as pd\r\nimport numpy as np\r\nimport seaborn as sns\r\nimport matplotlib.pyplot as plt\r\nfrom sklearn.model_selection import train_test_split\r\nfrom sklearn.linear_model import ElasticNet\r\nfrom sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error\r\n# Step 1: Load the dataset\r\n# -----------------------------\r\ndf = pd.read_excel('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_005/train.csv')\r\n \r\n\r\n# Rename columns for clarity (optional)\r\ndf.columns = [\r\n    'Cement', 'BlastFurnaceSlag', 'FlyAsh', 'Water',\r\n    'Superplasticizer', 'CoarseAggregate', 'FineAggregate',\r\n    'Age', 'CompressiveStrength'\r\n]\r\n# Step 5: Split data\r\n# -----------------------------\r\nX = df.drop('CompressiveStrength', axis=1)\r\ny = df['CompressiveStrength']\r\n\r\nX_train, X_test, y_train, y_test = train_test_split(\r\n    X, y, test_size=0.2, random_state=42\r\n)\r\n\r\n# -----------------------------\r\n# Step 6: Train Elastic Net Model\r\n# -----------------------------\r\nelastic_net = ElasticNet(alpha=0.1, l1_ratio=0.5, random_state=42)\r\nelastic_net.fit(X_train, y_train)\r\n# After training the Elastic Net model\r\ncoefficients = pd.Series(elastic_net.coef_, index=X.columns)\r\n\r\n# Display all feature coefficients\r\n\r\n\r\n# Identify the feature with the highest positive coefficient\r\ntop_feature = coefficients.idxmax()\r\ntop_value = coefficients.max()\r\n\r\nprint(f\"Feature with highest positive impact on compressive strength: {top_value:.4f}\")",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-06T10:23:42.727575",
+    "answers": [
+      {
+        "questionId": "M_007",
+        "partId": "Preprocessing",
+        "code": " # Import necessary libraries\r\nimport pandas as pd\r\nimport seaborn as sns\r\nimport matplotlib.pyplot as plt\r\n\r\n# -------------------------------\r\n# Step 1: Load the dataset\r\n# -------------------------------\r\ndf = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_007/train.csv'\r\n)\r\n\r\ndf.shape\r\n\r\ndf.isnull().sum()\r\n\r\n# Step 6: Convert categorical variables (if any)\r\n# -------------------------------\r\ndf = pd.get_dummies(df, drop_first=True)\r\n\r\n# -------------------------------\r\n# Step 7: Final training data shape\r\n# -------------------------------\r\nrows, cols = df.shape\r\nprint(\"Final Dataset Shape after preprocessing:\", rows, cols)",
+        "passed": false
+      },
+      {
+        "questionId": "M_007",
+        "partId": "Prediction",
+        "code": " # Import necessary libraries\r\nimport pandas as pd\r\nimport seaborn as sns\r\nimport matplotlib.pyplot as plt\r\n\r\n# -------------------------------\r\n# Step 1: Load the dataset\r\n# -------------------------------\r\ndf = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_007/train.csv'\r\n)\r\n\r\ndf.shape\r\n\r\ndf.isnull().sum()\r\n\r\n# Step 6: Convert categorical variables (if any)\r\n# -------------------------------\r\ndf = pd.get_dummies(df, drop_first=True)\r\n\r\n# -------------------------------\r\n# Step 7: Final training data shape\r\n# -------------------------------\r\nrows, cols = df.shape\r\nfrom sklearn.decomposition import PCA\r\nfrom sklearn.preprocessing import StandardScaler\r\nX = df.drop(columns=['diabetes'])  # Features only\r\ny = df['diabetes']                 # Target variable\r\n\r\n# Step 1: Feature Scaling (important for PCA)\r\n# --------------------------------------------\r\nscaler = StandardScaler()\r\nX_scaled = scaler.fit_transform(X)   # X = your feature matrix (excluding target)\r\n# Step 2: Apply PCA with 2 components\r\n# --------------------------------------------\r\npca = PCA(n_components=2)\r\nX_pca = pca.fit_transform(X_scaled)\r\n# Step 3: Display explained variance ratio\r\n# --------------------------------------------\r\nprint(f\"\\nTotal variance retained by 2 components: {pca.explained_variance_ratio_.sum():.4f}\")\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-06T13:03:38.615294",
+    "answers": [
+      {
+        "questionId": "S_001",
+        "partId": "1",
+        "code": "import speech_recognition as sr\nimport pandas as pd\n\n# ---------- Step 1: Load the audio file ----------\naudio_path = '/home/student/Desktop/PS/backend/data/datasets/Speech Recognition/level_2/S_001/input.wav'\nrecognizer = sr.Recognizer()\n\nwith sr.AudioFile(audio_path) as source:\n    audio_data = recognizer.record(source)\n\n# ---------- Step 2: Transcribe using Google API ----------\ntry:\n    transcription = recognizer.recognize_google(audio_data)\n    print(transcription)\nexcept sr.UnknownValueError:\n    print(\"Google Speech Recognition could not understand the audio.\")\n    transcription = \"\"\nexcept sr.RequestError as e:\n    print(f\"Could not request results from Google Speech Recognition service; {e}\")\n    transcription = \"\"\n\n\n",
+        "passed": true
+      },
+      {
+        "questionId": "S_002",
+        "partId": "1",
+        "code": "import speech_recognition as sr\nimport pandas as pd\n\n# ---------- Step 1: Load the audio file ----------\naudio_path = '/home/student/Desktop/PS/backend/data/datasets/Speech Recognition/level_2/S_002/input.wav'\nrecognizer = sr.Recognizer()\n\nwith sr.AudioFile(audio_path) as source:\n    audio_data = recognizer.record(source)\n\n# ---------- Step 2: Transcribe using Google API ----------\ntry:\n    transcription = recognizer.recognize_google(audio_data)\n    print(transcription)\nexcept sr.UnknownValueError:\n    print(\"Google Speech Recognition could not understand the audio.\")\n    transcription = \"\"\nexcept sr.RequestError as e:\n    print(f\"Could not request results from Google Speech Recognition service; {e}\")\n    transcription = \"\"\n\n\n",
+        "passed": true
+      },
+      {
+        "questionId": "S_003",
+        "partId": "1",
+        "code": "import speech_recognition as sr\nimport pandas as pd\n\n# ---------- Step 1: Load the audio file ----------\naudio_path = '/home/student/Desktop/PS/backend/data/datasets/Speech Recognition/level_2/S_003/input.wav'\nrecognizer = sr.Recognizer()\n\nwith sr.AudioFile(audio_path) as source:\n    audio_data = recognizer.record(source)\n\n# ---------- Step 2: Transcribe using Google API ----------\ntry:\n    transcription = recognizer.recognize_google(audio_data)\n    print(transcription)\nexcept sr.UnknownValueError:\n    print(\"Google Speech Recognition could not understand the audio.\")\n    transcription = \"\"\nexcept sr.RequestError as e:\n    print(f\"Could not request results from Google Speech Recognition service; {e}\")\n    transcription = \"\"\n\n\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-07T13:50:49.272413",
+    "answers": [
+      {
+        "questionId": "I_002",
+        "code": "from PIL import Image\n\n# Load image\nimg = Image.open(\"/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/D_002/input.png\")\n\n# Coordinates format: (left, upper, right, lower)\ndog_face_coords = (70, 80, 300, 320)      # Example values\nhuman_face_coords = (290, 70, 550, 280)   # Example values\n\n# Crop the images\ndog_face = img.crop(dog_face_coords)\nhuman_face = img.crop(human_face_coords)\n\n# Save cropped images\ndog_face.save(\"dog_face.jpg\")\nhuman_face.save(\"human_face.jpg\")\n\n# Display cropped images\ndog_face.show()\nhuman_face.show()\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-07T14:15:55.097690",
+    "answers": [
+      {
+        "questionId": "D_001",
+        "code": "from PIL import Image\n\n# Load image\nimg = Image.open(\"/home/student/Desktop/PS/backend/data/datasets/deep learning/level_1/D_001/input.png\")\n\n# Coordinates format: (left, upper, right, lower)\ndog_face_coords = (70, 80, 300, 320)      # Example values\nhuman_face_coords = (290, 70, 550, 280)   # Example values\n\n# Crop the images\ndog_face = img.crop(dog_face_coords)\nhuman_face = img.crop(human_face_coords)\n\n\n# Display cropped images\ndog_face.show()\nhuman_face.show()\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "ds",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-10T15:35:53.640391",
+    "answers": [
+      {
+        "questionId": "26",
+        "partId": "26",
+        "code": "import numpy as np\n\narr = np.array(list(map(float, input().split())))\nmean = arr.mean()\nstd = arr.std() * 0.97\nlower, upper = mean - std, mean + std\nclipped = np.clip(arr, lower, upper)\nprint(np.round(clipped, 2))",
+        "passed": false
+      },
+      {
+        "questionId": "3",
+        "partId": "3",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "15",
+        "partId": "15",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "28",
+        "partId": "28",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "8",
+        "partId": "8",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ds",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-10T15:48:46.286278",
+    "answers": [
+      {
+        "questionId": "28",
+        "partId": "28",
+        "code": "import numpy as np\n\narr = np.array(list(map(float, input().split())))\n\nradians = np.deg2rad(arr)\n\ncos_vals = np.cos(radians)\n\ncos_vals = np.round(cos_vals, 3)\n\nformatted = []\nfor v in cos_vals:\n    if abs(v - int(v)) < 1e-9:\n        formatted.append(str(int(v)))\n    else:\n        formatted.append(str(v))\n\nprint(\"[\" + \" \".join(formatted) + \"]\")\n",
+        "passed": true
+      },
+      {
+        "questionId": "25",
+        "partId": "25",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "4",
+        "partId": "4",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "3",
+        "partId": "3",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "14",
+        "partId": "14",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ds",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-10T16:02:44.880895",
+    "answers": [
+      {
+        "questionId": "D_022",
+        "partId": "D_022",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "D_003",
+        "partId": "D_003",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

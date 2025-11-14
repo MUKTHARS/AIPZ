@@ -1,0 +1,66 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:48:27.907720",
+    "answers": [
+      {
+        "questionId": "LR_008",
+        "partId": "Data Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T15:07:12.831210",
+    "answers": [
+      {
+        "questionId": "LR_008",
+        "partId": "Data Preprocessing",
+        "code": "import pandas as pd \r\ndf=pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/realistic_car/train.csv')\r\nfrom sklearn.preprocessing import LabelEncoder\r\nfor i in df.columns:\r\n    if(df[i].dtype==\"object\" or df[i].dtype==\"bool\"):\r\n        le=LabelEncoder()\r\n        df[i]=le.fit_transform(df[i])\r\nprint(df.info())",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

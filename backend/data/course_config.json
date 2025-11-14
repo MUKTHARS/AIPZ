@@ -1,0 +1,89 @@
+{
+  "ds": {
+    "title": "Fundamentals Of Data Science",
+    "isActive": true,
+    "levels": [
+      "level1",
+      "level2",
+      "level3",
+      "level4"
+    ],
+    "question_limit": {
+      "level1": 5,
+      "level2": 2,
+      "level3": 0,
+      "level4": 5
+    }
+  },
+  "ml": {
+    "title": "Fundamentals Of Machine Learning",
+    "isActive": true,
+    "levels": [
+      "level1",
+      "level2"
+    ],
+    "question_limit": {
+      "level1": 1,
+      "level2": 1,
+      "level3": 0
+    }
+  },
+  "Deep Learning": {
+    "title": "Deep Learning",
+    "isActive": true,
+    "levels": [
+      "level1",
+      "level2",
+      "level3"
+    ],
+    "question_limit": {
+      "level1": 1,
+      "level2": 2,
+      "level3": 5
+    }
+  },
+  "NLP": {
+    "title": "Natural Language Processing",
+    "isActive": true,
+    "levels": [
+      "level1",
+      "level2",
+      "level3"
+    ],
+    "question_limit": {
+      "level1": 5,
+      "level2": 0,
+      "level3": 0
+    }
+  },
+  "Generative AI": {
+    "title": "Generative AI",
+    "isActive": true,
+    "levels": [
+      "level1",
+      "level2",
+      "level3",
+      "level4"
+    ],
+    "question_limit": {
+      "level1": 10,
+      "level2": 5,
+      "level3": 10,
+      "level4": 5
+    }
+  },
+  "R Programming": {
+    "title": "R Programming",
+    "isActive": true,
+    "levels": [
+      "level1",
+      "level2",
+      "level3"
+    ],
+    "question_limit": {
+      "level1": 5,
+      "level2": 5,
+      "level3": 5
+    }
+  }
+}

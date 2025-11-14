@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "title": "Generative Adversarial Network (GAN) to generate synthetic MNIST images.",
+    "description": "A research team is building a Generative Adversarial Network (GAN) to generate synthetic MNIST images. The team wants the program to allow users to configure key hyperparameters for the Generator dynamically.\nRequirements:\nUse the MNIST dataset with images normalized to [-1, 1].\nThe Generator should take a 100-dimensional noise vector and output a 28×28 image. Include BatchNorm in hidden layers and ReLU activations.\nThe Discriminator should take an image as input, flatten it, and output a probability of being real. Include LeakyReLU activations.\nUse Binary Cross Entropy (BCE) loss.\nOptimizers:\nGenerator: Adam with learning rate and betas (beta1, beta2) provided by the user at runtime.\nDiscriminator: RMSprop with a fixed learning rate.\nTrain the GAN for 2 epochs with a batch size of 64.\nPrint the Generator loss (G Loss) and Discriminator loss (D Loss) at each logging step and after training.\nTask:\nWrite a Python program that implements this GAN and prompts the user to enter the Generator learning rate, beta1, and beta2 before training. Ensure the training loop correctly updates both Generator and Discriminator and prints the final losses.",
+    "test_cases": [
+      {
+        "input": "0.0001\n0.5\n0.7",
+        "output": "1.6171\n0.7537"
+      },
+      {
+        "input": "0.0002\n0.8\n0.5",
+        "output": "4.9998\n0.0252"
+      },
+      {
+        "input": "0.0010\n0.3\n0.4",
+        "output": "0.5725\n1.3556"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Generative Adversarial Networks (GANs) using the CIFAR-10 dataset",
+    "description": "A research team wants to experiment with Generative Adversarial Networks (GANs) using the CIFAR-10 dataset. The GAN should generate grayscale images of user-specified size.\nRequirements:\nConvert CIFAR-10 images to grayscale and resize to a dimension entered by the user.\nNormalize the dataset to [-1, 1].\nUse a Generator that takes a 100-dimensional noise vector and outputs an image of the specified size.\nUse a Discriminator that takes the generated or real image and outputs a probability of being real.\nInclude BatchNorm in the Generator and Dropout in the Discriminator for better training stability.\nUse BCE loss.\nOptimizers: Adam for the Generator and RMSprop for the Discriminator, with learning rates provided by the user.\nTrain the GAN for a number of epochs specified by the user.\nPrint Generator loss (G Loss) and Discriminator loss (D Loss) at the end of each epoch.\nTask:\nWrite a Python program that implements this GAN and allows the user to input the Generator learning rate, Discriminator learning rate, image size, and number of epochs before training. Ensure the program dynamically adjusts the Generator output and Discriminator input to match the specified image size and prints the final G and D losses.",
+    "test_cases": [
+      {
+        "input": "0.00023\n0.0004\n32\n4",
+        "output": "1.1403\n0.6136"
+      },
+      {
+        "input": "0.0002\n0.0010\n36\n5",
+        "output": "1.0129\n0.6552"
+      },
+      {
+        "input": "0.00025\n0.00123\n32\n6",
+        "output": "1.5254\n0.5681"
+      }
+    ]
+  }
+]

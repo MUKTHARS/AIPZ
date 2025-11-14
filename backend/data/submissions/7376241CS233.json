@@ -1,0 +1,66 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:38:32.445514",
+    "answers": [
+      {
+        "questionId": "LR_005",
+        "partId": "Data Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Model Performance",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:43:45.188536",
+    "answers": [
+      {
+        "questionId": "LR_007",
+        "partId": "Data Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_007",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_007",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_007",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

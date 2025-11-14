@@ -1,0 +1,130 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:37:08.843147",
+    "answers": [
+      {
+        "questionId": "LR_006",
+        "partId": "Data Preprocessing & Feature Engineering",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:40:19.207905",
+    "answers": [
+      {
+        "questionId": "LR_005",
+        "partId": "Data Preprocessing",
+        "code": "# Importing libraries\r\nimport pandas as pd\r\nfrom sklearn.ensemble import RandomForestRegressor\r\nfrom sklearn.model_selection import train_test_split\r\nfrom sklearn.metrics import mean_squared_error\r\n\r\n# Paths (as given)\r\ntrain_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/train.csv'\r\ntest_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/test.csv'\r\n\r\n# Load datasets\r\ntrain = pd.read_csv(train_path)\r\ntest = pd.read_csv(test_path)\r\n\r\n# -------------------------------\r\n# Part 1: Data Preprocessing & Feature Engineering\r\n# -------------------------------\r\n\r\n# Convert 'datetime' to pandas datetime type\r\ntrain['datetime'] = pd.to_datetime(train['datetime'])\r\ntest['datetime'] = pd.to_datetime(test['datetime'])\r\n\r\n# Extract temporal features\r\nfor df in [train, test]:\r\n    df['hour'] = df['datetime'].dt.hour\r\n    df['day'] = df['datetime'].dt.day\r\n    df['month'] = df['datetime'].dt.month\r\n    df['year'] = df['datetime'].dt.year\r\n    df['dayofweek'] = df['datetime'].dt.dayofweek\r\n\r\nprint(\"\u2705 Feature Engineering Complete!\")\r\n\r\n# -------------------------------\r\n# Part 2: Prepare Data for Modeling\r\n# -------------------------------\r\n\r\n# Define target and features\r\ntarget = 'count'\r\nfeatures = [col for col in train.columns if col not in ['datetime', 'count', 'casual', 'registered']]\r\n\r\nX = train[features]\r\ny = train[target]\r\nX_test = test[features]\r\n\r\n# -------------------------------\r\n# Part 3: Model Training\r\n# -------------------------------\r\n\r\n# Split data for validation (optional, not required for submission)\r\nX_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)\r\n\r\n# Initialize Random Forest Regressor\r\nrf = RandomForestRegressor(n_estimators=100, random_state=42)\r\n\r\n# Train model\r\nrf.fit(X_train, y_train)\r\n\r\n# Validation (optional)\r\ny_pred = rf.predict(X_val)\r\nrmse = mean_squared_error(y_val, y_pred, squared=False)\r\nprint(f\"Validation RMSE: {rmse:.2f}\")\r\n\r\n# -------------------------------\r\n# Part 4: Predict on Test Data\r\n# -------------------------------\r\ntest_predictions = rf.predict(X_test)\r\n\r\n# Create submission file\r\nsubmission = pd.DataFrame({\r\n    'datetime': test['datetime'],\r\n    'count': test_predictions\r\n})\r\n\r\n# Save predictions\r\nsubmission.to_csv('submission.csv', index=False)\r\n\r\nprint(\"\u2705 Model trained and predictions saved to 'submission.csv'\")",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Model Performance",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:40:46.004986",
+    "answers": [
+      {
+        "questionId": "LR_002",
+        "partId": "Feature Engineering",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_002",
+        "partId": "Polynomial Regression",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_002",
+        "partId": "Prediction & Analysis",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_002",
+        "partId": "Visualization",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:41:04.094402",
+    "answers": [
+      {
+        "questionId": "LR_005",
+        "partId": "Data Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Model Performance",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_005",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

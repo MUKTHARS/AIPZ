@@ -1,0 +1,1906 @@
+[
+  {
+    "id": "1",
+    "title": "Basic Word Tokenizer",
+    "description": "Write a program to tokenize a plain English sentence into individual words using basic whitespace splitting. This tokenizer will preserve alphanumeric words and discard punctuation.\n\n**Input Format:**\nA single line of text (sentence)\n\n**Output Format:**\nA list of words, with punctuation removed.",
+    "test_cases": [
+      {
+        "input": "Hello, world! NLP is fun.",
+        "output": "['Hello', 'world', 'NLP', 'is', 'fun']"
+      },
+      {
+        "input": "Python-based tools help in NLP.",
+        "output": "['Pythonbased', 'tools', 'help', 'in', 'NLP']"
+      },
+      {
+        "input": "Data-driven insights are powerful.",
+        "output": "['Datadriven', 'insights', 'are', 'powerful']"
+      },
+      {
+        "input": "Tokenization splits text into words.",
+        "output": "['Tokenization', 'splits', 'text', 'into', 'words']"
+      },
+      {
+        "input": "Text cleaning improves accuracy.",
+        "output": "['Text', 'cleaning', 'improves', 'accuracy']"
+      },
+      {
+        "input": "\"Natural-language\" models are trending.",
+        "output": "['Naturallanguage', 'models', 'are', 'trending']"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Hashtag Tokenizer",
+    "description": "Write a program to tokenize a sentence into words, preserving hashtags as individual tokens. Punctuation should be removed, but hashtags should be retained.\n\n**Input Format:**\nA single line sentence possibly containing hashtags and punctuation.\n\n**Output Format:**\nA list of tokens with hashtags preserved and punctuation removed.",
+    "test_cases": [
+      {
+        "input": "Learning #NLP is fun!",
+        "output": "['Learning', '#NLP', 'is', 'fun']"
+      },
+      {
+        "input": "We are working on #AI and #MachineLearning.",
+        "output": "['We', 'are', 'working', 'on', '#AI', 'and', '#MachineLearning']"
+      },
+      {
+        "input": "#DataScience is booming in 2024!",
+        "output": "['#DataScience', 'is', 'booming', 'in', '2024']"
+      },
+      {
+        "input": "Many use #Python-based solutions today.",
+        "output": "['Many', 'use', '#Python', 'based', 'solutions', 'today']"
+      },
+      {
+        "input": "#Tech #Innovation and #Startups are growing fast.",
+        "output": "['#Tech', '#Innovation', 'and', '#Startups', 'are', 'growing', 'fast']"
+      },
+      {
+        "input": "He said \"#AI is the future\" in his speech.",
+        "output": "['He', 'said', '#AI', 'is', 'the', 'future', 'in', 'his', 'speech']"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Punctuation-Aware Tokenizer",
+    "description": "Write a program to tokenize a sentence into words while retaining punctuation marks as separate tokens.\n\n**Input Format:**\nA single line of text possibly containing punctuation.\n\n**Output Format:**\nA list of tokens, including punctuation marks.",
+    "test_cases": [
+      {
+        "input": "Wow! This is amazing.",
+        "output": "['Wow', '!', 'This', 'is', 'amazing', '.']"
+      },
+      {
+        "input": "Can you help, please?",
+        "output": "['Can', 'you', 'help', ',', 'please', '?']"
+      },
+      {
+        "input": "Hello, world!",
+        "output": "['Hello', ',', 'world', '!']"
+      },
+      {
+        "input": "Don't stop. Keep going!",
+        "output": "['Don', \"'\", 't', 'stop', '.', 'Keep', 'going', '!']"
+      },
+      {
+        "input": "Yes... exactly!",
+        "output": "['Yes', '.', '.', '.', 'exactly', '!']"
+      },
+      {
+        "input": "“What’s new?”, she asked.",
+        "output": "['“', 'What', \"'\", 's', 'new', '?', '”', ',', 'she', 'asked', '.']"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Numeric Tokenizer",
+    "description": "Write a program to tokenize a sentence into individual words while treating numbers (integers and decimals) as separate tokens.\n\n**Input Format:**\nA single line of text containing words and numbers.\n\n**Output Format:**\nA list of tokens including words and numbers as strings.",
+    "test_cases": [
+      {
+        "input": "The temperature is 37.5 degrees.",
+        "output": "['The', 'temperature', 'is', '37.5', 'degrees']"
+      },
+      {
+        "input": "She bought 12 apples and 3 oranges.",
+        "output": "['She', 'bought', '12', 'apples', 'and', '3', 'oranges']"
+      },
+      {
+        "input": "Pi is approximately 3.14159",
+        "output": "['Pi', 'is', 'approximately', '3.14159']"
+      },
+      {
+        "input": "He scored 95 out of 100.",
+        "output": "['He', 'scored', '95', 'out', 'of', '100']"
+      },
+      {
+        "input": "Her phone number is 9876543210",
+        "output": "['Her', 'phone', 'number', 'is', '9876543210']"
+      },
+      {
+        "input": "We have 2.0 options: accept or reject.",
+        "output": "['We', 'have', '2.0', 'options', 'accept', 'or', 'reject']"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "CamelCase Tokenizer",
+    "description": "Write a program that splits CamelCase words into individual tokens (e.g., TextPreprocessing → ['Text', 'Preprocessing']).\n\n**Input Format:**\nA single line containing CamelCase or mixed-format text.\n\n**Output Format:**\nA list of tokens separated from CamelCase strings.",
+    "test_cases": [
+      {
+        "input": "TextPreprocessingIsImportant",
+        "output": "['Text', 'Preprocessing', 'Is', 'Important']"
+      },
+      {
+        "input": "MyVariableName isCamelCase",
+        "output": "['My', 'Variable', 'Name', 'is', 'Camel', 'Case']"
+      },
+      {
+        "input": "DeepLearningApplications",
+        "output": "['Deep', 'Learning', 'Applications']"
+      },
+      {
+        "input": "NaturalLanguageProcessing",
+        "output": "['Natural', 'Language', 'Processing']"
+      },
+      {
+        "input": "convertToPDF andSaveFile",
+        "output": "['convert', 'To', 'PDF', 'and', 'Save', 'File']"
+      },
+      {
+        "input": "camelCaseTokenizerDemo",
+        "output": "['camel', 'Case', 'Tokenizer', 'Demo']"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Emoji Tokenizer",
+    "description": "Write a program that separates emojis from a sentence and treats them as individual tokens.\n\n**Input Format:**\nA single line of text containing emojis and regular words.\n\n**Output Format:**\nA list of tokens including emojis and words.",
+    "test_cases": [
+      {
+        "input": "I love pizza 🍕",
+        "output": "['I', 'love', 'pizza', '🍕']"
+      },
+      {
+        "input": "Good morning ☀️ Have a nice day 😊",
+        "output": "['Good', 'morning', '☀️', 'Have', 'a', 'nice', 'day', '😊']"
+      },
+      {
+        "input": "Let's code! 👨‍💻👩‍💻",
+        "output": "[\"Let's\", 'code!', '👨\u200d💻', '👩\u200d💻']"
+      },
+      {
+        "input": "Happy birthday! 🎂🎉",
+        "output": "['Happy', 'birthday!', '🎂', '🎉']"
+      },
+      {
+        "input": "Study hard 📚 and stay focused 💡",
+        "output": "['Study', 'hard', '📚', 'and', 'stay', 'focused', '💡']"
+      },
+      {
+        "input": "🚀 Launch successful.",
+        "output": "['🚀', 'Launch', 'successful.']"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Contraction Expander",
+    "description": "Write a program that expands English language contractions in a sentence to their full forms. For example, \"don't\" becomes \"do not\".\n\n**Input Format:**\nA single line of text with English contractions.\n\n**Output Format:**\nA string with all contractions expanded.",
+    "test_cases": [
+      {
+        "input": "I can't go today.",
+        "output": "I cannot go today."
+      },
+      {
+        "input": "You're going to love this.",
+        "output": "You are going to love this."
+      },
+      {
+        "input": "She doesn't like pizza.",
+        "output": "She does not like pizza."
+      },
+      {
+        "input": "We're planning a trip.",
+        "output": "We are planning a trip."
+      },
+      {
+        "input": "He won't be there.",
+        "output": "He will not be there."
+      },
+      {
+        "input": "There's a surprise for you.",
+        "output": "There is a surprise for you."
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Capitalization Normalizer",
+    "description": "Write a program that normalizes the capitalization of a sentence by converting all words to lowercase.\n\n**Input Format:**\nA single line containing a sentence.\n\n**Output Format:**\nA single line with all words converted to lowercase.",
+    "test_cases": [
+      {
+        "input": "Natural Language Processing is FUN!",
+        "output": "natural language processing is fun!"
+      },
+      {
+        "input": "HELLO World",
+        "output": "hello world"
+      },
+      {
+        "input": "The QUICK Brown FOX",
+        "output": "the quick brown fox"
+      },
+      {
+        "input": "Python Is Popular For NLP.",
+        "output": "python is popular for nlp."
+      },
+      {
+        "input": "Machine Learning AND AI",
+        "output": "machine learning and ai"
+      },
+      {
+        "input": "She SAID, \"It's AMAZING!\"",
+        "output": "she said, \"it's amazing!\""
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Word Shape Tokenizer",
+    "description": "Write a program that tokenizes a sentence and maps each word to its word shape. Word shape refers to the pattern of uppercase ('X'), lowercase ('x'), digits ('d'), and other symbols.\n\n**Input Format:**\nA single line containing a sentence.\n\n**Output Format:**\nA list of tuples: each word and its word shape.",
+    "test_cases": [
+      {
+        "input": "John123 loves AI!",
+        "output": "[('John123', 'Xxxxddd'), ('loves', 'xxxxx'), ('AI', 'XX'), ('!', '!')]"
+      },
+      {
+        "input": "USA 2024 Election",
+        "output": "[('USA', 'XXX'), ('2024', 'dddd'), ('Election', 'Xxxxxxxx')]"
+      },
+      {
+        "input": "Python3 is Fun.",
+        "output": "[('Python3', 'Xxxxxxd'), ('is', 'xx'), ('Fun', 'Xxx'), ('.', '.')]"
+      },
+      {
+        "input": "OpenAI has 500+ models.",
+        "output": "[('OpenAI', 'XxxxXX'), ('has', 'xxx'), ('500', 'ddd'), ('+', '+'), ('models', 'xxxxxx'), ('.', '.')]"
+      },
+      {
+        "input": "Dr. Smith went to UK",
+        "output": "[('Dr', 'Xx'), ('.', '.'), ('Smith', 'Xxxxx'), ('went', 'xxxx'), ('to', 'xx'), ('UK', 'XX')]"
+      },
+      {
+        "input": "eBay sold 1000 items in 2023",
+        "output": "[('eBay', 'xXxx'), ('sold', 'xxxx'), ('1000', 'dddd'), ('items', 'xxxxx'), ('in', 'xx'), ('2023', 'dddd')]"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Emoji-aware Tokenizer",
+    "description": "Write a program that tokenizes a sentence into individual words and separates emojis as standalone tokens.\n\n**Input Format:**\nA single line containing a sentence with or without emojis.\n\n**Output Format:**\nA list of strings where each word or emoji is a separate token.",
+    "test_cases": [
+      {
+        "input": "I love NLP 😊",
+        "output": "['I', 'love', 'NLP', '😊']"
+      },
+      {
+        "input": "This is fun! 😂🔥",
+        "output": "['This', 'is', 'fun!', '😂', '🔥']"
+      },
+      {
+        "input": "ChatGPT is amazing 😎.",
+        "output": "['ChatGPT', 'is', 'amazing', '😎', '.']"
+      },
+      {
+        "input": "Great job 💪! Keep going 💯",
+        "output": "['Great', 'job', '💪', '!', 'Keep', 'going', '💯']"
+      },
+      {
+        "input": "No worries 🙌 just chill 😌",
+        "output": "['No', 'worries', '🙌', 'just', 'chill', '😌']"
+      },
+      {
+        "input": "🚀 Launch successful",
+        "output": "['🚀', 'Launch', 'successful']"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Tweet Tokenizer (Regex)",
+    "description": "Design a program that tokenizes text from tweets. Your tokenizer must handle: Words, Mentions (@user), Hashtags (#AI), and URLs.\n\n**Input Format:**\nA tweet (string).\n\n**Output Format:**\nA list of individual tokens extracted from the tweet.",
+    "test_cases": [
+      {
+        "input": "Loving #AI and #ML these days!",
+        "output": "['Loving', '#AI', 'and', '#ML', 'these', 'days', '!']"
+      },
+      {
+        "input": "Check this out: https://t.co/example",
+        "output": "['Check', 'this', 'out', ':', 'https://t.co/example']"
+      },
+      {
+        "input": "@OpenAI is doing great work 🚀",
+        "output": "['@OpenAI', 'is', 'doing', 'great', 'work', '🚀']"
+      },
+      {
+        "input": "Join us at #Tech2025 — register now!",
+        "output": "['Join', 'us', 'at', '#Tech2025', '—', 'register', 'now', '!']"
+      },
+      {
+        "input": "RT @elonmusk: Mars here we come! 🌌",
+        "output": "['RT', '@elonmusk', ':', 'Mars', 'here', 'we', 'come', '!', '🌌']"
+      },
+      {
+        "input": "Visit http://nlp.ai/resources for #NLP tools",
+        "output": "['Visit', 'http://nlp.ai/resources', 'for', '#NLP', 'tools']"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Regex-based Word-Punctuation Tokenizer",
+    "description": "Write a program to tokenize a sentence into words and punctuation marks separately using regular expressions. For example, \"Hello!\" should become ['Hello', '!'].\n\n**Input Format:**\nA string (sentence) with words and punctuation.\n\n**Output Format:**\nA list of tokens where punctuation is separated.",
+    "test_cases": [
+      {
+        "input": "Hello, world!",
+        "output": "['Hello', ',', 'world', '!']"
+      },
+      {
+        "input": "Wait... what?!",
+        "output": "['Wait', '.', '.', '.', 'what', '?', '!']"
+      },
+      {
+        "input": "She said, \"Hi.\"",
+        "output": "['She', 'said', ',', '\"', 'Hi', '.', '\"']"
+      },
+      {
+        "input": "Let's test regex-based tokenization.",
+        "output": "['Let', \"'\", 's', 'test', 'regex', '-', 'based', 'tokenization', '.']"
+      },
+      {
+        "input": "(Hello) [world]!",
+        "output": "['(', 'Hello', ')', '[', 'world', ']', '!']"
+      },
+      {
+        "input": "Yes! No? Maybe.",
+        "output": "['Yes', '!', 'No', '?', 'Maybe', '.']"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Tweet Tokenizer (NLTK)",
+    "description": "Design a tokenizer using NLTK’s TweetTokenizer that accurately processes tweets by preserving hashtags, mentions, emojis, and contractions.\n\n**Input Format:**\nA single tweet (string).\n\n**Output Format:**\nA list of tokens as recognized by the TweetTokenizer.",
+    "test_cases": [
+      {
+        "input": "I love #Python! 💻❤️",
+        "output": "['I', 'love', '#Python', '!', '💻', '❤', '️']"
+      },
+      {
+        "input": "Hey @john_doe, what's up?",
+        "output": "['Hey', '@john_doe', ',', \"what's\", 'up', '?']"
+      },
+      {
+        "input": "Can't wait to code 😎 #100DaysOfCode",
+        "output": "[\"Can't\", 'wait', 'to', 'code', '😎', '#100DaysOfCode']"
+      },
+      {
+        "input": "RT @openai: ChatGPT is awesome!",
+        "output": "['RT', '@openai', ':', 'ChatGPT', 'is', 'awesome', '!']"
+      },
+      {
+        "input": "LOL 😂😂... that's crazy!!!",
+        "output": "['LOL', '😂', '😂', '...', 'that', \"'s\", 'crazy', '!', '!', '!']"
+      },
+      {
+        "input": "Follow us @myhandle & stay tuned.",
+        "output": "['Follow', 'us', '@myhandle', '&', 'stay', 'tuned', '.']"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Whitespace Tokenizer",
+    "description": "Create a tokenizer that splits the input text into tokens using whitespace as the only delimiter. Punctuation marks and special characters are treated as part of the tokens.\n\n**Input Format:**\nA string containing words and punctuation.\n\n**Output Format:**\nA list of tokens obtained by splitting the string at spaces.",
+    "test_cases": [
+      {
+        "input": "The quick brown fox jumps.",
+        "output": "['The', 'quick', 'brown', 'fox', 'jumps.']"
+      },
+      {
+        "input": "Hello, world! Welcome to NLP.",
+        "output": "['Hello,', 'world!', 'Welcome', 'to', 'NLP.']"
+      },
+      {
+        "input": "Tokenizing with whitespace only",
+        "output": "['Tokenizing', 'with', 'whitespace', 'only']"
+      },
+      {
+        "input": "Coding is fun!!!",
+        "output": "['Coding', 'is', 'fun!!!']"
+      },
+      {
+        "input": "\"Quoted text\" should remain.",
+        "output": "['\"Quoted', 'text\"', 'should', 'remain.']"
+      },
+      {
+        "input": "Space matters here",
+        "output": "['Space', 'matters', 'here']"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Punkt Sentence Tokenizer",
+    "description": "Write a program that splits a paragraph into individual sentences using the Punkt tokenizer from NLTK. This tokenizer recognizes sentence boundaries intelligently by accounting for abbreviations, decimals, and names.\n\n**Input Format:**\nA multi-sentence paragraph string.\n\n**Output Format:**\nA list of individual sentences.",
+    "test_cases": [
+      {
+        "input": "Dr. Smith went to Washington. He met the president.",
+        "output": "['Dr. Smith went to Washington.', 'He met the president.']"
+      },
+      {
+        "input": "It’s raining. Let’s stay indoors.",
+        "output": "['It’s raining.', 'Let’s stay indoors.']"
+      },
+      {
+        "input": "He lives in the U.S. He travels often.",
+        "output": "['He lives in the U.S.', 'He travels often.']"
+      },
+      {
+        "input": "The conference is at 10 a.m. Please arrive early.",
+        "output": "['The conference is at 10 a.m.', 'Please arrive early.']"
+      },
+      {
+        "input": "Prof. Allen is a renowned scientist. His work is remarkable.",
+        "output": "['Prof. Allen is a renowned scientist.', 'His work is remarkable.']"
+      },
+      {
+        "input": "E.g., the tokenizer must handle this correctly. It does.",
+        "output": "['E.g., the tokenizer must handle this correctly.', 'It does.']"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Multi-Word Expression Tokenizer",
+    "description": "Write a program that uses MWETokenizer from NLTK to tokenize a sentence while treating specified multi-word expressions (like “New York”, “natural language”) as single tokens.\n\n**Input Format:**\nA sentence (string). A predefined list of multi-word expressions is used internally.\n\n**Output Format:**\nA list of tokens, where multi-word expressions are preserved as single tokens with underscores.",
+    "test_cases": [
+      {
+        "input": "He studies natural language processing.",
+        "output": "['He', 'studies', 'natural_language', 'processing', '.']"
+      },
+      {
+        "input": "I visited New York last summer.",
+        "output": "['I', 'visited', 'New_York', 'last', 'summer', '.']"
+      },
+      {
+        "input": "Machine learning is evolving fast.",
+        "output": "['Machine', 'learning', 'is', 'evolving', 'fast', '.']"
+      },
+      {
+        "input": "Natural language models are powerful.",
+        "output": "['Natural', 'language', 'models', 'are', 'powerful', '.']"
+      },
+      {
+        "input": "She moved to New York for work.",
+        "output": "['She', 'moved', 'to', 'New_York', 'for', 'work', '.']"
+      },
+      {
+        "input": "I am learning machine learning and AI.",
+        "output": "['I', 'am', 'learning', 'machine_learning', 'and', 'AI', '.']"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "URL and Email Tokenizer",
+    "description": "Write a Python program that extracts and tokenizes URLs and email addresses from a given text while preserving other words as normal tokens.\n\n**Input Format:**\nA line of text containing words, emails, and/or URLs.\n\n**Output Format:**\nA list of strings including words, email addresses, and URLs as separate tokens.",
+    "test_cases": [
+      {
+        "input": "Please contact us at support@example.com for help.",
+        "output": "['Please', 'contact', 'us', 'at', 'for', 'help', 'support@example.com']"
+      },
+      {
+        "input": "Visit https://openai.com/blog/gpt-4 today!",
+        "output": "['Visit', 'today', 'https://openai.com/blog/gpt-4']"
+      },
+      {
+        "input": "Email me at user123@mail.org or go to http://example.org",
+        "output": "['Email', 'me', 'at', 'or', 'go', 'to', 'user123@mail.org', 'http://example.org']"
+      },
+      {
+        "input": "Our team page is at www.example.com/team",
+        "output": "['Our', 'team', 'page', 'is', 'at', 'www.example.com/team']"
+      },
+      {
+        "input": "Send details to hr@company.in and mark cc to admin@host.com",
+        "output": "['Send', 'details', 'to', 'and', 'mark', 'cc', 'to', 'hr@company.in', 'admin@host.com']"
+      },
+      {
+        "input": "https://bit.ly/ai-tokenizer is the tool we use.",
+        "output": "['is', 'the', 'tool', 'we', 'use', 'https://bit.ly/ai-tokenizer']"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Abbreviation Cleaner + Tokenizer",
+    "description": "Create a Python program that cleans and tokenizes abbreviations in a sentence. Abbreviations like \"U.S.A.\", \"A.I.\", or \"Ph.D.\" should be collapsed (e.g., \"A.I.\" → \"AI\") and then tokenized as single units.\n\n**Input Format:**\nA line of English text, possibly containing abbreviations.\n\n**Output Format:**\nA list of tokens, with cleaned abbreviations included as single tokens.",
+    "test_cases": [
+      {
+        "input": "A.I. is transforming industries.",
+        "output": "['AI', 'is', 'transforming', 'industries']"
+      },
+      {
+        "input": "U.S.A. and U.K. have signed the agreement.",
+        "output": "['USA', 'and', 'UK', 'have', 'signed', 'the', 'agreement']"
+      },
+      {
+        "input": "He earned a Ph.D. from MIT.",
+        "output": "['He', 'earned', 'a', 'PhD', 'from', 'MIT']"
+      },
+      {
+        "input": "Dr. Smith works in the R&D department.",
+        "output": "['Dr', 'Smith', 'works', 'in', 'the', 'RD', 'department']"
+      },
+      {
+        "input": "My email is sent via the A.I. system.",
+        "output": "['My', 'email', 'is', 'sent', 'via', 'the', 'AI', 'system']"
+      },
+      {
+        "input": "NASA and F.B.I. are U.S. agencies.",
+        "output": "['NASA', 'and', 'FBI', 'are', 'US', 'agencies']"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Custom Delimiter Tokenizer",
+    "description": "Write a Python program that tokenizes a sentence using a custom delimiter such as commas (,), semicolons (;), slashes (/), or pipes (|).\n\n**Input Format:**\nFirst line: A sentence with custom delimiter.\nSecond line: The delimiter character.\n\n**Output Format:**\nA list of clean tokens separated based on the specified delimiter.",
+    "test_cases": [
+      {
+        "input": "Apple, Banana, Mango, Grapes\n,",
+        "output": "['Apple', 'Banana', 'Mango', 'Grapes']"
+      },
+      {
+        "input": "Python|Java|C++|Go\n|",
+        "output": "['Python', 'Java', 'C++', 'Go']"
+      },
+      {
+        "input": "Red / Green / Blue\n/",
+        "output": "['Red', 'Green', 'Blue']"
+      },
+      {
+        "input": "one; two ;three;four ;\n;",
+        "output": "['one', 'two', 'three', 'four']"
+      },
+      {
+        "input": "car | bike | bus | train\n|",
+        "output": "['car', 'bike', 'bus', 'train']"
+      },
+      {
+        "input": "name1,name2,name3,name4\n,",
+        "output": "['name1', 'name2', 'name3', 'name4']"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Non-English Tokenizer",
+    "description": "Write a Python program that tokenizes non-English sentences, such as Hindi, Tamil, or any other Unicode-based language. The tokenizer should handle native scripts and split words based on spaces and punctuation removal.\n\n**Input Format:**\nA single line: Sentence in any non-English language.\n\n**Output Format:**\nA list of individual words as tokens, with punctuation removed.",
+    "test_cases": [
+      {
+        "input": "यह एक सुंदर दिन है।",
+        "output": "['यह', 'एक', 'सुंदर', 'दिन', 'है']"
+      },
+      {
+        "input": "நான் புத்தகம் படிக்கிறேன்.",
+        "output": "['நான்', 'புத்தகம்', 'படிக்கிறேன்']"
+      },
+      {
+        "input": "இது ஒரு சிறந்த வாய்ப்பு!",
+        "output": "['இது', 'ஒரு', 'சிறந்த', 'வாய்ப்பு']"
+      },
+      {
+        "input": "यह मेरा दोस्त है, उसका नाम अमित है।",
+        "output": "['यह', 'मेरा', 'दोस्त', 'है', 'उसका', 'नाम', 'अमित', 'है']"
+      },
+      {
+        "input": "தமிழ் மொழி மிகவும் அழகானது.",
+        "output": "['தமிழ்', 'மொழி', 'மிகவும்', 'அழகானது']"
+      },
+      {
+        "input": "我喜欢学习中文。",
+        "output": "['我喜欢学习中文']"
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Token Length Filter",
+    "description": "Create a Python program that removes short or overly long tokens from a tokenized sentence. A valid token should be at least 3 characters and at most 10 characters long.\n\n**Input Format:**\nA single line: Sentence in English.\n\n**Output Format:**\nA list of words that are 3–10 characters in length.",
+    "test_cases": [
+      {
+        "input": "I love natural language processing.",
+        "output": "['love', 'natural', 'language']"
+      },
+      {
+        "input": "AI is so cool and powerful!",
+        "output": "['cool', 'and', 'powerful']"
+      },
+      {
+        "input": "An extremelylongwordshouldnotappear",
+        "output": "[]"
+      },
+      {
+        "input": "This tool filters tiny or gigantic tokens",
+        "output": "['This', 'tool', 'filters', 'tiny', 'gigantic', 'tokens']"
+      },
+      {
+        "input": "Do AI tools like GPT help?",
+        "output": "['tools', 'like', 'GPT', 'help']"
+      },
+      {
+        "input": "To be or not to be.",
+        "output": "['not']"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Character-Level Tokenization",
+    "description": "Write a program to perform character-level tokenization of a given sentence. Instead of words, break the sentence into individual characters (excluding spaces and punctuation).\n\n**Input Format:**\nA single line containing a sentence.\n\n**Output Format:**\nA list of characters (excluding punctuation and whitespace).",
+    "test_cases": [
+      {
+        "input": "AI is fun!",
+        "output": "['A', 'I', 'i', 's', 'f', 'u', 'n']"
+      },
+      {
+        "input": " NLP 101",
+        "output": "['N', 'L', 'P', '1', '0', '1']"
+      },
+      {
+        "input": "@OpenAI",
+        "output": "['O', 'p', 'e', 'n', 'A', 'I']"
+      },
+      {
+        "input": "ChatGPT rocks.",
+        "output": "['C', 'h', 'a', 't', 'G', 'P', 'T', 'r', 'o', 'c', 'k', 's']"
+      },
+      {
+        "input": " Hello World!",
+        "output": "['H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd']"
+      },
+      {
+        "input": "",
+        "output": "[]"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "N-Gram Tokenization (Bigrams)",
+    "description": "Write a program to split a sentence into 2-word sequences (bigrams).\n\n**Input Format:**\nA single line containing a sentence.\n\n**Output Format:**\nA list of bigram tuples.",
+    "test_cases": [
+      {
+        "input": "Deep learning rocks",
+        "output": "[('Deep', 'learning'), ('learning', 'rocks')]"
+      },
+      {
+        "input": "Welcome back student",
+        "output": "[('Welcome', 'back'), ('back', 'student')]"
+      },
+      {
+        "input": "One word",
+        "output": "[('One', 'word')]"
+      },
+      {
+        "input": "NLP improves understanding",
+        "output": "[('NLP', 'improves'), ('improves', 'understanding')]"
+      },
+      {
+        "input": "Hello",
+        "output": "[]"
+      },
+      {
+        "input": "This is AI",
+        "output": "[('This', 'is'), ('is', 'AI')]"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Regex-Based Tokenization",
+    "description": "Write a program that uses a regular expression to tokenize only alphabetic words (no digits or special characters).\n\n**Input Format:**\nA sentence containing words, numbers, and punctuation.\n\n**Output Format:**\nA list of only alphabetic words.",
+    "test_cases": [
+      {
+        "input": "AI 4 U",
+        "output": "['AI', 'U']"
+      },
+      {
+        "input": "Python 3.8 is great",
+        "output": "['Python', 'is', 'great']"
+      },
+      {
+        "input": "NLP@2024",
+        "output": "['NLP']"
+      },
+      {
+        "input": "Hackathon 101 Rocks!",
+        "output": "['Hackathon', 'Rocks']"
+      },
+      {
+        "input": "50% accuracy",
+        "output": "['accuracy']"
+      },
+      {
+        "input": "Just Code It",
+        "output": "['Just', 'Code', 'It']"
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Hyphenated Word Splitter",
+    "description": "Write a program to split words connected by hyphens into separate tokens.\n\n**Input Format:**\nA sentence containing hyphenated words.\n\n**Output Format:**\nA list of tokens with hyphenated words split.",
+    "test_cases": [
+      {
+        "input": "Data-driven learning",
+        "output": "['Data', 'driven', 'learning']"
+      },
+      {
+        "input": "Cost-effective AI",
+        "output": "['Cost', 'effective', 'AI']"
+      },
+      {
+        "input": "Chat-based interface",
+        "output": "['Chat', 'based', 'interface']"
+      },
+      {
+        "input": "A well-known method",
+        "output": "['A', 'well', 'known', 'method']"
+      },
+      {
+        "input": "Pre-trained embeddings",
+        "output": "['Pre', 'trained', 'embeddings']"
+      },
+      {
+        "input": "NLP-based systems",
+        "output": "['NLP', 'based', 'systems']"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Stopword Removal",
+    "description": "Remove common English stopwords from a sentence. Stopwords are words like “is”, “the”, “in”, “and”, which don’t add much meaning. Your task is to clean the sentence by keeping only meaningful words.\n\n**Input Format:**\nA single sentence containing multiple English words.\n\n**Output Format:**\nA list of words excluding stopwords.",
+    "test_cases": [
+      {
+        "input": "We are learning natural language processing",
+        "output": "['learning', 'natural', 'language', 'processing']"
+      },
+      {
+        "input": "NLP is fun and educational",
+        "output": "['NLP', 'fun', 'educational']"
+      },
+      {
+        "input": "This example shows how stopword removal works.",
+        "output": "['example', 'shows', 'stopword', 'removal', 'works']"
+      },
+      {
+        "input": "The model is very accurate.",
+        "output": "['model', 'accurate']"
+      },
+      {
+        "input": "He will be going to school tomorrow.",
+        "output": "['going', 'school', 'tomorrow']"
+      },
+      {
+        "input": "AI has the power to change everything.",
+        "output": "['AI', 'power', 'change', 'everything']"
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Frequency-Based Stopword Removal",
+    "description": "In this challenge, you are required to write a program that removes the most frequently occurring words from a given set of sentences. Frequency-based stopword removal is a method where top-N frequent words (e.g., top 5%) are removed, assuming they contribute less meaning across multiple documents or sentences.\n\n**Input Format:**\nFirst line: Number of sentences N\nNext N lines: Each line is a sentence.\n\n**Output Format:**\nN lines with filtered words, excluding the most frequent ones.",
+    "test_cases": [
+      {
+        "input": "2\nThe cat sat on the mat\nThe dog sat on the mat",
+        "output": "cat on mat\ndog on mat"
+      },
+      {
+        "input": "2\nMachine learning is fun\nDeep learning is powerful",
+        "output": "Machine fun\nDeep powerful"
+      },
+      {
+        "input": "3\nAI is the future\nAI will change the world\nAI brings automation",
+        "output": "is future\nwill change world\nbrings automation"
+      },
+      {
+        "input": "3\nSmartphones are everywhere\nSmart devices are getting better\nPeople use smart assistants daily",
+        "output": "Smartphones everywhere\ndevices getting better\nPeople use assistants daily"
+      },
+      {
+        "input": "2\nData science is evolving\nData analytics is useful",
+        "output": "science evolving\nanalytics useful"
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "TF-IDF Thresholding",
+    "description": "Your task is to write a program that removes low-importance words from a document using TF-IDF (Term Frequency-Inverse Document Frequency) thresholding. You'll retain only words with TF-IDF values above a defined threshold (e.g., 0.2).\n\n**Input Format:**\nFirst line: Integer N – number of sentences.\nNext N lines: Each line contains a sentence.\n\n**Output Format:**\nN lines with only high-TF-IDF scoring words retained.",
+    "test_cases": [
+      {
+        "input": "2\nThe internet is fast\nThe connection is stable",
+        "output": "fast internet\nconnection stable"
+      },
+      {
+        "input": "3\nPython is great for data science\nData science needs clean data\nMachine learning is a part of data science",
+        "output": "for great python\nclean needs\nlearning machine of part"
+      },
+      {
+        "input": "2\nI love learning about AI\nAI is shaping the future",
+        "output": "about learning love\nfuture shaping"
+      },
+      {
+        "input": "2\nStudents love coding in Python\nPython helps solve complex problems",
+        "output": "coding in love students\ncomplex helps problems solve"
+      },
+      {
+        "input": "3\nChatbots improve customer support\nAI powers chatbots\nCustomer support becomes efficient",
+        "output": "customer improve\nai powers\nbecomes efficient"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Length-Based Stopword Removal",
+    "description": "Write a program that removes words that are too short or too long from a sentence. You must retain only the words whose lengths fall within a specified range (e.g., 3 to 10 characters).\n\n**Input Format:**\nA single line containing the sentence.\n\n**Output Format:**\nA list of filtered words meeting the length criteria.",
+    "test_cases": [
+      {
+        "input": "The elephant walked in the zoo.",
+        "output": "['The', 'elephant', 'walked', 'the', 'zoo']"
+      },
+      {
+        "input": "It is an AI model running smoothly.",
+        "output": "['model', 'running', 'smoothly']"
+      },
+      {
+        "input": "I am happy with NLP!",
+        "output": "['happy', 'with', 'NLP']"
+      },
+      {
+        "input": "Go to the park quickly.",
+        "output": "['the', 'park', 'quickly']"
+      },
+      {
+        "input": "Small words like a or I are dropped.",
+        "output": "['Small', 'words', 'like', 'are', 'dropped']"
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "title": "Porter Stemmer Implementation",
+    "description": "Your task is to implement a simplified version of the Porter Stemmer algorithm. The Porter Stemmer is a widely used algorithm for conflating words to their root form (stem).\n\n**Input Format:**\nA single line containing a space-separated string of words.\n\n**Output Format:**\nA list of stemmed words.",
+    "test_cases": [
+      {
+        "input": "classes abilities runs agreed",
+        "output": "['class', 'abil', 'run', 'agre']"
+      },
+      {
+        "input": "hopes tries feeds",
+        "output": "['hope', 'tri', 'feed']"
+      },
+      {
+        "input": "books boxes cares",
+        "output": "['book', 'box', 'care']"
+      },
+      {
+        "input": "meeting controlling",
+        "output": "['meet', 'control']"
+      },
+      {
+        "input": "matrices analyses",
+        "output": "['matric', 'analysi']"
+      },
+      {
+        "input": "programmes passed fixed",
+        "output": "['programm', 'pass', 'fix']"
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "title": "Snowball Stemmer (Porter2) Simulation",
+    "description": "Your task is to simulate a very basic aspect of the Snowball (Porter2) Stemmer by implementing a rule for suffixes like 'y' becoming 'i' after a non-vowel, and a more robust handling of 's' removal, along with the 'eed' rule from Porter.\n\n**Input Format:**\nA single line containing a space-separated string of words.\n\n**Output Format:**\nA list of stemmed words.",
+    "test_cases": [
+      {
+        "input": "pretty studies bunnies agreed",
+        "output": "['pretti', 'studi', 'bunni', 'agre']"
+      },
+      {
+        "input": "community bodies tries",
+        "output": "['communiti', 'bodi', 'tri']"
+      },
+      {
+        "input": "plays cares",
+        "output": "['play', 'care']"
+      },
+      {
+        "input": "dry fly by",
+        "output": "['dri', 'fli', 'by']"
+      },
+      {
+        "input": "cities luxuries",
+        "output": "['citi', 'luxuri']"
+      },
+      {
+        "input": "seeing buying",
+        "output": "['see', 'buy']"
+      }
+    ]
+  },
+  {
+    "id": "33",
+    "title": "Lancaster Stemmer (Paice/Husk) Simulation",
+    "description": "Your task is to simulate the highly aggressive nature of the Lancaster (Paice/Husk) Stemmer. You will implement a few rules that demonstrate its characteristic of removing long suffixes and sometimes producing non-dictionary stems.\n\n**Input Format:**\nA single line containing a space-separated string of words.\n\n**Output Format:**\nA list of stemmed words.",
+    "test_cases": [
+      {
+        "input": "creationally educational dedicate learning",
+        "output": "['cre', 'educ', 'ded', 'learn']"
+      },
+      {
+        "input": "relational duplicate coding",
+        "output": "['rel', 'duply', 'cod']"
+      },
+      {
+        "input": "walking talks",
+        "output": "['walk', 'talk']"
+      },
+      {
+        "input": "operational indicating",
+        "output": "['op', 'ind']"
+      },
+      {
+        "input": "traditional programming",
+        "output": "['tradit', 'program']"
+      },
+      {
+        "input": "processes",
+        "output": "['process']"
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "title": "Lovins Stemmer Simulation",
+    "description": "Your task is to implement a very basic simulation of the Lovins Stemmer. The Lovins stemmer was the first published stemming algorithm and works by removing the longest possible suffix from a word based on a dictionary of suffixes, followed by potential \"re-coding\" of the stem.\n\n**Input Format:**\nA single line containing a space-separated string of words.\n\n**Output Format:**\nA list of stemmed words.",
+    "test_cases": [
+      {
+        "input": "organizational commitments",
+        "output": "['organ', 'commitment']"
+      },
+      {
+        "input": "readiness running",
+        "output": "['read', 'run']"
+      },
+      {
+        "input": "apples fixes",
+        "output": "['appl', 'fix']"
+      },
+      {
+        "input": "application",
+        "output": "['applic']"
+      },
+      {
+        "input": "happiness",
+        "output": "['hap']"
+      },
+      {
+        "input": "developing",
+        "output": "['develop']"
+      }
+    ]
+  },
+  {
+    "id": "35",
+    "title": "Dictionary-Based Lemmatizer",
+    "description": "Your task is to implement a dictionary-based lemmatizer that converts inflected or derived words into their base (lemma) forms using a manually curated mapping.\n\n**Input Format:**\nA single line of space-separated lowercase English words.\n\n**Output Format:**\nA list of words where each word has been lemmatized using the dictionary.",
+    "test_cases": [
+      {
+        "input": "am is was were children teeth ate",
+        "output": "['be', 'be', 'be', 'be', 'child', 'tooth', 'eat']"
+      },
+      {
+        "input": "running studies had better",
+        "output": "['run', 'study', 'have', 'good']"
+      },
+      {
+        "input": "cars houses eaten",
+        "output": "['car', 'house', 'eat']"
+      },
+      {
+        "input": "geese studying are mice",
+        "output": "['goose', 'study', 'be', 'mouse']"
+      },
+      {
+        "input": "feet worse has",
+        "output": "['foot', 'bad', 'have']"
+      }
+    ]
+  },
+  {
+    "id": "36",
+    "title": "POS-Aware Lemmatization",
+    "description": "Your task is to simulate Part-of-Speech (POS) aware lemmatization, which improves the accuracy of base form conversion by utilizing the grammatical role (POS tag) of each word. You will map each word to its lemma using WordNet-style rules, where POS tagging helps disambiguate the correct lemma.\n\n**Input Format:**\nA single line containing a space-separated sentence in lowercase English text.\n\n**Output Format:**\nA list of lemmatized words based on their POS tags.",
+    "test_cases": [
+      {
+        "input": "running played children better",
+        "output": "['run', 'play', 'child', 'good']"
+      },
+      {
+        "input": "talking dogs faster eaten",
+        "output": "['talk', 'dog', 'fast', 'eat']"
+      },
+      {
+        "input": "flies studied went",
+        "output": "['fly', 'study', 'go']"
+      },
+      {
+        "input": "walking books happier",
+        "output": "['walk', 'book', 'happy']"
+      },
+      {
+        "input": "mice ran swimming",
+        "output": "['mouse', 'run', 'swim']"
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "title": "Rule-Based Lemmatization",
+    "description": "Your task is to implement a rule-based lemmatizer that reduces inflected or derived words to their root (base) forms by applying a set of predefined linguistic suffix-stripping rules.\n\n**Input Format:**\nA single line of lowercase English words, space-separated.\n\n**Output Format:**\nA list of stemmed words based on the transformation rules.",
+    "test_cases": [
+      {
+        "input": "national communication dedicate running",
+        "output": "['nate', 'communic', 'dic', 'run']"
+      },
+      {
+        "input": "creationally educational dedicate learning",
+        "output": "['creationally', 'educate', 'dic', 'learn']"
+      },
+      {
+        "input": "relational duplicate coding",
+        "output": "['relate', 'duplic', 'cod']"
+      },
+      {
+        "input": "operational indicating",
+        "output": "['operate', 'indicat']"
+      },
+      {
+        "input": "processes",
+        "output": "['processe']"
+      }
+    ]
+  },
+  {
+    "id": "38",
+    "title": "Statistical / ML-Based Lemmatization",
+    "description": "Your task is to simulate Statistical or Machine Learning-based Lemmatization, where a trained model predicts the lemma (base form) of a word based on learned linguistic patterns from a corpus.\n\n**Input Format:**\nA single line of space-separated lowercase English words.\n\n**Output Format:**\nA list of lemmatized base forms as predicted by the trained model.",
+    "test_cases": [
+      {
+        "input": "running children better",
+        "output": "['run', 'child', 'good']"
+      },
+      {
+        "input": "studies talked faster",
+        "output": "['study', 'talk', 'fast']"
+      },
+      {
+        "input": "bought mice went",
+        "output": "['buy', 'mouse', 'go']"
+      },
+      {
+        "input": "driving faster children",
+        "output": "['drive', 'fast', 'child']"
+      },
+      {
+        "input": "singing better went",
+        "output": "['sing', 'good', 'go']"
+      },
+      {
+        "input": "walked studies",
+        "output": "['walk', 'study']"
+      }
+    ]
+  },
+  {
+    "id": "39",
+    "title": "Rule-Based Part-of-Speech Tagger",
+    "description": "Your task is to implement a Rule-Based POS Tagger that assigns a Part-of-Speech (POS) tag to each word in a sentence based on a set of predefined grammatical and suffix rules.\n\n**Input Format:**\nA single line with space-separated lowercase words.\n\n**Output Format:**\nA list of (word, POS) tuples representing the part of speech assigned to each word.",
+    "test_cases": [
+      {
+        "input": "walking slowly beautiful danced amazing book likely",
+        "output": "[('walking', 'VB'), ('slowly', 'RB'), ('beautiful', 'JJ'), ('danced', 'VB'), ('amazing', 'JJ'), ('book', 'NN'), ('likely', 'RB')]"
+      },
+      {
+        "input": "played happily dangerous flexible run teacher",
+        "output": "[('played', 'VB'), ('happily', 'RB'), ('dangerous', 'JJ'), ('flexible', 'JJ'), ('run', 'NN'), ('teacher', 'NN')]"
+      },
+      {
+        "input": "studying carefully wonderful music",
+        "output": "[('studying', 'VB'), ('carefully', 'RB'), ('wonderful', 'JJ'), ('music', 'NN')]"
+      },
+      {
+        "input": "amazing happily cooked internet",
+        "output": "[('amazing', 'JJ'), ('happily', 'RB'), ('cooked', 'VB'), ('internet', 'NN')]"
+      },
+      {
+        "input": "running joyfully creative song",
+        "output": "[('running', 'VB'), ('joyfully', 'RB'), ('creative', 'JJ'), ('song', 'NN')]"
+      },
+      {
+        "input": "beautifully painted active story",
+        "output": "[('beautifully', 'RB'), ('painted', 'VB'), ('active', 'JJ'), ('story', 'NN')]"
+      }
+    ]
+  },
+  {
+    "title": "Byte Pair Encoding Tokenizer for Short Phone Reviews",
+    "description": "Train a BPE tokenizer on a small corpus of phone-related sentences and tokenize user inputs that may contain spelling variations, slang, or elongated words.\nThis tests subword segmentation, unknown token handling ([UNK]), and vocabulary generalization.",
+    "test_cases": [
+      {
+        "input": "This phone is amaaazing!",
+        "output": "Tokens     : ['[UNK]', 'h', 'is', '[UNK]', 'phone', '[UNK]', 'is', '[UNK]', 'am', 'a', 'a', 'az', 'ing', '[UNK]']\nToken IDs  : [0, 11, 27, 0, 34, 0, 27, 0, 29, 4, 4, 36, 41, 0]"
+      },
+      {
+        "input": "Battery life is amazng",
+        "output": "'[UNK]', 'at', 't', 'er', 'y', '[UNK]', 'li', 'fe', '[UNK]', 'is', '[UNK]', 'amaz', 'n', 'g']\nToken IDs  : [0, 35, 21, 30, 25, 0, 38, 47, 0, 27, 0, 40, 15, 10]"
+      },
+      {
+        "input": "Super quality phone",
+        "output": "Tokens     : ['[UNK]', 'u', 'p', 'er', '[UNK]', 'q', 'u', 'ali', 't', 'y', '[UNK]', 'phone']\nToken IDs  : [0, 22, 17, 30, 0, 18, 22, 43, 21, 25, 0, 34]"
+      },
+      {
+        "input": "The camerra is amazing!",
+        "output": "Tokens     : ['[UNK]', 'h', 'e', '[UNK]', 'cam', 'er', 'r', 'a', '[UNK]', 'is', '[UNK]', 'amazing', '[UNK]']\nToken IDs  : [0, 11, 8, 0, 45, 30, 19, 4, 0, 27, 0, 42, 0]"
+      },
+      {
+        "input": "I love this phone so much",
+        "output": "Tokens     : ['[UNK]', '[UNK]', 'l', 'o', 'v', 'e', '[UNK]', 'this', '[UNK]', 'phone', '[UNK]', 's', 'o', '[UNK]', 'm', 'u', 'c', 'h']\nToken IDs  : [0, 0, 13, 16, 23, 8, 0, 39, 0, 34, 0, 20, 16, 0, 14, 22, 6, 11]"
+      }
+    ],
+    "id": "40"
+  },
+  {
+    "title": "Custom Tokenizer for Chatbot Input Preprocessing Scenario",
+    "description": "You are building a chatbot system that receives informal and expressive text messages from users. Words like “heyyy”, “sooo good”, or “yaaay!” often appear in feedback. To ensure your LLM model handles unseen words, you must build a BPE tokenizer that splits such spelling variants into meaningful subwords using a custom vocabulary trained on a sample chat corpus.\n\nSample corpus\nchat_corpus = [\n    \"hey how are you\",\n    \"this is so good\",\n    \"what are you doing now\",\n    \"yaaay I love this\",\n    \"this is amazing\",\n    \"feeling happy and relaxed\",\n    \"that’s sooo funny\",\n    \"I am so excited!\",\n    \"heyyy what’s up\",\n    \"cool cool cool!\"\n]",
+    "test_cases": [
+      {
+        "input": "heyyy I’m so happy!",
+        "output": "Tokens     : ['heyyy', '[UNK]', '[UNK]', '’', 'm', '[UNK]', 'so', '[UNK]', 'happy', '!']\nToken IDs  : [78, 0, 0, 27, 14, 0, 47, 0, 89, 4]"
+      },
+      {
+        "input": "yaaay this is cool",
+        "output": "Tokens     : ['yaaay', '[UNK]', 'this', '[UNK]', 'is', '[UNK]', 'cool']\nToken IDs  : [88, 0, 35, 0, 29, 0, 37]"
+      },
+      {
+        "input": "that’s sooo nice",
+        "output": "Tokens     : ['that', '’', 's', '[UNK]', 'sooo', '[UNK]', 'n', 'i', 'c', 'e']\nToken IDs  : [69, 27, 19, 0, 87, 0, 15, 12, 6, 8]"
+      },
+      {
+        "input": "what’s up??",
+        "output": "Tokens     : ['what', '’', 's', '[UNK]', 'up', '[UNK]', '[UNK]']\nToken IDs  : [48, 27, 19, 0, 71, 0, 0]"
+      },
+      {
+        "input": "",
+        "output": ""
+      }
+    ],
+    "id": "41"
+  },
+  {
+    "title": "Testing BPE Tokenizer on Chat Corpus",
+    "description": "The program trains a Byte Pair Encoding (BPE) tokenizer using a small chat corpus.\n It applies lowercasing and accent stripping normalization, splits text by whitespace, and encodes input sentences into subword tokens and token IDs.\nThe goal is to verify that the tokenizer correctly handles normalization, punctuation, unknown tokens, and merge behavior.",
+    "test_cases": [
+      {
+        "input": "HeYyy I’m So HapPy!",
+        "output": "Tokens: ['heyyy', 'im', 'so', 'happy', '!']\n Token IDs: [12, 45, 8, 23, 5]"
+      },
+      {
+        "input": "yaaay this is cool",
+        "output": "Tokens: ['yaaay', 'this', 'is', 'cool']\nToken IDs: [14, 7, 9, 11]"
+      },
+      {
+        "input": "what’s up??",
+        "output": "Tokens: ['whats', 'up', '?', '?']\n Token IDs: [10, 15, 5, 5]"
+      },
+      {
+        "input": "feeling excited and relaxed",
+        "output": "Tokens: ['feeling', 'excited', 'and', 'relaxed']\n Token IDs: [18, 42, 13, 27]"
+      }
+    ],
+    "id": "42"
+  },
+  {
+    "title": "Custom Tokenizer for Medical Notes",
+    "description": "Scenario:\n You are developing an LLM assistant for doctors to process handwritten EMR (Electronic Medical Record) notes converted to text. These notes are often fragmented, with non-standard spellings and abbreviations. You need to build a BPE tokenizer that can effectively tokenize such input.\n\nSample Corpus:\nmedical_notes = [\n    \"pt has diab\",\n    \"BP is 140/90\",\n    \"sched for ECG\",\n    \"pt feels anxi\",\n    \"meds include metformin\",\n    \"pt c/o chest pain\",\n    \"followup in 2wks\",\n    \"HbA1c high\",\n    \"no hx of CAD\",\n    \"rx: atenolol 50mg\"\n]\n",
+    "test_cases": [
+      {
+        "input": "pt has diab and HTN",
+        "output": "Tokens     : ['pt', '[UNK]', 'has', '[UNK]', 'diab', '[UNK]', 'an', 'd', '[UNK]', '[UNK]', '[UNK]', '[UNK]']\nToken IDs  : [35, 0, 70, 0, 97, 0, 49, 15, 0, 0, 0, 0]"
+      },
+      {
+        "input": "sched for ECG next wk",
+        "output": "Tokens     : ['sch', 'ed', '[UNK]', 'for', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'n', 'e', 'x', 't', '[UNK]', 'w', 'k']\nToken IDs  : [82, 37, 0, 40, 0, 0, 0, 0, 0, 24, 16, 32, 29, 0, 31, 21]"
+      },
+      {
+        "input": "pt feels anxi again",
+        "output": "Tokens     : ['pt', '[UNK]', 'feels', '[UNK]', 'anxi', '[UNK]', 'a', 'g', 'ain']\nToken IDs  : [35, 0, 98, 0, 95, 0, 12, 18, 52]"
+      },
+      {
+        "input": "rx includes aspirin",
+        "output": "Tokens     : ['rx', '[UNK]', 'incl', 'ude', 's', '[UNK]', 'as', 'p', 'i', 'r', 'in']\nToken IDs  : [81, 0, 87, 84, 28, 0, 50, 26, 20, 27, 33]"
+      },
+      {
+        "input": "",
+        "output": "Tokens     : []\nToken IDs  : []"
+      }
+    ],
+    "id": "43"
+  },
+  {
+    "title": "Tokenizer for Product Review Classification",
+    "description": "Scenario:\n You’re building a model that processes informal product reviews. Users use spelling variants like “greeeeat”, “wooow”, or “baaad”. A BPE tokenizer must be trained to deal with these reviews effectively.\nSample Corpus:\nreviews = [\n    \"this is great\",\n    \"baaad quality\",\n    \"wooow amazing!\",\n    \"so disappointed\",\n    \"greeeeat product\",\n    \"works well\",\n    \"terrible service\",\n    \"love this phone\",\n    \"not good at all\",\n    \"perfect fit\"\n]\n",
+    "test_cases": [
+      {
+        "input": "greeeeat quality",
+        "output": "Tokens     : ['greeeeat', '[UNK]', 'qu', 'alit', 'y']\nToken IDs  : [89, 0, 73, 87, 27]"
+      },
+      {
+        "input": "not baaad",
+        "output": "Tokens     : ['not', '[UNK]', 'baaad']\nToken IDs  : [97, 0, 93]"
+      },
+      {
+        "input": "wooow and amazing",
+        "output": "Tokens     : ['woo', 'ow', '[UNK]', 'a', 'n', 'd', '[UNK]', 'amaz', 'ing']\nToken IDs  : [81, 66, 0, 5, 17, 8, 0, 91, 90]"
+      },
+      {
+        "input": "service was terrible",
+        "output": "Tokens     : ['ser', 'vice', '[UNK]', 'w', 'a', 's', '[UNK]', 'ter', 'ribl', 'e']\nToken IDs  : [76, 80, 0, 26, 5, 22, 0, 77, 74, 9]"
+      },
+      {
+        "input": "works perfectly",
+        "output": "Tokens     : ['wor', 'ks', '[UNK]', 'per', 'fect', 'l', 'y']\nToken IDs  : [83, 61, 0, 70, 56, 15, 27]"
+      }
+    ],
+    "id": "44"
+  },
+  {
+    "title": "Tokenizer for Student Chat App",
+    "description": "Scenario:\n You're designing an app for university students that receives casual chats like “sup?”, “yooo”, or “gotta gooo!”. You must train a BPE tokenizer on this student slang.\nSample Corpus:\nstudent_chat = [\n    \"yooo whatsup\",\n    \"gotta go now\",\n    \"sup bro\",\n    \"you coming?\",\n    \"see yaaa\",\n    \"i’m chillin\",\n    \"exams suck!\",\n    \"let's party\",\n    \"assignment due tmrw\",\n    \"nooo wayyy\"\n]\n",
+    "test_cases": [
+      {
+        "input": "nooo I’m chillin",
+        "output": "Tokens     : ['nooo', '[UNK]', '[UNK]', '’', 'm', '[UNK]', 'chillin']\nToken IDs  : [61, 0, 0, 28, 17, 0, 92]"
+      },
+      {
+        "input": "gotta party yaaa",
+        "output": "Tokens     : ['gotta', '[UNK]', 'party', '[UNK]', 'yaaa']\nToken IDs  : [76, 0, 86, 0, 90]"
+      },
+      {
+        "input": "sup broooo!",
+        "output": "Tokens     : ['sup', '[UNK]', 'br', 'oo', 'oo', '!']\nToken IDs  : [36, 0, 42, 29, 29, 4]"
+      },
+      {
+        "input": "exams tmrw suck",
+        "output": "Tokens     : ['exams', '[UNK]', 'tmrw', '[UNK]', 'suck']\nToken IDs  : [83, 0, 87, 0, 75]"
+      },
+      {
+        "input": "",
+        "output": "Tokens     : []\nToken IDs  : []"
+      }
+    ],
+    "id": "45"
+  },
+  {
+    "title": "Tokenizer for News Headlines",
+    "description": "Scenario:\n You are developing a tokenizer for real-time news headlines. The headlines are short, contain all-caps words, and sometimes use hashtags or punctuation without spacing. Your tokenizer should segment meaningful units.\nSample Corpus:\nnews = [\n    \"BREAKING: FIRE IN CITY\",\n    \"PM visits flood-hit area\",\n    \"Market hits all-time high\",\n    \"Tech stocks surge\",\n    \"Elections 2024 coming\",\n    \"India wins gold!\",\n    \"WHO issues alert\",\n    \"COVID cases rising\",\n    \"Big crash on highway\",\n    \"Alert: thunderstorm warning\"\n]\n",
+    "test_cases": [
+      {
+        "input": "BREAKING NEWS TODAY!",
+        "output": "Tokens     : ['[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '!']\nToken IDs  : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4]"
+      },
+      {
+        "input": "COVID cases hit high",
+        "output": "Tokens     : ['[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'cas', 'es', '[UNK]', 'hit', '[UNK]', 'high']\nToken IDs  : [0, 0, 0, 0, 0, 0, 62, 43, 0, 50, 0, 51]"
+      },
+      {
+        "input": "PM meets WHO reps",
+        "output": "Tokens     : ['[UNK]', '[UNK]', '[UNK]', 'me', 'et', 's', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 're', 'p', 's']\nToken IDs  : [0, 0, 0, 78, 67, 26, 0, 0, 0, 0, 0, 86, 24, 26]"
+      },
+      {
+        "input": "market sees dip",
+        "output": "Tokens     : ['mar', 'ket', '[UNK]', 's', 'e', 'es', '[UNK]', 'di', 'p']\nToken IDs  : [80, 76, 0, 26, 14, 43, 0, 64, 24]"
+      },
+      {
+        "input": "Elections in 2024",
+        "output": "Tokens     : ['[UNK]', 'l', 'ec', 'ti', 'on', 's', '[UNK]', 'in', '[UNK]', '202', '4']\nToken IDs  : [0, 20, 42, 49, 46, 26, 0, 32, 0, 56, 8]"
+      }
+    ],
+    "id": "46"
+  },
+  {
+    "title": "Tokenizer for Code Comments in IDE Assistant",
+    "description": "Scenario:\n You’re building an LLM-based assistant to help programmers. It must understand comments like “func not working” or “pls fix this bug asap”. Informal language is common, so train a BPE tokenizer on code comments.\nSample Corpus:\n\ncode_comments = [\n    \"init not defined\",\n    \"pls fix asap\",\n    \"bug in login func\",\n    \"check db conn\",\n    \"handle err gracefully\",\n    \"timeout issue\",\n    \"loop not exiting\",\n    \"need retry logic\",\n    \"add null check\",\n    \"deprecated api used\"\n]",
+    "test_cases": [
+      {
+        "input": "bug in func",
+        "output": "Tokens     : ['bug', '[UNK]', 'in', '[UNK]', 'func']\nToken IDs  : [92, 0, 25, 0, 84]"
+      },
+      {
+        "input": "pls fix timeout asap",
+        "output": "Tokens     : ['pls', '[UNK]', 'fix', '[UNK]', 'tim', 'eout', '[UNK]', 'asap']\nToken IDs  : [69, 0, 98, 0, 74, 95, 0, 91]"
+      },
+      {
+        "input": "login loop not exiting",
+        "output": "Tokens     : ['login', '[UNK]', 'loop', '[UNK]', 'not', '[UNK]', 'exiting']\nToken IDs  : [87, 0, 80, 0, 39, 0, 97]"
+      },
+      {
+        "input": "deprecated api err",
+        "output": "Tokens     : ['depr', 'ecat', 'ed', '[UNK]', 'api', '[UNK]', 'err']\nToken IDs  : [83, 79, 26, 0, 81, 0, 96]"
+      },
+      {
+        "input": "",
+        "output": "Tokens     : []\nToken IDs  : []"
+      }
+    ],
+    "id": "47"
+  },
+  {
+    "title": "Word-Level Tokenizer – Sentiment Analysis Scenario",
+    "description": "You're building a simple sentiment analysis system. You tokenize text at the word level, meaning each word is separated by spaces and basic punctuation splitting is applied.",
+    "test_cases": [
+      {
+        "input": "This product is excellent",
+        "output": "Tokens     : ['This', 'product', 'is', 'excellent']"
+      },
+      {
+        "input": "It's not good at all",
+        "output": "Tokens     : ['It', \"'\", 's', 'not', 'good', 'at', 'all']"
+      },
+      {
+        "input": "Unbelievably awesome!",
+        "output": "['Unbelievably', 'awesome', '!']"
+      }
+    ],
+    "id": "48"
+  },
+  {
+    "title": "Character-Level Tokenizer",
+    "description": " Scenario: Name Spell Checker with Character-Level Tokenizer\nYou are developing a name spell checker module for a government identity system that handles millions of user entries. Users often misspell or exaggerate names in forms (e.g., \"Daaavid\", \"Saaam\"). The system must detect these variations and normalize them.\nSince exact word matching fails with these variants, you implement a Character-Level Tokenizer to:\nIdentify patterns like repeated characters\n\n\nDetect prefixes/suffixes\n\n\nPrepare character-level embeddings for ML models\n",
+    "test_cases": [
+      {
+        "input": "David",
+        "output": "Tokens     : ['D', 'a', 'v', 'i', 'd']"
+      },
+      {
+        "input": "Daaavid",
+        "output": "Tokens     : ['D', 'a', 'a', 'a', 'v', 'i', 'd']"
+      },
+      {
+        "input": "John!",
+        "output": "['J', 'o', 'h', 'n', '!']"
+      },
+      {
+        "input": "Saaam🤦",
+        "output": "['S', 'a', 'a', 'a', 'm', '🤦']"
+      },
+      {
+        "input": "An@123",
+        "output": "['A', 'n', '@', '1', '2', '3']"
+      }
+    ],
+    "id": "49"
+  },
+  {
+    "title": "WordPiece Tokenizer – Subword Handling for BERT-like Feedback Understanding",
+    "description": "You are developing a BERT-like transformer model to process user feedback on products and services. Since users often use rare or exaggerated words like \"greeeeat\" or \"unbelievable\", you use a WordPiece tokenizer to break unknown or long words into meaningful subword units.",
+    "test_cases": [
+      {
+        "input": "unbelievable",
+        "output": "Tokens     : ['unbelievable']"
+      },
+      {
+        "input": "disappointed",
+        "output": "Tokens     : ['disappointed']"
+      },
+      {
+        "input": "greeeeat",
+        "output": "Tokens     : ['gr', '##ee', '##ee', '##at']"
+      }
+    ],
+    "id": "50"
+  },
+  {
+    "title": "SentencePiece (Unigram LM)",
+    "description": "Scenario:\nYou are building a text normalization system for a shopping app's chatbot. Users frequently enter continuous words without spaces like \"checkoutnow\" or \"bestdealoffer\".\n To handle such cases, you use SentencePiece with Unigram LM, which can segment words from raw character sequences and learn meaningful subword units without relying on whitespace.\nSave corpus for training (file: english_corpus.txt)\ngood product\nsuper man\ncheckout now\nlimited offer\nbest buy on mobile\ndeal of the day\ndiscount applied\nfree delivery now\nbuy 1 get 1\nbig sale happening\n[Requirements:      \ninput='/content/drive/MyDrive/LLM SKILL QUESTIONS/sample.txt',\n    model_prefix='sp_en',\n    vocab_size=40,  \n    model_type='unigram',\n    character_coverage=1.0\n]\n",
+    "test_cases": [
+      {
+        "input": "goodproduct",
+        "output": "Tokens     : ['▁', 'g', 'o', 'od', 'p', 'r', 'od', 'u', 'c', 't']"
+      },
+      {
+        "input": "superman",
+        "output": "Tokens     : ['▁', 's', 'u', 'p', 'er', 'm', 'a', 'n']"
+      },
+      {
+        "input": "checkoutnow",
+        "output": "Tokens     : ['▁', 'c', 'he', 'c', 'k', 'o', 'u', 't', 'n', 'o', 'w']"
+      },
+      {
+        "input": "limitedoffer",
+        "output": "Tokens     : ['▁', 'li', 'm', 'i', 't', 'ed', 'o', 'f', 'f', 'er']"
+      },
+      {
+        "input": "bestbuyonmobile",
+        "output": "Tokens     : ['▁b', 'e', 's', 't', 'b', 'u', 'y', 'o', 'n', 'm', 'o', 'b', 'i', 'l', 'e']"
+      }
+    ],
+    "id": "51"
+  },
+  {
+    "title": "Byte-Level BPE Tokenizer",
+    "description": "Scenario:\nYou’re developing a tokenizer for a social media analysis system. Since posts often include emojis, non-ASCII characters, and noisy multilingual text, you use a Byte-Level BPE tokenizer similar to what GPT-2/GPT-3 use.\nIt operates at the byte level and can encode any Unicode character (e.g., emojis, accented letters) without [UNK].\n",
+    "test_cases": [
+      {
+        "input": "I ❤️ Python!",
+        "output": "Tokens     : ['I', 'ĠâĿ', '¤', 'ï¸ı', 'ĠPython', '!']"
+      },
+      {
+        "input": "gr8 work 👍",
+        "output": "Tokens     : ['gr', '8', 'Ġwork', 'ĠðŁĳ', 'į']"
+      },
+      {
+        "input": "Olá",
+        "output": "Tokens     : ['Ol', 'Ã¡']"
+      }
+    ],
+    "id": "52"
+  },
+  {
+    "title": "Sentence-Level (Whitespace) Tokenizer",
+    "description": "Scenario:\nYou’re building a lightweight NLP prototype where tokens are simply split based on whitespace. It’s fast, naive, and requires no training.",
+    "test_cases": [
+      {
+        "input": "Welcome to AI world!",
+        "output": "Tokens     : ['Welcome', 'to', 'AI', 'world!']"
+      },
+      {
+        "input": "Hello   there",
+        "output": "Tokens     : ['Hello', 'there']"
+      },
+      {
+        "input": "See you soon!",
+        "output": "Tokens     : ['See', 'you', 'soon!']"
+      }
+    ],
+    "id": "53"
+  },
+  {
+    "title": "Regex-Based Tokenizer",
+    "description": "Scenario:\nYou are building a tweet processor to extract structured tokens like hashtags, mentions, URLs, emojis, and words using custom regular expressions.\n",
+    "test_cases": [
+      {
+        "input": "@user thanks for #help!",
+        "output": "Tokens     : ['@user', 'thanks', 'for', '#help', '!']"
+      },
+      {
+        "input": "Visit http://bit.ly/link",
+        "output": "Tokens     : ['Visit', 'http://bit.ly/link']"
+      },
+      {
+        "input": "LOL😂!!!",
+        "output": "Tokens     : ['LOL', '😂', '!', '!', '!']"
+      }
+    ],
+    "id": "54"
+  },
+  {
+    "title": "Word-Level Tokenizer – Scenario: Tokenizing Legal Documents",
+    "description": "You’re developing a Legal Document Preprocessor for a law firm. Legal contracts contain formal phrases, clauses separated by semicolons or commas, and compound terms (e.g., “non-disclosure”, “third-party”). You need to tokenize the sentences into meaningful words while preserving punctuation and legal terminology for downstream processing (like clause classification or entity extraction).\n",
+    "test_cases": [
+      {
+        "input": "This Agreement is made on July 8, 2025.",
+        "output": "Tokens     : ['This', 'Agreement', 'is', 'made', 'on', 'July', '8', ',', '2025', '.']"
+      },
+      {
+        "input": "The party agrees to a non-disclosure obligation.",
+        "output": "Tokens     : ['The', 'party', 'agrees', 'to', 'a', 'non', '-disclosure', 'obligation', '.']"
+      },
+      {
+        "input": "Payment shall be made within 30 days; interest applies thereafter.",
+        "output": "Tokens     : ['Payment', 'shall', 'be', 'made', 'within', '30', 'days', ';', 'interest', 'applies', 'thereafter', '.']"
+      },
+      {
+        "input": "Any breach by a third-party shall be liable.",
+        "output": "Tokens     : ['Any', 'breach', 'by', 'a', 'third', '-party', 'shall', 'be', 'liable', '.']"
+      },
+      {
+        "input": "Subject to applicable law, changes may occur.",
+        "output": "Tokens     : ['Subject', 'to', 'applicable', 'law', ',', 'changes', 'may', 'occur', '.']"
+      }
+    ],
+    "id": "55"
+  },
+  {
+    "title": "Handling Out-of-Vocabulary (OOV) Words with BPE",
+    "description": "In real-world chat applications, users often make spelling mistakes or use new slang. A BPE tokenizer must handle these out-of-vocabulary words by breaking them into known subword units instead of dropping them. Your task is to implement a simple tokenizer that simulates this behavior.\n",
+    "test_cases": [
+      {
+        "input": "The chatbot's respsonse was unbeleivable.",
+        "output": "['the', 'chat', '##bot', \"##'s\", 'res', '##p', '##son', '##se', 'was', 'un', '##bel', '##ie', '##vable', '.']"
+      },
+      {
+        "input": "He made a typo: respsonse.",
+        "output": "['he', 'made', 'a', 'typo', ':', 'res', '##p', '##son', '##se', '.']"
+      },
+      {
+        "input": "Unbeleivable effort!",
+        "output": "['un', '##bel', '##ie', '##vable', 'effort', '!']"
+      },
+      {
+        "input": "The chatbot worked well.",
+        "output": "['the', 'chat', '##bot', 'worked', 'well', '.']"
+      },
+      {
+        "input": "Fix the respsonse quickly.",
+        "output": "['fix', 'the', 'res', '##p', '##son', '##se', 'quickly', '.']"
+      }
+    ],
+    "id": "56"
+  },
+  {
+    "title": "Tokenizing Social Media Text",
+    "description": "Social media posts often contain hashtags, usernames, and emojis. A tokenizer must split hashtags into meaningful subwords while keeping emojis intact as separate tokens. Your task is to implement such a tokenizer.\n",
+    "test_cases": [
+      {
+        "input": "I am so excited! #LLMlove",
+        "output": "['i', 'am', 'so', 'excited', '!', '#', 'll', '##m', '##love']"
+      },
+      {
+        "input": "Follow me @AI_bot 🤖",
+        "output": "['follow', 'me', '@', 'ai', '_', 'bot', '🤖']"
+      },
+      {
+        "input": "#MachineLearning is fun!",
+        "output": "['#', 'machine', '##learning', 'is', 'fun', '!']"
+      },
+      {
+        "input": "This model rocks 💯🔥",
+        "output": "['this', 'model', 'rocks', '💯', '🔥']"
+      },
+      {
+        "input": "New post by @JohnDoe!",
+        "output": "['new', 'post', 'by', '@', 'john', 'doe', '!']"
+      }
+    ],
+    "id": "57"
+  },
+  {
+    "title": "Tokenizing Contractions and Possessives",
+    "description": "In English, contractions like \"don't\" or possessives like \"Mary's\" must be split into meaningful tokens. Your task is to implement a tokenizer that correctly handles these cases.\n",
+    "test_cases": [
+      {
+        "input": "I don't know who's there.",
+        "output": "['i', 'don', \"##'t\", 'know', 'who', \"##'s\", 'there', '.']"
+      },
+      {
+        "input": "It's amazing!",
+        "output": "['it', \"##'s\", 'amazing', '!']"
+      },
+      {
+        "input": "Mary's book is here.",
+        "output": "['mary', \"##'s\", 'book', 'is', 'here', '.']"
+      },
+      {
+        "input": "They've done it.",
+        "output": "['they', \"##'ve\", 'done', 'it', '.']"
+      },
+      {
+        "input": "You're right.",
+        "output": "['you', \"##'re\", 'right', '.']"
+      }
+    ],
+    "id": "58"
+  },
+  {
+    "title": "Tokenizing Numbers and Scientific Notation",
+    "description": "Numbers appear in different formats like integers, decimals, and scientific notation. A tokenizer must break them consistently into smaller units without losing meaning.",
+    "test_cases": [
+      {
+        "input": "The distance is 1.5 million km.",
+        "output": "['the', 'distance', 'is', '1', '.', '5', 'million', 'km', '.']"
+      },
+      {
+        "input": "Value = 2.75e3",
+        "output": "['value', '=', '2', '.', '75', '##e', '##3']"
+      },
+      {
+        "input": "Pi ≈ 3.1415",
+        "output": "['pi', '≈', '3', '.', '1415']"
+      },
+      {
+        "input": "Temperature is -12.6C",
+        "output": "['temperature', 'is', '-', '12', '.', '6', 'c']"
+      },
+      {
+        "input": "Avogadro number 6.022e23",
+        "output": "['avogadro', 'number', '6', '.', '022', '##e', '##23']"
+      }
+    ],
+    "id": "59"
+  },
+  {
+    "title": " Handling Emojis as Distinct Tokens",
+    "description": "In modern chat and social media, emojis carry semantic meaning. A tokenizer should treat them as separate tokens and not merge them with words.\n",
+    "test_cases": [
+      {
+        "input": "That's awesome! 👍",
+        "output": "['that', \"##'s\", 'awesome', '!', '👍']"
+      },
+      {
+        "input": "Happy Birthday 🎉🎂",
+        "output": "['happy', 'birthday', '🎉', '🎂']"
+      },
+      {
+        "input": "Good job 💯🔥",
+        "output": "['good', 'job', '💯', '🔥']"
+      },
+      {
+        "input": "Let's party 🥳🎊",
+        "output": "['let', \"##'s\", 'party', '🥳', '🎊']"
+      },
+      {
+        "input": "I love it 😂😍",
+        "output": "['i', 'love', 'it', '😂', '😍']"
+      }
+    ],
+    "id": "60"
+  },
+  {
+    "title": "Multilingual Tokenization (German)",
+    "description": "Modern tokenizers must handle diacritics, compound words, and inflections in multilingual contexts.  In German, long compound words and accented characters should be split into meaningful subwords.  You are asked to tokenize German sentences into subwords and assign token IDs.\nSample vocabulary with token IDs (toy example)\nvocab = {\n    'guten': 23, 'morgen': 45, ',': 12, 'mein': 88, 'freund': 99, '.': 11,\n    'sch': 50, '##ön': 51, '##en': 52, 'tag': 53, '!': 1, 'wie': 54,\n    'geht': 55, \"'s\": 56, '?': 16,\n    'donau': 60, '##dampf': 61, '##schiff': 62, '##fahrts': 63, '##gesellschaft': 64,\n    'für': 70, 'dich': 71,\n    'stra': 72, '##ße': 73, 'ist': 11, 'lang': 74\n}\n",
+    "test_cases": [
+      {
+        "input": " Guten Morgen, mein Freund.",
+        "output": "Tokens: ['guten', 'morgen', ',', 'mein', 'freund', '.']\nToken IDs: [23, 45, 12, 88, 99, 11]\nExpected IDs: [23, 45, 12, 88, 99, 11]\nMatch: True"
+      },
+      {
+        "input": "Schönen Tag! Wie geht's?",
+        "output": "Tokens: ['sch', '##ön', '##en', 'tag', '!', 'wie', 'geht', \"'s\", '?']\nToken IDs: [50, 51, 52, 53, 1, 54, 55, 56, 16]\nExpected IDs: [50, 51, 52, 53, 1, 54, 55, 56, 16, 1]\nMatch: False"
+      },
+      {
+        "input": "Donaudampfschifffahrtsgesellschaft",
+        "output": "Tokens: ['donau', '##dampf', '##schiff', '##fahrts', '##gesellschaft']\nToken IDs: [60, 61, 62, 63, 64]\nExpected IDs: [60, 61, 62, 63, 64]\nMatch: True"
+      },
+      {
+        "input": "für dich",
+        "output": "Tokens: ['für', 'dich']\nToken IDs: [70, 71]\nExpected IDs: [70, 71]\nMatch: True"
+      },
+      {
+        "input": "straße ist lang.",
+        "output": "Tokens: ['stra', '##ße', 'ist', 'lang', '.']\nToken IDs: [72, 73, 11, 74, 11]\nExpected IDs: [72, 73, 11, 74, 3]\nMatch: False"
+      }
+    ],
+    "id": "61"
+  },
+  {
+    "title": "Tokenization of Numbers and Scientific Notation",
+    "description": "In text data, numbers appear in various forms such as integers, decimals, and scientific notation.  A tokenizer must consistently split digits, decimal points, and scientific symbols into subwords.  You are asked to tokenize sentences containing numbers, decimals, and exponential formats.\n\nvocab = {\n    'the': 4, 'distance': 34, 'is': 12, '1': 55, '.': 88, '5': 42, 'million': 78,\n    'kilometers': 90, 'or': 11, '##e': 33, '##6': 31, 'km': 22,\n    'value': 65, '=': 10, '2': 21, '-': 19, '3': 22,\n    'temp': 35, '273': 94, '15': 95, '°': 96, 'c': 67,\n    'pi': 13, 'approx': 36, '14159': 97,\n    ',': 89, '000': 98\n}\n",
+    "test_cases": [
+      {
+        "input": "The distance is 1.5 million kilometers or 1.5e6 km.",
+        "output": "Tokens: ['the', 'distance', 'is', '1', '.', '5', 'million', 'kilometers', 'or', '1', '.', '5', '##e', '##6', 'km', '.']\nToken IDs: [4, 34, 12, 55, 88, 42, 78, 90, 11, 55, 88, 42, 33, 31, 22, 88]\nExpected IDs: [4, 34, 12, 55, 6, 42, 78, 90, 11, 55, 6, 42, 33, 31, 22, 5]\nMatch: False"
+      },
+      {
+        "input": "Value = 2e-3",
+        "output": "Tokens: ['value', '=', '2', '##e', '-', '3']\nToken IDs: [65, 10, 21, 33, 19, 22]\nExpected IDs: [65, 10, 21, 33, 19, 22]\nMatch: True"
+      },
+      {
+        "input": "Temp is -273.15°C",
+        "output": "Tokens: ['temp', 'is', '-', '273', '.', '15', '°', 'c']\nToken IDs: [35, 12, 19, 94, 88, 95, 96, 67]\nExpected IDs: [35, 12, 19, 94, 88, 95, 96, 67]\nMatch: True"
+      },
+      {
+        "input": "Pi approx 3.14159",
+        "output": "Tokens: ['pi', 'approx', '3', '.', '14159']\nToken IDs: [13, 36, 22, 88, 97]\nExpected IDs: [13, 36, 22, 88, 97]\nMatch: True"
+      },
+      {
+        "input": "1,000,000 or 1e6",
+        "output": "Tokens: ['1', ',', '000', ',', '000', 'or', '1', '##e', '6']\nToken IDs: [55, 89, 98, 89, 98, 11, 55, 33, -1]\nExpected IDs: [55, 89, 98, 89, 98, 11, 55, 33, 31]\nMatch: False"
+      }
+    ],
+    "id": "62"
+  },
+  {
+    "title": "Small Vocabulary Size Impact",
+    "description": "When the vocabulary size is very small, tokenizers often fall back to character-level subword units.  This leads to tokens being split into small parts with prefixes like ## to mark continuation.  You are asked to tokenize words into minimal character-level units and assign token IDs.\n\nvocab = {\n    'the': 12, 'q': 5, '##u': 11, '##ick': 23,\n    'b': 7, '##rown': 56, 'f': 8, '##ox': 99, '.': 4,\n    'h': 2, '##e': 3, '##l': 3, '##o': 4, '!': 1,\n    'd': 6, '##a': 7, '##t': 8,\n    'a': 5, '##i': 23,\n    'm': 9, '##o': 10, '##d': 11, '##el': 12\n}\n",
+    "test_cases": [
+      {
+        "input": "The quick brown fox.",
+        "output": "Tokens: ['the', 'q', '##u', '##ick', 'b', '##rown', 'f', '##ox', '.']\nToken IDs: [12, 5, 11, 23, 7, 56, 8, 99, 4]\nExpected IDs: [12, 5, 11, 23, 7, 56, 8, 99, 4]\nMatch: True"
+      },
+      {
+        "input": "Hello!",
+        "output": "Tokens: ['h', '##e', '##l', '##l', '##o', '!']\nToken IDs: [2, 3, 3, 3, 10, 1]\nExpected IDs: [2, 3, 3, 3, 4, 1]\nMatch: False"
+      },
+      {
+        "input": "data",
+        "output": "Tokens: ['d', '##a', '##t', '##a']\nToken IDs: [6, 7, 8, 7]\nExpected IDs: [6, 7, 8, 7]\nMatch: True"
+      },
+      {
+        "input": "ai",
+        "output": "Tokens: ['a', '##i']\nToken IDs: [5, 23]\nExpected IDs: [5, 23]\nMatch: True"
+      },
+      {
+        "input": "model",
+        "output": "Tokens: ['m', '##o', '##d', '##el']\nToken IDs: [9, 10, 11, 12]\nExpected IDs: [9, 10, 11, 12]\nMatch: True"
+      }
+    ],
+    "id": "63"
+  },
+  {
+    "title": "Tokenizing Contractions and Possessives",
+    "description": "In natural language, contractions (like don't, isn't) and possessives (like John's) are common.  A tokenizer must split them properly into the base word plus suffix ('t, 's, 'll, etc.).  You are asked to tokenize contractions and possessives while assigning token IDs.\nvocab = {\n    'i': 1, 'don': 2, \"'t\": 3, 'know': 4, 'who': 5, \"'s\": 6, 'there': 7, '.': 8,\n    'it': 9, 'mary': 11, \"'s_mary\": 12, # handling repeated 's'\n    'she': 21, 'gone': 22, ',': 12, 'isn': 23, '?': 1,\n    'we': 24, \"'ll\": 15, 'meet': 25,\n    'they': 26, \"'ve\": 27, 'been': 28,\n    'john': 30, 'book': 31\n}\n",
+    "test_cases": [
+      {
+        "input": "I don't know who's there. It's Mary's.",
+        "output": "Tokens: ['i', 'don', \"'t\", 'know', 'who', \"'s\", 'there', '.', 'it', \"'s\", 'mary', 's', '.']\nToken IDs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 6, 11, -1, 8]\nExpected IDs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]\nMatch: False"
+      },
+      {
+        "input": "She's gone, isn't she?",
+        "output": "Tokens: ['she', \"'s\", 'gone', ',', 'isn', \"'t\", 'she', '?']\nToken IDs: [21, 6, 22, 12, 23, 3, 21, 1]\nExpected IDs: [21, 16, 22, 12, 23, 3, 21, 1]\nMatch: False"
+      },
+      {
+        "input": "we'll meet",
+        "output": "Tokens: ['we', \"'ll\", 'meet']\nToken IDs: [24, 15, 25]\nExpected IDs: [24, 15, 25]\nMatch: True"
+      },
+      {
+        "input": "they've been there",
+        "output": "Tokens: ['they', \"'ve\", 'been', 'there']\nToken IDs: [26, 27, 28, 7]\nExpected IDs: [26, 27, 28, 29]\nMatch: False"
+      },
+      {
+        "input": "John's book",
+        "output": "Tokens: ['john', \"'s\", 'book']\nToken IDs: [30, 6, 31]\nExpected IDs: [30, 16, 31]\nMatch: False"
+      }
+    ],
+    "id": "64"
+  },
+  {
+    "title": "WordPiece Tokenization in Sentiment Analysis",
+    "description": "A company is building a sentiment analysis system to analyze customer reviews.\n Since customers may use complex words like \"unhappiness\" or \"predictability\", the model must break them into smaller subwords for better understanding.\n WordPiece tokenization helps the system handle rare or unseen words while keeping vocabulary size manageable.",
+    "test_cases": [
+      {
+        "input": "The product caused unhappiness.",
+        "output": "Output: ['the', 'product', 'caused', 'un', '##ha', '##pp', '##iness', '.']"
+      },
+      {
+        "input": "This app supports internationalization.",
+        "output": "Output: ['this', 'app', 'supports', 'international', '##ization', '.']"
+      },
+      {
+        "input": "I dislike the reorganization of menus.",
+        "output": "Output: ['i', 'dislike', 'the', 'reorganization', 'of', 'menu', '##s', '.']"
+      },
+      {
+        "input": "The predictability of service is poor.",
+        "output": "Output: ['the', 'predict', '##ability', 'of', 'service', 'is', 'poor', '.']"
+      },
+      {
+        "input": "Microorganisms were found in the sample.",
+        "output": "Output: ['micro', '##org', '##ani', '##sms', 'were', 'found', 'in', 'the', 'sample', '.']"
+      }
+    ],
+    "id": "65"
+  },
+  {
+    "title": "SentencePiece Tokenization in Multilingual Chat Apps",
+    "description": "A multilingual chat application needs to support users typing in English, Spanish, and Japanese.  Instead of relying on spaces, SentencePiece tokenization can directly work on raw text.  This ensures consistent subword segmentation for different languages and scripts without custom rules.",
+    "test_cases": [
+      {
+        "input": "Hello world!",
+        "output": "['▁Hello','▁world','!']"
+      },
+      {
+        "input": "¿Cómo estás?",
+        "output": "['▁¿','Cómo','▁estás','?']"
+      },
+      {
+        "input": "今日は晴れです。",
+        "output": "['▁今日','は','晴','れ','です','。']"
+      },
+      {
+        "input": "I love tacos 🌮",
+        "output": "['▁I','▁love','▁tacos','▁🌮']"
+      },
+      {
+        "input": "メールを送ってください。",
+        "output": "['▁メール','を','送','って','ください','。']"
+      }
+    ],
+    "id": "66"
+  },
+  {
+    "title": "Tokenizing Conversational Fillers & Interjections in Voice Assistants",
+    "description": "A voice assistant (like Alexa, Siri, or Google Assistant) must understand informal conversations.  Users often use fillers, interjections, and hesitations like \"uh\", \"um\", \"oh\", \"wow\".  Correct tokenization ensures the assistant interprets meaning while ignoring unnecessary noise.",
+    "test_cases": [
+      {
+        "input": "Oh, wow, that's so cool, right?",
+        "output": "['oh', ',', 'wow', ',', \"that's\", 'so', 'cool', ',', 'right', '?']"
+      },
+      {
+        "input": "Um... I guess.",
+        "output": "['um', '.', '.', '.', 'i', 'guess', '.']"
+      },
+      {
+        "input": "Erm, maybe.",
+        "output": "['erm', ',', 'maybe', '.']"
+      },
+      {
+        "input": "Ah! That's it.",
+        "output": "['ah', '!', \"that's\", 'it', '.']"
+      },
+      {
+        "input": "Yikes, oops.",
+        "output": "['yikes', ',', 'oops', '.']"
+      }
+    ],
+    "id": "67"
+  },
+  {
+    "title": "Tokenizing URLs & Email Addresses in Cybersecurity Logs",
+    "description": "Cybersecurity analysts often process logs containing URLs, email addresses, and IPs.\n A tokenizer must preserve these as single meaningful tokens to detect phishing, malware links, or suspicious emails.  Improper tokenization could break URLs/emails, reducing detection accuracy.",
+    "test_cases": [
+      {
+        "input": "Visit https://example.com for details.",
+        "output": "['Visit', 'https://example.com', 'for', 'details', '.']"
+      },
+      {
+        "input": "Email sent to john.doe@example.org successfully.",
+        "output": "['Email', 'sent', 'to', 'john.doe@example.org', 'successfully', '.']"
+      },
+      {
+        "input": "Check http://malicious.site/path",
+        "output": "['Check', 'http://malicious.site/path']"
+      },
+      {
+        "input": "User login from 192.168.1.1 failed.",
+        "output": "['User', 'login', 'from', '192.168.1.1', 'failed', '.']"
+      },
+      {
+        "input": "FTP upload: ftp://server.com/file.txt completed.",
+        "output": "['FTP', 'upload', 'ftp://server.com/file.txt', 'completed', '.']"
+      }
+    ],
+    "id": "68"
+  },
+  {
+    "title": "Tokenizing Social Media Text with Hashtags, Mentions, Emojis, and Slang",
+    "description": "Social media posts often contain hashtags (#), mentions (@), emojis, abbreviations, and slang.  A tokenizer must preserve the semantic meaning of these elements while splitting text into meaningful subwords.  This is crucial for sentiment analysis, trend detection, and social media monitoring.",
+    "test_cases": [
+      {
+        "input": "They sound amaaazing and feel super light.",
+        "output": "Tokens: ['[CLS]', 'they', 'sound', 'amaaazing', 'and', 'feel', 'super', 'light', '.', '[SEP]']\nIDs: [1, 80, 46, 109, 38, 87, 102, 99, 6, 2]"
+      }
+    ],
+    "id": "69"
+  }
+]

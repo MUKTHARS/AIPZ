@@ -1,0 +1,66 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:31:53.612030",
+    "answers": [
+      {
+        "questionId": "LR_006",
+        "partId": "Data Preprocessing & Feature Engineering",
+        "code": "import numpy as np \r\nimport pandas as pd \r\n\r\ntest_data = pd.read_csv(r'/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/test.csv')\r\ntrain_data = pd.read_csv(r'/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/train.csv')\r\nprint(test_data.isnull().sum())\r\nprint(test_data)",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:33:00.256797",
+    "answers": [
+      {
+        "questionId": "LR_007",
+        "partId": "Data Preprocessing",
+        "code": "import numpy as np \r\nimport pandas as pd \r\n\r\ntest_data = pd.read_csv(r'/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/test.csv')\r\ntrain_data = pd.read_csv(r'/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/train.csv')\r\nprint(test_data.isnull().sum())\r\nprint(test_data)",
+        "passed": false
+      },
+      {
+        "questionId": "LR_007",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_007",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_007",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

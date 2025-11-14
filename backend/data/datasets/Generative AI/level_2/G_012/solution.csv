@@ -1,0 +1,10 @@
+Speaker,StartTime(s),EndTime(s),Transcript
+Speaker 1,0.0,2.0,hello good morning can you
+Speaker 2,2.0,4.0,[Unrecognized Speech]
+Speaker 1,4.0,6.0,the connection seems perfect today
+Speaker 2,6.0,8.0,great let's start the discussion
+Speaker 1,8.0,10.0,what about our project timeline
+Speaker 2,10.0,12.0,I think we should complete the testing
+Speaker 1,12.0,14.0,is my next week perfect
+Speaker 2,14.0,16.0,let's wrap it up and meet again tomorrow
+Speaker 1,16.0,16.2,[Unrecognized Speech]

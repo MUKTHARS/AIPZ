@@ -1,0 +1,28 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:37:11.785811",
+    "answers": [
+      {
+        "questionId": "LR_001",
+        "partId": "Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_001",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_001",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

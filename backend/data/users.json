@@ -1,0 +1,2695 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2b$10$gXUvk0vqautGW8x9yjA3EebdMrdjcB8t/XQ2yOSvgx8yxUl95RJTu",
+      "role": "admin",
+      "progress": {
+        "Sping Boot": {
+          "level1": "unlocked"
+        },
+        "final_test_subject": {
+          "level1": "unlocked"
+        },
+        "Python Basics": {
+          "level1": "unlocked"
+        },
+        "Phone Software": {
+          "level1": "unlocked"
+        },
+        "C": {
+          "level1": "unlocked"
+        },
+        "R Programming": {
+          "level1": "unlocked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "completed"
+        },
+        "Generative AI": {
+          "level2": "completed",
+          "level1": "unlocked"
+        }
+      }
+    },
+    {
+      "username": "student1",
+      "password": "$2b$10$KNx1JsmoBvzUeZkmQQ3N4OBaThn2Nk8TLLsF.ooIHlcJnLZkTGSX.",
+      "role": "student",
+      "progress": {
+        "C": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked"
+        },
+        "Deffusor": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Generative AI": {
+          "level1": "completed",
+          "level2": "completed",
+          "level3": "completed",
+          "level4": "completed"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "completed",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "completed",
+          "level3": "locked"
+        },
+        "Phone Software": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Python Basics": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "completed",
+          "level2": "completed"
+        },
+        "Sping Boot": {
+          "level1": "unlocked"
+        },
+        "ds": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "final_test_subject": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "ml": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked"
+        },
+        "web_dev": {
+          "level1": "unlocked",
+          "level2": "locked"
+        }
+      }
+    },
+    {
+      "username": "student2",
+      "password": "$2b$10$KNx1JsmoBvzUeZkmQQ3N4OBaThn2Nk8TLLsF.ooIHlcJnLZkTGSX.",
+      "role": "student",
+      "progress": {
+        "ds": {
+          "level1": "completed",
+          "level2": "completed",
+          "level3": "unlocked",
+          "level4": "locked"
+        },
+        "dsa": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "NLP": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "LLM": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "web_dev": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Sping Boot": {
+          "level1": "unlocked"
+        },
+        "final_test_subject": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Python Basics": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Phone Software": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "C": {
+          "level1": "unlocked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        }
+      }
+    },
+    {
+      "username": "MACHINE_LEARNING",
+      "password": "$2b$12$Em443PNcL8uLXhRcJEDEtu1BOx8Xlt.nH2VeXKK19MZw8c.gZfnwS",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "GEN-AI",
+      "password": "$2b$12$iYsTrZo6NzuOmVjLdrtb5OnKFT8ToYkos3cBAEb5w/ikGyNUwE5SC",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "R-PRO",
+      "password": "$2b$12$1C9V.jhSJsWxzlpp9wb.zO3Y7oVklEYXQDLg0ThomE6gCU2/XTHK6",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "LLM",
+      "password": "$2b$12$a8URsVmBoTXVk9ZcMddKceapcIu3efRYM.ekpQCjYpprL6CMArq4O",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "suriya",
+      "password": "$2b$12$dTmmCdYw52YzZPgbRUQInea7kc7X4Mo3VowI5BKbbIzayT6XqDDNW",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "7376242AD165",
+      "password": "$2b$12$ZIHDcUT.j85n9emKDdVyK.DZSV8jpQ5OoOotzObq46h2LPCmENy5G",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS309",
+      "password": "$2b$12$3tyFyImh0t8baYZXX8oh9eA66Jbpv1UN6lriryqaPDdryV97gwgd6",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS363",
+      "password": "$2b$12$cWFkY7Jkky9adrtcojNhvuyUqWqgagSmxA9u1Y44mpHPgFNMfRpr6",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS415",
+      "password": "$2b$12$KqgfaPhqXwcBQA877ggKZusgEowPRl43b7tUVudaYiK7mhpKVuZ5W",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS353",
+      "password": "$2b$12$1zQPIOnoyN9AoVumyMoiPeC8Z03dv32kXP505QCntnuQA64MmgKDG",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS267",
+      "password": "$2b$12$mqzV57Ym9yEZjabSHUF0r.E0SQAcRzpqLDCY/3z.8bTXX.PanqNmS",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS408",
+      "password": "$2b$12$e6AEj265MGBRyE2IYe8jcughYI2nrj2LX7iE5hJUUsx4dnMpz4CvK",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242IT333",
+      "password": "$2b$12$.UCkWLLr4qWHqQFKcQ/h1uMlqPlTnYi3t8InrRML3WPIUySJf9tM2",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS465",
+      "password": "$2b$12$/AiWmQXnbw0ovkRNZrVaoOFLpW8/vcwsNWvx8XHo6ciukseokGQG.",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS233",
+      "password": "$2b$12$ASVNh3NtdpZbVSR.1MRKdeiqz7MO3VgQiWuOlOuZURWNDkiUGlrma",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS262",
+      "password": "$2b$12$C/iu4ozQCjrZoHxzJAFRw.UjDrB30WaYRi7VihMRmhSJrUchkzwme",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242CB152",
+      "password": "$2b$12$b3UfZEeESbzYHdPfdTdSnuXAg/C651gHl9lnZH5/O4qvPSlm1mcma",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242CB156",
+      "password": "$2b$12$6HP1r.pMEWjIqsIjiT4fDe7GRlLN0fjNx7qrGorb3Q4QUCQhxSMue",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD113",
+      "password": "$2b$12$nFBK54N403sEJrn2eQpG6eSaNWPUNn.7HYqbRzV8.yoQkDiKCoRqe",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS343",
+      "password": "$2b$12$1HhPvH3J9QmF1iZBEltdS.AOujfXsFAMLJDxUvrenkbFxFhIpbEBS",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS146",
+      "password": "$2b$12$3yUOSeT5qTk3jJHeLVFhHeMlUeP2sVycyDOyGntDS.cm6okDDgnJW",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS117",
+      "password": "$2b$12$u7L.sdwKf8sL1KxfAV38v.33QkFMGtYBnw99vL.MWUlTOIqWvxGje",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD328",
+      "password": "$2b$12$dl5kAN1N.AFgKUKe4Kkb1e4fogn6k1edVsaMAV5hAd.mpg4oa1LaW",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD231",
+      "password": "$2b$12$jMtxJHxIanLsZ.PSveLD6OuQ6/o7a1pcNLlKznurLmUieaDJKtHJ2",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD121",
+      "password": "$2b$12$4wGYVBRIRVYJoFM0No4JpO33FnesWwB0bea1GVEtw0iUKKse4YgiW",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD206",
+      "password": "$2b$12$I5T1oDqZUxadyETx7/hE.OdONFd32g44Z0u2i/Btbw5I0z4TdUcdG",
+      "role": "student",
+      "progress": {
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS452",
+      "password": "$2b$12$f1fLnMT0vM9iAKSwL82Ll.NGPoohqgvlYh06qTg2uwSk6NW70ycTO",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD192",
+      "password": "$2b$12$/x0415sO7/Rb2hTw7Obx6eA.JPOXyDUWAKBSahwQRE2QEkBfmt4Sa",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS405",
+      "password": "$2b$12$41pps7MRZAI9pOI0qYtX.uVInHdZubfPW5/95nra5ANf40vYf4ODO",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS435",
+      "password": "$2b$12$XWV3B.nU/Tw6SzGP60G8EOjQ/5crPs57p1YV5VEMfSuGErMHIcNPq",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS456",
+      "password": "$2b$12$iwx9conS4xqbs3BebuCpm.BW7khC//XbD2CZ6CCzzz3YHJTOXuSf6",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS286",
+      "password": "$2b$12$/yvkBOMzbFGflYj3hDp3PuFECBeJo1NcO3f4C0b1Wm10/F9ZP82g6",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS231",
+      "password": "$2b$12$ij0AElYSkWD/UxASOLqFGe07hxTitqaWcu14q4og6hxnkpY1uneT6",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS375",
+      "password": "$2b$12$ZMLI3coxDfVacGdEmgo2Lu017nZFK3PMlbNy7BB9jKGu4rwlvDz3O",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242IT182",
+      "password": "$2b$12$DOP9Pj1O.AzJUNXOSpw7AeF8DJ7HNCK/OBLmIdvC1ubpGIOe/AFcC",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD122",
+      "password": "$2b$12$LlIfN0qDMbR8Lehc.ESVd.HrSvwDnLOcQnZWDn07x4o64yH5Esxvy",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242CB158",
+      "password": "$2b$12$spapLIpvxo6VQT72j7AvuePgp7BHDEQzgMtAl4dtRbUB/4CPck/.C",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD327",
+      "password": "$2b$12$x6rhdXJDh19aWpeVYliFTeNiIkI46QxXH2HhwbgR/aBVO95Qu9qSu",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD337",
+      "password": "$2b$12$UWv9.QhHHWm8dk4vP2BLMux4QyXmPLrVo5Cv9eQfaWcdvgRY8T08C",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS225",
+      "password": "$2b$12$3bO9QpESrN.TOP7DRgsYb.4zc6V.yYteHY1mkQeipLMHONcF.8N1W",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS301",
+      "password": "$2b$12$VEa3VDtX34STP9Dkz50ba.K5y7qZ31xDE1wBTDwFskFd2j43Vdviq",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS418",
+      "password": "$2b$12$r5fQ/mXTGadepjiYz3LJROkDPOpAYpe9v0suzkW9X.8BQrVAYtVD6",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD306",
+      "password": "$2b$12$xAJPLZD35kW3E0eJh5uPB.w6DULLCTyLtWVT8qQ1y6MyN8jie/4zy",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS319",
+      "password": "$2b$12$1ZwCGHNTmyWbVe75OP05LuWYP2zU8wrsnnY846rQO48z94YyTISpu",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS238",
+      "password": "$2b$12$xA8LHPjuJbxG2LH7Exv3wOq5AnlI9zXzgKWQMR330nsWBANMNsVSi",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242AD149",
+      "password": "$2b$12$/ug/gy9ZJCAmRT8ZifKhRO7YAgjjhLvNM9enyT6AJiB.K58Nz.1UO",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS290",
+      "password": "$2b$12$dDCtFla0KmLp5IlVzSfkie0i3yLyW1ajI6Q0zAKOrzgOF2xAFPOPC",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242CB109",
+      "password": "$2b$12$wUG9FUzLATqnVvu6l0OVduI4cRQ52EK.oiDnQgF1tdSlkSHWMw27a",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376242IT213",
+      "password": "$2b$12$ZpmOQNGtqkQ3YCAkZV5a9ersmXKEAX3B3Z7AZJbKfulLwuQfZq44W",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS444",
+      "password": "$2b$12$pQISL5zta2/CZcY.yD2KZOjt./9f5T39F7LWbexqqpmO5gOOFj5HK",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS291",
+      "password": "$2b$12$EZivkJdW9.ZcPplGhvf3hOSshYDxxn7SpVooFmiOJrEcVuOluAaZG",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS165",
+      "password": "$2b$12$TvKjXOn9TZBUe48XlISLieGoI.dFunFh9K/zz367Q.gAbqGRsFr7u",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "7376241CS173",
+      "password": "$2b$12$ddqoti7NRviMBwrDTatppeWfw9wwGTH5Dx5t/HjjdTtGLauqK3mle",
+      "role": "student",
+      "progress": {
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        }
+      }
+    },
+    {
+      "username": "PS_AI",
+      "password": "$2b$12$Mg4w.sA4O1cssG6.bGOILuFEc73vdDIEQpiLObRTLgj3aGGRJE04i",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "DATA_SCIENCE",
+      "password": "$2b$12$z9u0yoWdX6CIvwdvXI8.puIbcKW5krKvHrN0ji5z3Lmj3JDpL/3Ye",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "IMAGE_PRO",
+      "password": "$2b$12$y1B11uU0pnEUDwiM8sXse.J3P3CmhCh/6.gD0H0UjN52YYixkZjye",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "HARIPRIYA",
+      "password": "$2b$12$QMu4hcKJPPF1puzAS00W4uOfN4D/8GrnZ9rQR7v.gczlaAAXPn6qq",
+      "role": "admin",
+      "progress": {}
+    },
+    {
+      "username": "ai",
+      "password": "$2b$12$OffCawHPmcqjZPrPi1pr8uILE5chWRZTSxEUNq.03DPeEYa2WWJDG",
+      "role": "student",
+      "progress": {
+        "ds": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "ml": {
+          "level1": "completed",
+          "level2": "unlocked"
+        },
+        "Generative AI": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "R Programming": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ImageProcessing": {
+          "level1": "unlocked"
+        }
+      }
+    }
+  ]
+}

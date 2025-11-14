@@ -1,0 +1,34 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:47:05.158715",
+    "answers": [
+      {
+        "questionId": "LR_006",
+        "partId": "Data Preprocessing & Feature Engineering",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_006",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

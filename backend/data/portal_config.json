@@ -1,0 +1,10 @@
+{
+  "security": {
+    "copy": false,
+    "cut": false,
+    "fullscreen": false,
+    "paste": false,
+    "select": false,
+    "tabswitchwarning": false
+  }
+}

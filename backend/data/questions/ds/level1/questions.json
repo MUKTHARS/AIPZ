@@ -1,0 +1,808 @@
+[
+  {
+    "id": "1",
+    "title": "Create numpy array from Input",
+    "description": "Write a Python script that reads a line of space-separated numbers from input, creates a numpy array from them, and then prints the numpy array.",
+    "test_cases": [
+      {
+        "input": "0 -1 -2",
+        "output": "[ 0 -1 -2]"
+      },
+      {
+        "input": "1 2 3",
+        "output": "[1 2 3]"
+      },
+      {
+        "input": "10 20 30 40",
+        "output": "[10 20 30 40]"
+      },
+      {
+        "input": "5",
+        "output": "[5]"
+      },
+      {
+        "input": "99 88",
+        "output": "[99 88]"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Check numpy array Size from Input",
+    "description": "Write a Python script that reads a line of space-separated numbers, creates a numpy array from them, and prints the numpy array's size (number of elements).",
+    "test_cases": [
+      {
+        "input": "2 4 6 8",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "3"
+      },
+      {
+        "input": "10 20 30 40 50",
+        "output": "5"
+      },
+      {
+        "input": "7",
+        "output": "1"
+      },
+      {
+        "input": "9 8",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "numpy array of Ones",
+    "description": "Write a Python script that reads a number n from input and creates an numpy array of n ones using np.ones(), then prints it.",
+    "test_cases": [
+      {
+        "input": "3",
+        "output": "[1. 1. 1.]"
+      },
+      {
+        "input": "5",
+        "output": "[1. 1. 1. 1. 1.]"
+      },
+      {
+        "input": "1",
+        "output": "[1.]"
+      },
+      {
+        "input": "4",
+        "output": "[1. 1. 1. 1.]"
+      },
+      {
+        "input": "2",
+        "output": "[1. 1.]"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Add a Number to an numpy array",
+    "description": "Write a Python script that reads a line of space-separated numbers to create an numpy array, reads a single number on the next line, and prints the numpy array after adding the single number to each element.",
+    "test_cases": [
+      {
+        "input": "5 10\n2",
+        "output": "[7 12]"
+      },
+      {
+        "input": "1 2 3\n5",
+        "output": "[6 7 8]"
+      },
+      {
+        "input": "21 76\n10",
+        "output": "[31 86]"
+      },
+      {
+        "input": "0 0\n-5",
+        "output": "[-5 -5]"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Count numpy array Elements",
+    "description": "Write a Python script that reads space-separated numbers, creates an numpy array, and prints how many elements are in the numpy array.",
+    "test_cases": [
+      {
+        "input": "1 2 3",
+        "output": "3"
+      },
+      {
+        "input": "5 10 15 20",
+        "output": "4"
+      },
+      {
+        "input": "7",
+        "output": "1"
+      },
+      {
+        "input": "1 2 3 4 5 6",
+        "output": "6"
+      },
+      {
+        "input": "10 20",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Find Biggest Number",
+    "description": "Write a Python script that reads space-separated numbers, creates an numpy array, and prints the biggest number.",
+    "test_cases": [
+      {
+        "input": "1 5 3",
+        "output": "5"
+      },
+      {
+        "input": "10 2 8 6",
+        "output": "10"
+      },
+      {
+        "input": "7",
+        "output": "7"
+      },
+      {
+        "input": "15 25 5 30 20",
+        "output": "30"
+      },
+      {
+        "input": "-5 -1 -10",
+        "output": "-1"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Double All Numbers",
+    "description": "Write a Python script that reads space-separated numbers, creates an numpy array, multiplies each number by 2, and prints the result.",
+    "test_cases": [
+      {
+        "input": "1 2 3",
+        "output": "[2 4 6]"
+      },
+      {
+        "input": "5 10",
+        "output": "[10 20]"
+      },
+      {
+        "input": "0 1 4",
+        "output": "[0 2 8]"
+      },
+      {
+        "input": "3 6 9 12",
+        "output": "[6 12 18 24]"
+      },
+      {
+        "input": "-5",
+        "output": "[-10]"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Get First Element",
+    "description": "Write a Python script that reads space-separated numbers, creates an numpy array, and prints the first element.",
+    "test_cases": [
+      {
+        "input": "10 20 30",
+        "output": "10"
+      },
+      {
+        "input": "5 15 25 35",
+        "output": "5"
+      },
+      {
+        "input": "100",
+        "output": "100"
+      },
+      {
+        "input": "1 2 3 4 5 6 7",
+        "output": "1"
+      },
+      {
+        "input": "50 40",
+        "output": "50"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Add All Numbers",
+    "description": "Write a Python script that reads space-separated numbers, creates an numpy array, and prints the sum of all numbers.",
+    "test_cases": [
+      {
+        "input": "1 2 3",
+        "output": "6"
+      },
+      {
+        "input": "10 20",
+        "output": "30"
+      },
+      {
+        "input": "5",
+        "output": "5"
+      },
+      {
+        "input": "2 4 6 8",
+        "output": "20"
+      },
+      {
+        "input": "10 -5 3",
+        "output": "8"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Make Number Sequence",
+    "description": "Write a Python script that reads a number n and creates an numpy array with numbers from 1 to n using np.arange(1, n+1), then prints it.",
+    "test_cases": [
+      {
+        "input": "3",
+        "output": "[1 2 3]"
+      },
+      {
+        "input": "5",
+        "output": "[1 2 3 4 5]"
+      },
+      {
+        "input": "1",
+        "output": "[1]"
+      },
+      {
+        "input": "7",
+        "output": "[1 2 3 4 5 6 7]"
+      },
+      {
+        "input": "4",
+        "output": "[1 2 3 4]"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Replace Negatives with Absolute Mean",
+    "description": "Given a list of integers, create a numpy array and replace all negative numbers with the mean of the array's absolute values.",
+    "test_cases": [
+      {
+        "input": "1 -3 5 -2",
+        "output": "[1.   2.75 5.   2.75]"
+      },
+      {
+        "input": "-10 -5 -1",
+        "output": "[5.33 5.33 5.33]"
+      },
+      {
+        "input": "0 -7 7",
+        "output": "[0.   4.67 7.  ]"
+      },
+      {
+        "input": "4 -4 4",
+        "output": "[4. 4. 4.]"
+      },
+      {
+        "input": "-9 3",
+        "output": "[6. 3.]"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Circular Right Shift",
+    "description": "Perform a circular right shift of elements in a numpy array by k positions using numpy slicing.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4 | k=1",
+        "output": "[4 1 2 3]"
+      },
+      {
+        "input": "10 20 30 40 50 | k=2",
+        "output": "[40 50 10 20 30]"
+      },
+      {
+        "input": "5 6 7 | k=3",
+        "output": "[5 6 7]"
+      },
+      {
+        "input": "9 8 7 6 | k=5",
+        "output": "[6 9 8 7]"
+      },
+      {
+        "input": "0 1 2 | k=0",
+        "output": "[0 1 2]"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Replace Evens with Indices",
+    "description": "Replace all even elements in a numpy array with their corresponding index positions.",
+    "test_cases": [
+      {
+        "input": "5 6 7 8 9",
+        "output": "[5 1 7 3 9]"
+      },
+      {
+        "input": "2 4 6 8",
+        "output": "[0 1 2 3]"
+      },
+      {
+        "input": "1 3 5",
+        "output": "[1 3 5]"
+      },
+      {
+        "input": "10 11 12",
+        "output": "[0 11 2]"
+      },
+      {
+        "input": "7 8 9 10",
+        "output": "[7 1 9 3]"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Swap First and Last Columns",
+    "description": "Given a 2D numpy array, swap its first and last columns using slicing.",
+    "test_cases": [
+      {
+        "input": "[[1 2 3]; [4 5 6]]",
+        "output": "[[3 2 1]\n [6 5 4]]"
+      },
+      {
+        "input": "[[7 8]; [9 10]]",
+        "output": "[[8 7]; [10 9]]"
+      },
+      {
+        "input": "[[1 2 3]]",
+        "output": "[[3 2 1]]"
+      },
+      {
+        "input": "[[1]]",
+        "output": "[[1]]"
+      },
+      {
+        "input": "[[5 6 7]; [8 9 10]; [11 12 13]]",
+        "output": "[[7 6 5]; [10 9 8]; [13 12 11]]"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Find Second Maximum Unique Value",
+    "description": "From a given numpy array, find the second largest unique value. Return nan if not available.",
+    "test_cases": [
+      {
+        "input": "1 5 2 5 3",
+        "output": "3"
+      },
+      {
+        "input": "9 9 9",
+        "output": "nan"
+      },
+      {
+        "input": "4 1 7 3",
+        "output": "4"
+      },
+      {
+        "input": "10 20 30 40",
+        "output": "30"
+      },
+      {
+        "input": "100 50 100 25",
+        "output": "50"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Zero Border Elements",
+    "description": "Replace border elements of a 2D numpy array with zeros while keeping internal elements the same.",
+    "test_cases": [
+      {
+        "input": "[[1 2 3]; [4 5 6]; [7 8 9]]",
+        "output": "[[0 0 0]; [0 5 0]; [0 0 0]]"
+      },
+      {
+        "input": "[[5 5 5]; [5 5 5]; [5 5 5]]",
+        "output": "[[0 0 0]; [0 5 0]; [0 0 0]]"
+      },
+      {
+        "input": "[[1 2]; [3 4]]",
+        "output": "[[0 0]; [0 0]]"
+      },
+      {
+        "input": "[[9]]",
+        "output": "[[0]]"
+      },
+      {
+        "input": "[[10 20 30]; [40 50 60]; [70 80 90]; [100 110 120]]",
+        "output": "[[0 0 0]; [0 50 0]; [0 80 0]; [0 0 0]]"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Count Greater than Mean",
+    "description": "Count how many values in a numpy array are greater than its mean.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4 5",
+        "output": "2"
+      },
+      {
+        "input": "10 10 10",
+        "output": "0"
+      },
+      {
+        "input": "1 100",
+        "output": "1"
+      },
+      {
+        "input": "5",
+        "output": "0"
+      },
+      {
+        "input": "3 3 5 7",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Replace Max with Min",
+    "description": "Replace the maximum value in a numpy array with its minimum value.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4 5",
+        "output": "[1 2 3 4 1]"
+      },
+      {
+        "input": "10 20 10 20",
+        "output": "[10 10 10 10]"
+      },
+      {
+        "input": "5",
+        "output": "[5]"
+      },
+      {
+        "input": "7 7 7",
+        "output": "[7 7 7]"
+      },
+      {
+        "input": "0 -1 10",
+        "output": "[0 -1 -1]"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Reverse Each Row",
+    "description": "Reverse the order of elements in each row of a 2D numpy array.",
+    "test_cases": [
+      {
+        "input": "[[1 2 3]; [4 5 6]]",
+        "output": "[[3 2 1]; [6 5 4]]"
+      },
+      {
+        "input": "[[9 8]; [7 6]]",
+        "output": "[[8 9]; [6 7]]"
+      },
+      {
+        "input": "[[1]]",
+        "output": "[[1]]"
+      },
+      {
+        "input": "[[1 2 3 4]]",
+        "output": "[[4 3 2 1]]"
+      },
+      {
+        "input": "[[10 11 12]; [13 14 15]; [16 17 18]]",
+        "output": "[[12 11 10]; [15 14 13]; [18 17 16]]"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Zero Every Third Element",
+    "description": "Replace every third element in a numpy array with zero using slicing.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4 5 6 7 8 9",
+        "output": "[1 2 0 4 5 0 7 8 0]"
+      },
+      {
+        "input": "10 20 30",
+        "output": "[10 20 0]"
+      },
+      {
+        "input": "4 5 6 7",
+        "output": "[4 5 0 7]"
+      },
+      {
+        "input": "1",
+        "output": "[1]"
+      },
+      {
+        "input": "1 2 3 4 5 6",
+        "output": "[1 2 0 4 5 0]"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Replace Outside Range with Mean",
+    "description": "Replace all elements in a numpy array outside a given range [low, high] with the mean of elements within that range.",
+    "test_cases": [
+      {
+        "input": "1 10 20 30 40 | low=10 high=30",
+        "output": "[20 10 20 30 20]"
+      },
+      {
+        "input": "5 15 25 | low=0 high=20",
+        "output": "[5 15 10]"
+      },
+      {
+        "input": "0 50 100 | low=10 high=90",
+        "output": "[50 50 50]"
+      },
+      {
+        "input": "1 2 3 | low=1 high=3",
+        "output": "[1 2 3]"
+      },
+      {
+        "input": "10 11 12 50 | low=10 high=12",
+        "output": "[10 11 12 11]"
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Normalize to 0-1 Range",
+    "description": "Normalize all values in a numpy array so that minimum becomes 0 and maximum becomes 1.",
+    "test_cases": [
+      {
+        "input": "0 5 10",
+        "output": "[0. 0.5 1.]"
+      },
+      {
+        "input": "10 20 30 40",
+        "output": "[0. 0.333 0.667 1.]"
+      },
+      {
+        "input": "3 3 3",
+        "output": "[0. 0. 0.]"
+      },
+      {
+        "input": "-1 0 1",
+        "output": "[0. 0.5 1.]"
+      },
+      {
+        "input": "100 50 0",
+        "output": "[1. 0.5 0.]"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "title": "Count Unique Even Numbers",
+    "description": "Return count of distinct even numbers in a numpy array.",
+    "test_cases": [
+      {
+        "input": "1 2 2 3 4 4 4",
+        "output": "2"
+      },
+      {
+        "input": "5 7 9",
+        "output": "0"
+      },
+      {
+        "input": "2 4 6 8",
+        "output": "4"
+      },
+      {
+        "input": "10 10 10 11",
+        "output": "1"
+      },
+      {
+        "input": "3 6 9 12 12",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Local Maxima Indices",
+    "description": "Find indices of local maxima where an element is greater than both its neighbors.",
+    "test_cases": [
+      {
+        "input": "1 3 2 5 4",
+        "output": "[1 3]"
+      },
+      {
+        "input": "1 1 1",
+        "output": "[]"
+      },
+      {
+        "input": "0 2 0 2 0",
+        "output": "[1 3]"
+      },
+      {
+        "input": "10 5 10",
+        "output": "[0 2]"
+      },
+      {
+        "input": "5 4 3",
+        "output": "[]"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Zero Percentage",
+    "description": "Calculate and print the percentage of zeros present in a numpy array.",
+    "test_cases": [
+      {
+        "input": "0 1 0 2",
+        "output": "50.0"
+      },
+      {
+        "input": "0 0 0",
+        "output": "100.0"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0.0"
+      },
+      {
+        "input": "1 0 1 0 1 0",
+        "output": "50.0"
+      },
+      {
+        "input": "",
+        "output": "nan"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Replace Odd with Running Sum",
+    "description": "Replace every odd element with the cumulative sum of all odd numbers seen so far.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4 5",
+        "output": "[1 2 4 4 9]"
+      },
+      {
+        "input": "2 4 6",
+        "output": "[2 4 6]"
+      },
+      {
+        "input": "1 3 5",
+        "output": "[1 4 9]"
+      },
+      {
+        "input": "5",
+        "output": "[5]"
+      },
+      {
+        "input": "7 8 9 10 11",
+        "output": "[7 8 16 10 27]"
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Clip by One Standard Deviation",
+    "description": "Clip all array elements outside one standard deviation from the mean to the boundary.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4 5",
+        "output": "[1.63 2. 3. 4. 4.37]"
+      },
+      {
+        "input": "10 20 30 40 50",
+        "output": "[16.9 20. 30. 40. 43.1]"
+      },
+      {
+        "input": "0 0 0",
+        "output": "[0 0 0]"
+      },
+      {
+        "input": "1 10 100",
+        "output": "[1 10 73.3]"
+      },
+      {
+        "input": "3 4 5 6 7 8 9",
+        "output": "[3.59 4. 5. 6. 7. 8. 8.41]"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Replace by Floor of log10",
+    "description": "Replace each positive element by floor(log10(x)), keeping nonpositive numbers unchanged.",
+    "test_cases": [
+      {
+        "input": "1 10 100 1000",
+        "output": "[0 1 2 3]"
+      },
+      {
+        "input": "0 -1 1",
+        "output": "[0 -1 0]"
+      },
+      {
+        "input": "5 50 500",
+        "output": "[0 1 2]"
+      },
+      {
+        "input": "99 9999",
+        "output": "[1 3]"
+      },
+      {
+        "input": "10 0 10000",
+        "output": "[1 0 4]"
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Cosine of Degrees",
+    "description": "Compute cosine of each element in the array considering input values are in degrees.",
+    "test_cases": [
+      {
+        "input": "0 60 90",
+        "output": "[1 0.5 0]"
+      },
+      {
+        "input": "180",
+        "output": "[-1]"
+      },
+      {
+        "input": "45 135",
+        "output": "[0.707 -0.707]"
+      },
+      {
+        "input": "270",
+        "output": "[0]"
+      },
+      {
+        "input": "30 150",
+        "output": "[0.866 -0.866]"
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Remove Consecutive Duplicates",
+    "description": "Use numpy to remove consecutive duplicate elements from a 1D array.",
+    "test_cases": [
+      {
+        "input": "1 1 2 2 3 3 3",
+        "output": "[1 2 3]"
+      },
+      {
+        "input": "5 5 5 5",
+        "output": "[5]"
+      },
+      {
+        "input": "1 2 2 3 4 4 5",
+        "output": "[1 2 3 4 5]"
+      },
+      {
+        "input": "1 1 1 2 1 1",
+        "output": "[1 2 1]"
+      },
+      {
+        "input": "0 0 1 1 2 3 3",
+        "output": "[0 1 2 3]"
+      }
+    ]
+  }
+]

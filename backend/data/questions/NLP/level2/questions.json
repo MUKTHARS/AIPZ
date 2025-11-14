@@ -1,0 +1,516 @@
+[
+  {
+    "id": "1",
+    "title": "Document Frequency Counter",
+    "description": "Write a program that takes a list of sentences (documents) and constructs a vocabulary of all unique words. For each sentence, it should then generate its Bag of Words (BoW) representation, showing the frequency of each word from the vocabulary within that sentence.\n\n**Use Case:** Understanding the raw word counts in documents, which forms the basis for BoW model. This is a foundational step for text classification and clustering.\n\n**Input Format:** Multiple lines of text, where each line represents a document/sentence. Input ends when an empty line is entered.\n\n**Output Format:** First, print the sorted vocabulary. Then, for each input sentence, print its Bag of Words vector (a dictionary of word counts corresponding to the vocabulary).",
+    "test_cases": [
+      {
+        "input": "The cat sat on the mat.\nA dog sat on the rug.\n",
+        "output": "['a', 'cat', 'dog', 'mat', 'on', 'rug', 'sat', 'the']\n{'a': 0, 'cat': 1, 'dog': 0, 'mat': 1, 'on': 1, 'rug': 0, 'sat': 1, 'the': 2}\n{'a': 1, 'cat': 0, 'dog': 1, 'mat': 0, 'on': 1, 'rug': 1, 'sat': 1, 'the': 1}"
+      },
+      {
+        "input": "I love programming.\nProgramming is fun.\n",
+        "output": "['fun', 'i', 'is', 'love', 'programming']\n{'fun': 0, 'i': 1, 'is': 0, 'love': 1, 'programming': 1}\n{'fun': 1, 'i': 0, 'is': 1, 'love': 0, 'programming': 1}"
+      },
+      {
+        "input": "Machine learning.\nDeep learning.\nArtificial intelligence.\n",
+        "output": "['artificial', 'deep', 'intelligence', 'learning', 'machine']\n{'artificial': 0, 'deep': 0, 'intelligence': 0, 'learning': 1, 'machine': 1}\n{'artificial': 0, 'deep': 1, 'intelligence': 0, 'learning': 1, 'machine': 0}\n{'artificial': 1, 'deep': 0, 'intelligence': 1, 'learning': 0, 'machine': 0}"
+      },
+      {
+        "input": "Red, blue, green.\nYellow and red.\n",
+        "output": "['and', 'blue', 'green', 'red', 'yellow']\n{'and': 0, 'blue': 1, 'green': 1, 'red': 1, 'yellow': 0}\n{'and': 1, 'blue': 0, 'green': 0, 'red': 1, 'yellow': 1}"
+      },
+      {
+        "input": "Apple is a fruit.\nBanana is a fruit too.\n",
+        "output": "['a', 'apple', 'banana', 'fruit', 'is', 'too']\n{'a': 1, 'apple': 1, 'banana': 0, 'fruit': 1, 'is': 1, 'too': 0}\n{'a': 1, 'apple': 0, 'banana': 1, 'fruit': 1, 'is': 1, 'too': 1}"
+      },
+      {
+        "input": "The quick brown fox.\nThe lazy dog.\n",
+        "output": "['brown', 'dog', 'fox', 'lazy', 'quick', 'the']\n{'brown': 1, 'dog': 0, 'fox': 1, 'lazy': 0, 'quick': 1, 'the': 1}\n{'brown': 0, 'dog': 1, 'fox': 0, 'lazy': 1, 'quick': 0, 'the': 1}"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Simple Document Similarity (using BoW and Cosine Similarity)",
+    "description": "Given two short text documents, calculate their similarity based on their Bag of Words (BoW) representation using cosine similarity. The program should tokenize, lowercase, and remove a predefined list of common stopwords before calculating BoW vectors and then similarity.\n\n**Stop Words:** `['the', 'is', 'a', 'on', 'and', 'to', 'of', 'in', 'it']`\n\n**Use Case:** Finding similar documents, basic content recommendation, or detecting plagiarism.\n\n**Input Format:** Two lines of text, each representing a document.\n\n**Output Format:** A single floating-point number representing the cosine similarity between the two documents, rounded to 4 decimal places.",
+    "test_cases": [
+      {
+        "input": "The cat sat on the mat.\nThe dog sat on the rug.",
+        "output": "0.3333"
+      },
+      {
+        "input": "I love programming.\nI love coding.",
+        "output": "0.6667"
+      },
+      {
+        "input": "The quick brown fox.\nThe lazy dog.",
+        "output": "0.0000"
+      },
+      {
+        "input": "This is a test document.\nThis document is a test.",
+        "output": "1.0000"
+      },
+      {
+        "input": "Machine learning is cool.\nDeep learning is fascinating.",
+        "output": "0.3333"
+      },
+      {
+        "input": "Apple.\nOrange.",
+        "output": "0.0000"
+      },
+      {
+        "input": "NLP is fun.\nNLP is easy and fun.",
+        "output": "0.8165"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Build a Simple Bag of Words Vectorizer from Raw Text",
+    "description": "Write a Python program that takes a list of sentences and builds a Bag of Words (BoW) model, converting each sentence into a word count vector based on the combined vocabulary of all sentences.\n\n**Requirements:**\n1. Extract all unique words (vocabulary).\n2. Represent each sentence as a list of counts corresponding to each word in the vocabulary.\n3. Ignore case and punctuation.\n4. Sort the vocabulary in alphabetical order.\n\n**Use Case:** Feature extraction for document classification, spam detection, or keyword frequency analysis in NLP pipelines.\n\n**Input Format:** First line is the number of sentences, followed by the sentences, one per line.\n\n**Output Format:**\n1. A list of unique words (vocabulary) sorted alphabetically.\n2. A list of word count vectors, one for each sentence (printed one per line).",
+    "test_cases": [
+      {
+        "input": "2\nThe quick brown fox jumps\nThe fox is quick and smart",
+        "output": "['and', 'brown', 'fox', 'is', 'jumps', 'quick', 'smart', 'the']\n[0, 1, 1, 0, 1, 1, 0, 1]\n[1, 0, 1, 1, 0, 1, 1, 1]"
+      },
+      {
+        "input": "2\nAI is the future\nAI will revolutionize the world",
+        "output": "['ai', 'future', 'is', 'revolutionize', 'the', 'will', 'world']\n[1, 1, 1, 0, 1, 0, 0]\n[1, 0, 0, 1, 1, 1, 1]"
+      },
+      {
+        "input": "2\nCoding is fun\nPython is powerful",
+        "output": "['coding', 'fun', 'is', 'powerful', 'python']\n[1, 1, 1, 0, 0]\n[0, 0, 1, 1, 1]"
+      },
+      {
+        "input": "2\nMachine learning is cool\nDeep learning is powerful",
+        "output": "['cool', 'deep', 'is', 'learning', 'machine', 'powerful']\n[1, 0, 1, 1, 1, 0]\n[0, 1, 1, 1, 0, 1]"
+      },
+      {
+        "input": "2\nHackathons boost innovation\nStudents learn through hackathons",
+        "output": "['boost', 'hackathons', 'innovation', 'learn', 'students', 'through']\n[1, 1, 1, 0, 0, 0]\n[0, 1, 0, 1, 1, 1]"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Cosine Similarity of Sentences",
+    "description": "Write a Python program that takes two sentences, converts them into Bag of Words vectors using a `CountVectorizer` (ignoring case and punctuation), and computes the cosine similarity between them.\n\n**Formula:** $CosineSimilarity = \\frac{A \\cdot B}{||A|| \\times ||B||}$\n\n**Use Case:** Used in search engines, question-answer similarity, and plagiarism detection.\n\n**Input Format:** Two lines of text, each a sentence.\n\n**Output Format:** A single floating-point number representing the cosine similarity, rounded to 3 decimal places.",
+    "test_cases": [
+      {
+        "input": "Sentence 1: I love machine learning\nSentence 2: Machine learning is amazing",
+        "output": "0.500"
+      },
+      {
+        "input": "NLP is exciting\nI find NLP very exciting",
+        "output": "0.577"
+      },
+      {
+        "input": "Hello world\nHello machine",
+        "output": "0.5"
+      },
+      {
+        "input": "Deep learning for AI\nAI in deep learning",
+        "output": "0.75"
+      },
+      {
+        "input": "Text mining is useful\nMining data is useful",
+        "output": "0.75"
+      },
+      {
+        "input": "Python programming\nJava development",
+        "output": "0.0"
+      },
+      {
+        "input": "Machine learning techniques\nLearning techniques in machine vision",
+        "output": "0.775"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Jaccard Similarity for Word Sets",
+    "description": "Write a Python program to compute the Jaccard Similarity Coefficient between two sentences. Treat each sentence as a set of words, ignoring punctuation and case.\n\n**Formula:** $Jaccard(A, B) = \\frac{|A \\cap B|}{|A \\cup B|}$\n\n**Use Case:** Set-based document similarity, tag matching, keyword comparison.\n\n**Input Format:** Two lines of text, each a sentence.\n\n**Output Format:** Prints the Jaccard Similarity rounded to 3 decimal places.",
+    "test_cases": [
+      {
+        "input": "Sentence 1: machine learning and data science\nSentence 2: learning and science in practice",
+        "output": "Jaccard Similarity: 0.429"
+      },
+      {
+        "input": "cloud computing and storage\nedge computing and networks",
+        "output": "Jaccard Similarity: 0.250"
+      },
+      {
+        "input": "I like AI and ML\nI enjoy ML and DL",
+        "output": "Jaccard Similarity: 0.333"
+      },
+      {
+        "input": "intelligent systems for automation\nautomation systems are intelligent",
+        "output": "Jaccard Similarity: 1.000"
+      },
+      {
+        "input": "neural networks and deep learning\nlearning with deep neural networks",
+        "output": "Jaccard Similarity: 1.000"
+      },
+      {
+        "input": "python for beginners\njava for professionals",
+        "output": "Jaccard Similarity: 0.200"
+      },
+      {
+        "input": "text data cleaning is important\ndata cleaning improves quality",
+        "output": "Jaccard Similarity: 0.500"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Hamming Distance of Binary Word Vectors",
+    "description": "Write a Python program to calculate the Hamming Distance between two equal-length binary vectors representing word presence (1) or absence (0).\n\n**Formula:** Hamming Distance = Number of positions where the two binary vectors differ.\n\n**Use Case:** Bit-level comparison, encoding validation, comparing text fingerprints.\n\n**Input Format:** Two lines of space-separated binary digits (0s and 1s).\n\n**Output Format:** The Hamming Distance (an integer).",
+    "test_cases": [
+      {
+        "input": "1 0 1 1 0\n1 1 0 1 0",
+        "output": "2"
+      },
+      {
+        "input": "0 0 1 1\n0 1 1 0",
+        "output": "2"
+      },
+      {
+        "input": "1 1 1 1 1\n0 0 0 0 0",
+        "output": "5"
+      },
+      {
+        "input": "1 0 0\n1 0 0",
+        "output": "0"
+      },
+      {
+        "input": "1 1 0 0\n0 1 1 0",
+        "output": "2"
+      },
+      {
+        "input": "0 1 1 0 1\n0 0 1 1 0",
+        "output": "3"
+      },
+      {
+        "input": "1 0 1 0 1 0\n1 1 0 1 0 1",
+        "output": "5"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Calculate Document Frequency Difference Between Two Text Documents",
+    "description": "Write a Python program to compute the Document Frequency Difference between two given text documents. Each document is treated as a bag-of-words, and the presence (1) or absence (0) of each unique word (from the combined vocabulary) is represented as a binary vector.\n\n**Formula:** Document Frequency Difference is calculated as the number of differing word positions between the two binary vectors, similar to Hamming Distance.\n\n**Use Case:** Comparing semantic similarity based on term presence. Detecting how many unique words differ between documents. Lightweight comparison in information retrieval or clustering.\n\n**Input Format:** Two lines of text, where words are space-separated.\n\n**Output Format:** The Document Frequency Difference (an integer).",
+    "test_cases": [
+      {
+        "input": "the cat sat on the mat\nthe dog lay on the rug",
+        "output": "6"
+      },
+      {
+        "input": "apple orange banana\nbanana mango orange",
+        "output": "2"
+      },
+      {
+        "input": "machine learning is fun\nmachine learning is powerful",
+        "output": "2"
+      },
+      {
+        "input": "deep learning\ndeep learning",
+        "output": "0"
+      },
+      {
+        "input": "data privacy security\ndata ethics privacy",
+        "output": "2"
+      },
+      {
+        "input": "ai ml dl\nai cv nlp",
+        "output": "4"
+      },
+      {
+        "input": "hello world program run\nhello code compile execute",
+        "output": "6"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "TF-IDF Vector Calculation for Two Documents",
+    "description": "Write a Python program that takes two plain text documents as input and calculates the TF-IDF (Term Frequency–Inverse Document Frequency) vectors for each document. The vocabulary should be built from both documents combined. Output the vocabulary list and two TF-IDF vectors (one for each document) in the same order as the vocabulary.\\n\\n**Formula:** TF-IDF(t, d) = TF(t, d) × IDF(t), where $IDF(t) = \\\\log_{10}(\\\\frac{N}{1 + doc\\\\_count(t)})$. N=2.\\n\\n**Use Case:** NLP feature extraction. Keyword weighting in document classification. Search engine text ranking.\\n\\n**Input Format:** Two lines of space-separated text, each a document.\\n\\n**Output Format:**\\n1. The vocabulary list.\\n2. The first document's TF-IDF vector.\\n3. The second document's TF-IDF vector.\\nValues should be rounded to three decimal places and printed as Python-style lists.",
+    "test_cases": [
+      {
+        "input": "the cat sat on the mat\nthe dog lay on the rug",
+        "output": "['cat', 'dog', 'lay', 'mat', 'on', 'rug', 'sat', 'the']\n[0.0, 0.0, 0.0, 0.0, -0.0293, 0.0, 0.0, -0.0587]\n[0.0, 0.0, 0.0, 0.0, -0.0293, 0.0, 0.0, -0.0587]"
+      },
+      {
+        "input": "data science is awesome\nscience is a field of data",
+        "output": "['a', 'awesome', 'data', 'field', 'is', 'of', 'science']\n[0.0, 0.0, -0.044, 0.0, -0.044, 0.0, -0.044]\n[0.0, 0.0, -0.0293, 0.0, -0.0293, 0.0, -0.0293]"
+      },
+      {
+        "input": "machine learning algorithms\ndeep learning models",
+        "output": "['algorithms', 'deep', 'learning', 'machine', 'models']\n[0.0, 0.0, -0.0587, 0.0, 0.0]\n[0.0, 0.0, -0.0587, 0.0, 0.0]"
+      },
+      {
+        "input": "ai ml dl\nai cv nlp",
+        "output": "['ai', 'cv', 'dl', 'ml', 'nlp']\n[-0.0587, 0.0, 0.0, 0.0, 0.0]\n[-0.0587, 0.0, 0.0, 0.0, 0.0]"
+      },
+      {
+        "input": "hello world\nhello code compile execute",
+        "output": "['code', 'compile', 'execute', 'hello', 'world']\n[0.0, 0.0, 0.0, -0.088, 0.0]\n[0.0, 0.0, 0.0, -0.044, 0.0]"
+      },
+      {
+        "input": "privacy security\ndata security privacy ethics",
+        "output": "['data', 'ethics', 'privacy', 'security']\n[0.0, 0.0, -0.088, -0.088]\n[0.0, 0.0, -0.044, -0.044]"
+      },
+      {
+        "input": "the big cat\na big dog",
+        "output": "['a', 'big', 'cat', 'dog', 'the']\n[0.0, -0.0587, 0.0, 0.0, 0.0]\n[0.0, -0.0587, 0.0, 0.0, 0.0]"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Term Frequency Analysis",
+    "description": "Write a Python program to calculate the Term Frequency (TF) for each word in two given documents. The program must tokenize, convert to lowercase, remove punctuation, and then count word occurrences. Finally, the word-count dictionary for each sentence must be sorted by frequency in descending order.\n\n**Key Concept:** Term Frequency measures how frequently a term (word) appears in a document.\n\n**Use Case:** Content Summarization, Keyword Extraction, Document Comparison.\n\n**Input Format:** Two sentences, one per line.\n\n**Output Format:** Prints the sorted word-count pairs for the first sentence, then an empty line, then the sorted word-count pairs for the second sentence.",
+    "test_cases": [
+      {
+        "input": "Data Science is amazing!\nScience is power.",
+        "output": "'data': 1\n'science': 1\n'is': 1\n'amazing': 1\n\n'science': 1\n'is': 1\n'power': 1"
+      },
+      {
+        "input": "Machine Learning, Machine Learning, Deep Learning.\nDeep networks, deep networks, deep!",
+        "output": "'learning': 3\n'machine': 2\n'deep': 1\n\n'deep': 3\n'networks': 2"
+      },
+      {
+        "input": "Hello! Hello? HELLO.\nhello world",
+        "output": "'hello': 3\n\n'hello': 1\n'world': 1"
+      },
+      {
+        "input": "123 AI! 456 ML.\nAI is the future.",
+        "output": "'123': 1\n'ai': 1\n'456': 1\n'ml': 1\n\n'ai': 1\n'is': 1\n'the': 1\n'future': 1"
+      },
+      {
+        "input": "Natural-Language-Processing with Python.\nnatural language processing is fun!",
+        "output": "'natural': 1\n'language': 1\n'processing': 1\n'with': 1\n'python': 1\n\n'natural': 1\n'language': 1\n'processing': 1\n'is': 1\n'fun': 1"
+      },
+      {
+        "input": "Privacy and security in computing.\nData privacy is important for data security.",
+        "output": "'privacy': 1\n'and': 1\n'security': 1\n'in': 1\n'computing': 1\n\n'data': 2\n'privacy': 1\n'is': 1\n'important': 1\n'for': 1\n'security': 1"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Word Embedding Lookup and Sentence Vectorization",
+    "description": "Write a Python program that: 1. Takes a sentence as input. 2. Tokenizes and lowercases the words. 3. For each word, looks up its word embedding vector in the predefined dictionary. 4. Computes and returns the average vector of all known word embeddings as the sentence vector.\n\n**Embedding Dictionary:**\n`{'data': [1.0, 0.5, 0.2], 'science': [0.9, 0.1, 0.4], 'is': [0.3, 0.7, 0.8], 'fun': [0.6, 0.9, 0.3], 'learning': [0.8, 0.2, 0.5]}`\n\n**Use Case:** Sentence-level semantic representation for NLP tasks.\n\n**Input Format:** A single line sentence.\n\n**Output Format:** A list of float values representing the average vector, rounded to 3 decimal places. If no known word is found, print `[0.0, 0.0, 0.0]`.",
+    "test_cases": [
+      {
+        "input": "Data Science is fun",
+        "output": "[0.7, 0.55, 0.425]"
+      },
+      {
+        "input": "Learning is fun",
+        "output": "[0.567, 0.6, 0.533]"
+      },
+      {
+        "input": "Data is cool",
+        "output": "[0.65, 0.6, 0.5]"
+      },
+      {
+        "input": "unknown words here",
+        "output": "[0.0, 0.0, 0.0]"
+      },
+      {
+        "input": "Data science learning",
+        "output": "[0.9, 0.267, 0.367]"
+      },
+      {
+        "input": "fun science",
+        "output": "[0.75, 0.5, 0.35]"
+      },
+      {
+        "input": "learning data is fun",
+        "output": "[0.675, 0.575, 0.45]"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Semantic Similarity Using Pre-trained Word Embeddings",
+    "description": "Write a Python program that: 1. Loads Google's pre-trained Word2Vec embeddings (300-dim) from Gensim. 2. Accepts two sentences as input (one per line). 3. Preprocesses them using lowercase and tokenization. 4. Computes the average word vector for each sentence by ignoring out-of-vocabulary (OOV) words. 5. Calculates and prints the cosine similarity between the two sentence vectors, rounded to 4 decimal places.\n\n**Use Case:** Semantic search, Plagiarism detection, Measuring similarity.",
+    "test_cases": [
+      {
+        "input": "Data science is amazing\nScience of data is wonderful",
+        "output": "0.8872"
+      },
+      {
+        "input": "I love natural language processing\nNatural language processing is my passion",
+        "output": "0.8272"
+      },
+      {
+        "input": "Machine learning is interesting\nI enjoy hiking in the mountains",
+        "output": "0.348"
+      },
+      {
+        "input": "The AI revolution is near\nArtificial intelligence will change the future",
+        "output": "0.4215"
+      },
+      {
+        "input": "Data science is power\nMachine learning is powerful",
+        "output": "0.4904"
+      },
+      {
+        "input": "He plays football every weekend\nShe enjoys cooking pasta",
+        "output": "0.3181"
+      },
+      {
+        "input": "Python programming language\nSnake in the wild forest",
+        "output": "0.3188"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Sentence Vectorization Using GloVe Embeddings",
+    "description": "Write a Python program that: 1. Loads pre-trained GloVe embeddings (e.g., glove.6B.100d.txt). 2. Accepts a single sentence as input. 3. Preprocesses the sentence using lowercase and tokenization. 4. Computes the average word embedding vector (100-dim) of the sentence using only known words from GloVe.\n\n**Use Case:** Sentence embedding for downstream tasks. Feature extraction for classification. Semantic matching.\n\n**Input Format:** A single line sentence.\n\n**Output Format:** A list of 100 float values representing the average vector, rounded to 4 decimal places.",
+    "test_cases": [
+      {
+        "input": "Machine learning is fun",
+        "output": "[-0.2455, 0.4223, 0.1616, -0.1418, -0.0429, 0.3648, 0.1706, 0.3062, 0.1402, 0.1192, 0.1053, -0.3123, 0.0805, -0.1632, 0.2729, -0.082, 0.2366, 0.2839, -0.2353, 0.5305, -0.0709, 0.1037, 0.0453, -0.4497, 0.0607, 0.2734, -0.1994, -0.1683, -0.2605, 0.1041, -0.5674, 0.8052, -0.0763, -0.1654, 0.4422, -0.2367, -0.2103, 0.0524, 0.3385, -0.5555, -0.1483, 0.0162, -0.1111, -0.315, -0.3819, -0.0859, 0.162, -0.1492, 0.0895, -0.5875, -0.0464, -0.3222, 0.263, 0.9, 0.1208, -2.13, 0.1132, 0.2655, 1.2207, 0.2984, 0.2294, 0.6378, -0.2997, 0.0938, 0.3481, 0.2648, 0.5802, -0.1636, 0.2136, 0.0773, -0.0746, -0.208, 0.1336, -0.0805, 0.1012, 0.3269, 0.0826, -0.0056, -0.5078, -0.0545, 0.1112, 0.0661, -0.5214, -0.057, -1.4479, 0.3375, 0.0251, -0.4909, -0.0515, -0.3646, -0.0701, 0.1324, 0.2646, 0.3479, 0.0249, -0.2812, -0.2601, -0.7728, 0.9214, 0.4865]"
+      },
+      {
+        "input": "Natural language processing",
+        "output": "[0.1811, 0.7507, 0.2857, 0.2329, 0.2299, -0.4647, -0.3696, 0.1169, 0.1138, 0.4312, -0.5623, -0.4987, -0.0329, -0.0049, 0.1258, 0.0495, 0.3365, -0.0105, 0.0713, 0.1883, -0.3437, 0.0584, 0.588, 0.1178, -0.2366, -0.081, 0.1813, 0.1137, -0.2907, 0.238, -0.5036, 0.468, -0.5117, -0.5728, 0.1577, -0.234, -0.247, 0.0322, -0.0134, -0.5476, -0.259, -0.5521, -0.52, -0.0003, 0.1834, 0.2018, 0.0946, -0.2039, -0.2694, -0.2785, 0.179, 0.2526, 0.3796, 0.7287, -0.0354, -1.1609, -0.2309, -0.4954, 1.9367, 0.1589, 0.3136, 0.3776, -0.0561, -0.686, 0.8698, 0.0639, 0.5371, -0.4556, 0.6036, -0.2815, -0.3719, 0.5388, 0.822, -0.1644, 0.402, 0.0926, -0.2648, 0.2327, -0.718, 0.3316, 0.084, -0.4404, -0.6126, 0.1219, -1.4412, 0.5439, 0.4879, -0.3096, 0.1443, -0.2321, 0.2014, -0.2082, -0.2264, 0.2688, -0.3228, 0.1297, -0.5361, -0.9765, 0.7192, 0.1526]"
+      },
+      {
+        "input": "Artificial intelligence is powerful",
+        "output": "[-0.1518, 0.1696, 0.6051, -0.1281, 0.313, -0.1985, -0.2672, -0.2971, -0.0293, 0.2731, 0.2118, -0.3878, 0.4032, 0.1656, 0.2922, 0.2468, 0.2097, -0.0084, -0.1019, 0.154, -0.1005, -0.0004, 0.2495, -0.2654, -0.1898, 0.232, -0.2044, -0.0833, -0.2099, 0.2487, 0.2107, 0.2858, -0.2108, -0.337, 0.2901, -0.0737, -0.2582, 0.4594, 0.2187, 0.125, -0.3007, 0.0208, 0.2489, -0.1995, 0.2414, -0.1956, 0.421, 0.1115, -0.2334, -0.2374, 0.0951, -0.1001, 0.5693, 0.9282, 0.0926, -2.0519, 0.1017, -0.0147, 1.2449, 0.3266, 0.1796, 0.6134, 0.1565, 0.1084, 0.5833, -0.1999, 0.0493, -0.0897, 0.4081, 0.0047, 0.4132, -0.2434, 0.1515, -0.1412, 0.1792, -0.2462, -0.0024, -0.1324, -0.7785, 0.3379, 0.7441, 0.0258, -0.574, 0.0803, -1.4248, 0.2826, 0.5719, 0.4278, 0.159, -0.5807, 0.2088, 0.0005, -0.2893, 0.2231, -0.0572, 0.0235, -0.3346, -1.0122, 0.5245, 0.2214]"
+      },
+      {
+        "input": "I love data science",
+        "output": "[-0.0977, 0.5706, 0.5062, -0.1308, -0.0512, -0.0376, -0.0453, -0.1645, 0.0182, -0.0738, 0.299, -0.1242, 0.0372, 0.2977, 0.2357, -0.0136, 0.4125, 0.6126, -0.4128, 0.6496, -0.0964, 0.1146, 0.0527, -0.1973, 0.012, 0.1476, 0.2037, -0.4294, 0.1684, -0.0338, -0.4001, 0.6354, -0.1431, 0.2152, 0.002, 0.1693, -0.3564, 0.4278, 0.2158, -0.4428, -0.4498, -0.2796, -0.4971, -0.3775, -0.4797, -0.1891, 0.064, -0.1309, 0.1175, -0.7726, 0.367, 0.0007, 0.3315, 0.8154, 0.0134, -2.2878, 0.3817, 0.2735, 1.4611, 0.4516, 0.0461, 0.8634, -0.5413, -0.2362, 0.6063, 0.2458, 0.4375, 0.3272, 0.4579, 0.1346, 0.1642, 0.2716, 0.4033, -0.2214, -0.2427, 0.39, 0.1972, -0.1132, -0.8264, -0.2696, 0.16, 0.3076, -0.5353, 0.0336, -1.629, -0.0346, 0.0492, -0.5716, -0.3351, -0.2752, -0.0307, 0.0013, 0.1287, 0.2947, -0.2338, -0.0275, -0.1761, -0.722, 0.2351, 0.425]"
+      },
+      {
+        "input": "He plays football every weekend",
+        "output": "[-0.1219, 0.171, 0.38, -0.4868, -0.2189, 0.6845, 0.1893, 0.3979, -0.4961, -0.2045, 0.0415, -0.4552, 0.0338, 0.1642, -0.1891, 0.1411, 0.3728, 0.1141, -0.2266, 0.4065, 0.0033, 0.2505, 0.0269, -0.1737, 0.2514, -0.3397, -0.2258, -0.4464, 0.3392, 0.0741, -0.714, 0.7521, 0.1482, -0.0815, 0.0279, 0.0575, -0.6217, 0.3359, -0.4094, -0.1828, -0.2913, -0.0128, 0.3387, -0.2512, -0.005, 0.0466, 0.3221, -0.5801, 0.2141, -0.8243, -0.1808, -0.2802, 0.2453, 0.968, -0.0285, -2.4681, -0.4093, -0.1389, 1.1035, 0.7224, -0.2889, 0.7803, -0.5859, -0.3568, 0.4573, 0.0074, 0.3093, 0.1971, -0.086, 0.2417, 0.1671, -0.4413, 0.1203, -0.1103, 0.1396, 0.1582, 0.0595, 0.0245, -0.6542, 0.0207, 0.5452, 0.0182, -0.3441, -0.1324, -1.0739, -0.5137, -0.3754, -0.0068, 0.1335, -0.3, -0.1951, 0.0344, -0.1927, 0.2907, -0.606, 0.1442, -0.3238, 0.31, 0.6405, 0.1865]"
+      },
+      {
+        "input": "Python is a snake and a language",
+        "output": "[-0.139, 0.2415, 0.3089, -0.5027, 0.3025, 0.4946, -0.0741, 0.1484, -0.1277, 0.1398, -0.4302, -0.0496, 0.3161, 0.2916, -0.0513, 0.097, 0.3088, -0.2912, 0.0204, 0.3082, 0.1866, -0.1129, 0.2575, 0.0678, 0.6061, 0.2318, -0.2735, -0.1776, -0.3087, -0.0754, -0.4973, 0.5828, -0.0569, -0.1265, 0.4132, 0.3962, -0.1056, 0.3302, 0.3885, -0.0074, -0.4577, 0.0369, 0.1827, -0.0568, 0.0239, 0.0648, 0.2355, 0.0628, -0.1095, -0.3163, -0.3906, 0.0258, 0.3797, 0.8841, -0.4028, -2.1902, -0.1173, -0.2887, 1.4978, 0.3767, 0.2377, 0.6453, -0.2364, -0.1248, 0.8582, 0.1212, 0.6001, 0.2812, 0.2858, 0.017, -0.3621, -0.0815, 0.1939, 0.0286, 0.0745, -0.0051, -0.2502, 0.0609, -0.7364, 0.1122, 0.2138, -0.2386, -0.3642, -0.0529, -1.1022, 0.1691, 0.4157, -0.2683, 0.1849, -0.2731, 0.2324, -0.098, -0.3369, 0.2819, -0.2156, -0.0919, -0.3853, -0.7987, 0.57, 0.0687]"
+      },
+      {
+        "input": "Space exploration and astronomy are fascinating",
+        "output": "[-0.2401, 0.4666, 0.2026, 0.1114, 0.2991, -0.3428, -0.0616, 0.3288, -0.2594, 0.1099, 0.2011, -0.5071, 0.2923, 0.0656, -0.0115, -0.452, 0.2595, 0.5609, -0.0509, 0.256, 0.0013, 0.1643, 0.2376, -0.0862, 0.3878, -0.0698, 0.1766, 0.1613, -0.2134, -0.2465, -0.7207, -0.037, -0.5538, 0.1437, 0.0668, 0.1644, -0.1948, 0.4374, 0.0182, -0.3431, -0.2629, -0.2743, -0.3888, -0.0674, -0.2221, 0.0461, 0.2437, 0.3242, 0.1855, -0.0025, 0.3227, 0.0287, 0.0901, 1.0002, 0.0337, -1.6318, 0.3588, -0.185, 1.2891, 0.5325, -0.1845, 0.8066, 0.1219, -0.0385, 0.8914, 0.1747, 0.5926, 0.2408, 0.5435, -0.2321, 0.1383, -0.039, 0.4321, -0.1444, -0.3257, -0.2022, 0.1448, 0.1452, -0.8785, -0.067, 0.1172, 0.3559, -0.0722, 0.1575, -0.9632, 0.1772, 0.2428, -0.0672, -0.0281, -0.6153, 0.0206, 0.0455, 0.1015, -0.1997, -0.4206, 0.17, -0.711, -0.57, 0.1934, 0.1915]"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Word Analogy Solver Using GloVe Embeddings",
+    "description": "Write a Python program that: 1. Loads pre-trained GloVe embeddings (e.g., glove.6B.100d.txt). 2. Accepts three space-separated words as input: word_a word_b word_c. 3. Solves the analogy: $word_a - word_b + word_c = ?$. 4. Finds and prints the most similar word (excluding the input words) using cosine similarity from the vocabulary.\n\n**Use Case:** Word embeddings validation. NLP applications like semantic search, question answering, and language modeling.\n\n**Input Format:** A single line with three space-separated words (e.g., `king man woman`).\n\n**Output Format:** The most similar word followed by its cosine similarity score, rounded to 4 decimal places (e.g., `queen 0.7831`).",
+    "test_cases": [
+      {
+        "input": "king man woman",
+        "output": "queen 0.7831"
+      },
+      {
+        "input": "paris france italy",
+        "output": "rome 0.8084"
+      },
+      {
+        "input": "man woman boy",
+        "output": "kid 0.7265"
+      },
+      {
+        "input": "walking walked swimming",
+        "output": "canoeing 0.7137"
+      },
+      {
+        "input": "he him she",
+        "output": "never 0.726"
+      },
+      {
+        "input": "doctor hospital school",
+        "output": "teacher 0.762"
+      },
+      {
+        "input": "china beijing Japan",
+        "output": "japanese 0.702"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "FastText Word Analogy Solver",
+    "description": "Write a Python program that: 1. Loads pre-trained FastText word vectors. 2. Accepts three space-separated words as input: word_a word_b word_c. 3. Computes the analogy: $word_a$ is to $word_b$ as $word_c$ is to $\\_$. 4. Finds and prints the most similar word (excluding the input words) using cosine similarity. 5. Rounds the similarity score to 4 decimal places.\\n\\n**Use Case:** Semantic similarity. Analogy reasoning in NLP tasks. Benchmarking FastText's subword capabilities.\\n\\n**Input Format:** A single line with three space-separated words (e.g., `king man woman`).\\n\\n**Output Format:** The most similar word followed by its cosine similarity score, rounded to 4 decimal places (e.g., `queen 0.7935`).",
+    "test_cases": [
+      {
+        "input": "king man woman",
+        "output": "queen 0.7935"
+      },
+      {
+        "input": "paris france italy",
+        "output": "rome 0.8102"
+      },
+      {
+        "input": "man woman boy",
+        "output": "girl 0.7698"
+      },
+      {
+        "input": "walk walked run",
+        "output": "ran 0.7321"
+      },
+      {
+        "input": "china beijing japan",
+        "output": "tokyo 0.738"
+      },
+      {
+        "input": "doctor hospital school",
+        "output": "teacher 0.7654"
+      }
+    ]
+  },
+  {
+    "title": "Input Embedding-Customer Support Chatbot",
+    "description": "You are building a Customer Support Chatbot.  The chatbot should identify whether two customer queries have similar meaning even if they use different words.\n [hINT:  use sentence embeddings and compare them with cosine similarity].\n\nSample Input Sentences\n\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n\nExpected Output\nEmbedding Vector Shape: torch.Size([5, 384])\nSimilarity [Refund vs Return Shoes]: 0.xxx\nSimilarity [Refund vs Reset Password]: 0.xxx\nSimilarity [Password vs Cancel Subscription]: 0.xxx\n",
+    "test_cases": [
+      {
+        "input": "\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"",
+        "output": "Embedding Vector Shape: torch.Size([5, 384])\nSimilarity [Refund vs Return Shoes]: 0.485\nSimilarity [Refund vs Reset Password]: 0.229\nSimilarity [Password vs Cancel Subscription]: 0.294"
+      }
+    ],
+    "id": "15"
+  },
+  {
+    "title": "Input Embeddings – Customer Support Chatbot",
+    "description": "A customer support chatbot should identify when different queries mean the same thing. Use embeddings to check similarity.\nSample Input Sentences\n\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n\nExpected Output\nEmbedding Shape: torch.Size([5, 384])\nRefund vs Return: 0.xxx\nRefund vs Password: 0.xxx\nPassword vs Cancel: 0.xxx",
+    "test_cases": [
+      {
+        "input": "\"I need a refund for my order\",\n\"How do I reset my password?\",\n\"What is the weather in New York?\",\n\"Please cancel my subscription\",\n\"I want to return my shoes\"",
+        "output": "Embedding Shape: torch.Size([5, 384])\nRefund vs Return: 0.485\nRefund vs Password: 0.229\nPassword vs Cancel: 0.294"
+      }
+    ],
+    "id": "16"
+  },
+  {
+    "title": "Input Embedding- Movie Recommendation System",
+    "description": "Scenario\nA movie app wants to group similar user queries using embeddings.\nSample Input Sentences\n    1. \"I want to watch a scary movie\"\n    2. \"Show me a horror film\"\n    3. \"Play some comedy shows\"\n    4. \"Find me a thriller movie\"\n    5. \"Give me a documentary\"\n\nExpected Output\nEmbedding Shape: torch.Size([5, 384])\nScary Movie vs Horror Film: 0.xxx\nScary Movie vs Comedy Shows: 0.xxx\nHorror Film vs Thriller Movie: 0.xxx",
+    "test_cases": [
+      {
+        "input": "    1. \"I want to watch a scary movie\"\n    2. \"Show me a horror film\"\n    3. \"Play some comedy shows\"\n    4. \"Find me a thriller movie\"\n    5. \"Give me a documentary\"",
+        "output": "Embedding Shape: torch.Size([5, 384])\nScary Movie vs Horror Film: 0.628\nScary Movie vs Comedy Shows: 0.236\nHorror Film vs Thriller Movie: 0.666"
+      }
+    ],
+    "id": "17"
+  },
+  {
+    "title": "Input Embedding-Customer Support Chatbot",
+    "description": "You are building a Customer Support Chatbot.  The chatbot should identify whether two customer queries have similar meaning even if they use different words.\n [hINT:  use sentence embeddings and compare them with cosine similarity].\n\nSample Input Sentences\n\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n\nExpected Output\nEmbedding Vector Shape: torch.Size([5, 384])\nSimilarity [Refund vs Return Shoes]: 0.xxx\nSimilarity [Refund vs Reset Password]: 0.xxx\nSimilarity [Password vs Cancel Subscription]: 0.xxx\n",
+    "test_cases": [
+      {
+        "input": "\"I need a refund for my order\"\n\"How do I reset my password?\"\n\"What is the weather in New York?\"\n\"Please cancel my subscription\"\n\"I want to return my shoes\"\n1111",
+        "output": "111"
+      }
+    ],
+    "id": "18"
+  }
+]

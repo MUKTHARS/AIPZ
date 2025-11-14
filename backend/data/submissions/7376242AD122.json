@@ -1,0 +1,60 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:36:01.001203",
+    "answers": [
+      {
+        "questionId": "LR_002",
+        "partId": "Feature Engineering",
+        "code": "import pandas as pd   \r\nimport numpy as np  \r\nimport matplotlib.pyplot as plt  \r\ndf_train=pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/train.csv')\r\nprint(df_train.head)\r\ndf_test=pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/bike/test.csv')\r\nprint(df_test.head)\r\n  \r\n\r\n\r\n",
+        "passed": false
+      },
+      {
+        "questionId": "LR_002",
+        "partId": "Polynomial Regression",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_002",
+        "partId": "Prediction & Analysis",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_002",
+        "partId": "Visualization",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T14:44:41.090083",
+    "answers": [
+      {
+        "questionId": "LR_001",
+        "partId": "Preprocessing",
+        "code": "import pandas as pd  \r\nimport numpy as np  \r\nimport matplotlib.pyplot as plt \r\ndf_train = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/LR_001/train.csv')\r\nprint(df_train.head)\r\ndf_test = pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/LR_001/test.csv')\r\nprint(df_test.head)\r\nvalue=df_train.isnull()\r\nprint(value)\r\n",
+        "passed": false
+      },
+      {
+        "questionId": "LR_001",
+        "partId": "Model Training",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_001",
+        "partId": "Prediction",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

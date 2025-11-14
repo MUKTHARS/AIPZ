@@ -1,0 +1,34 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-29T15:07:44.466186",
+    "answers": [
+      {
+        "questionId": "LR_008",
+        "partId": "Data Preprocessing",
+        "code": "import pandas as pd \r\nimport numpy as np \r\ntrain_df=pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/realistic_car/test.csv')\r\ntest_df=pd.read_csv('/home/student/Desktop/PS/backend/data/datasets/ml/level_1/realistic_car/train.csv')\r\nprint(train_df)\r\nprint(train_df.columns)\r\nprint(train_df.isnull().sum())\r\n",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "LR_008",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

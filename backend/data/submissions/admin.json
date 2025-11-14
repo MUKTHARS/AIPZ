@@ -1,0 +1,406 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-10-30T10:21:26.279121",
+    "answers": [
+      {
+        "questionId": "M_009",
+        "partId": "Data Preprocessing",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_009",
+        "partId": "Hyperparameter Tuning",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_009",
+        "partId": "Model Training & predictions",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "M_009",
+        "partId": "Model evaluation & interpretation",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T12:22:27.062089",
+    "answers": [
+      {
+        "questionId": "S_002",
+        "partId": "1",
+        "code": "import librosa\r\nimport numpy as np\r\nimport pandas as pd\r\nfrom sklearn.preprocessing import StandardScaler, MinMaxScaler\r\n\r\n# Step 1: Load audio file\r\naudio_file = \"/home/student/Desktop/PS/backend/data/datasets/Speech Recognition/level_1/S_002/input.wav\"\r\ny, sr = librosa.load(audio_file, sr=None)\r\n\r\n# Step 2: Extract 13 MFCC features\r\nmfcc_features = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)\r\nmfcc_features = mfcc_features.T  # Transpose for (frames x coefficients)\r\n\r\n# Step 3: Apply normalization methods\r\nscaler_zscore = StandardScaler()\r\nscaler_minmax = MinMaxScaler()\r\n\r\nmfcc_zscore = scaler_zscore.fit_transform(mfcc_features)\r\nmfcc_minmax = scaler_minmax.fit_transform(mfcc_features)\r\n\r\n# Step 4: Combine both into a single DataFrame\r\ncolumns_zscore = [f\"MFCC{i+1}_ZScore\" for i in range(13)]\r\ncolumns_minmax = [f\"MFCC{i+1}_MinMax\" for i in range(13)]\r\n\r\ndf_zscore = pd.DataFrame(mfcc_zscore, columns=columns_zscore)\r\ndf_minmax = pd.DataFrame(mfcc_minmax, columns=columns_minmax)\r\n\r\ncombined_df = pd.concat([df_zscore, df_minmax], axis=1)\r\n\r\n# Step 5: Save to a single CSV file\r\noutput_file = \"solution.csv\"\r\ncombined_df.to_csv(output_file, index=False)\r\n\r\n# Step 6: Display the result\r\nprint(\"Normalized MFCC Values (first 5 rows):\")\r\nprint(combined_df.head())\r\n\r\nprint(f\"\\n\u2705 Normalized data successfully saved to '{output_file}'\")\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-05T13:39:40.056207",
+    "answers": [
+      {
+        "questionId": "S_003",
+        "partId": "1",
+        "code": "S",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T13:46:25.466353",
+    "answers": [
+      {
+        "questionId": "S_003",
+        "partId": "1",
+        "code": "SSSS",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Speech Recognition",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T13:48:23.410758",
+    "answers": [
+      {
+        "questionId": "S_003",
+        "partId": "1",
+        "code": "EEEE",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "LLM",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-05T14:04:13.524859",
+    "answers": [
+      {
+        "questionId": "4",
+        "partId": "4",
+        "code": "PRINT(111)",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "LLM",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T14:11:12.811146",
+    "answers": [
+      {
+        "questionId": "31",
+        "partId": "31",
+        "code": "wef",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "LLM",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T15:24:00.234633",
+    "answers": [
+      {
+        "questionId": "31",
+        "partId": "31",
+        "code": "asdas",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-07T14:14:31.065055",
+    "answers": [
+      {
+        "questionId": "D_001",
+        "code": "from PIL import Image\n\n# Load image\nimg = Image.open(\"/home/student/Desktop/PS/backend/data/datasets/deep learning/level_1/D_001/input.png\")\n\n# Coordinates format: (left, upper, right, lower)\ndog_face_coords = (70, 80, 300, 320)      # Example values\nhuman_face_coords = (290, 70, 550, 280)   # Example values\n\n# Crop the images\ndog_face = img.crop(dog_face_coords)\nhuman_face = img.crop(human_face_coords)\n\n\n\n# Display cropped images\ndog_face.show()\nhuman_face.show()\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-07T15:22:14.667474",
+    "answers": [
+      {
+        "questionId": "D_002",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-07T15:25:38.907400",
+    "answers": [
+      {
+        "questionId": "D_003",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-07T16:46:42.170310",
+    "answers": [
+      {
+        "questionId": "D_002",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-07T16:47:55.512076",
+    "answers": [
+      {
+        "questionId": "D_003",
+        "code": "",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-10T12:25:26.688474",
+    "answers": [
+      {
+        "questionId": "G_001",
+        "partId": "1",
+        "code": "import speech_recognition as sr\r\nimport csv\r\n\r\n# Initialize the recognizer\r\nr = sr.Recognizer()\r\n\r\n# Load and process the audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_001/input.wav\"\r\n\r\nwith sr.AudioFile(audio_file) as source:\r\n    print(\"Listening to the audio file...\")\r\n    audio_data = r.record(source)\r\n\r\n# Transcribe the audio using Google's Speech Recognition\r\ntry:\r\n    text = r.recognize_google(audio_data)\r\n    print(\"\\nFull Transcription:\\n\")\r\n    print(text)\r\nexcept sr.UnknownValueError:\r\n    print(\"Google Speech Recognition could not understand the audio.\")\r\n    text = \"\"\r\nexcept sr.RequestError as e:\r\n    print(f\"Could not request results from Google Speech Recognition service; {e}\")\r\n    text = \"\"\r\n\r\n# Split transcription into individual words\r\nwords = text.split()\r\n\r\n# Export to CSV file\r\ncsv_filename = \"solution.csv\"\r\nwith open(csv_filename, mode=\"w\", newline=\"\", encoding=\"utf-8\") as file:\r\n    writer = csv.writer(file)\r\n    writer.writerow([\"Word\"])  # Header\r\n    for word in words:\r\n        writer.writerow([word])\r\n\r\n# Display only the first 5 rows of the output\r\nprint(\"\\nFirst 5 words from the transcription:\\n\")\r\nfor word in words[:5]:\r\n    print(word)\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-10T12:36:27.013807",
+    "answers": [
+      {
+        "questionId": "G_002",
+        "partId": "1",
+        "code": "# ===========================================================\r\n# Assessment Task: Chunk-Based Speech Transcription\r\n# ===========================================================\r\n\r\nimport speech_recognition as sr\r\nimport math\r\nimport pandas as pd\r\n\r\n# --------------------------------------------\r\n# 1. Load and Initialize\r\n# --------------------------------------------\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_002/input.wav\"\r\nrecognizer = sr.Recognizer()\r\n\r\n# Load audio file\r\nwith sr.AudioFile(audio_file) as source:\r\n    audio_data = recognizer.record(source)\r\n\r\n# Get duration using AudioFile\u2019s internal info\r\nwith sr.AudioFile(audio_file) as source:\r\n    duration = source.DURATION\r\n\r\nchunk_duration = 1  # seconds\r\nnum_chunks = math.ceil(duration / chunk_duration)\r\n\r\nresults = []\r\n\r\n# --------------------------------------------\r\n# 2. Process each chunk\r\n# --------------------------------------------\r\nfor i in range(num_chunks):\r\n    start_time = i * chunk_duration\r\n    end_time = min((i + 1) * chunk_duration, duration)\r\n\r\n    with sr.AudioFile(audio_file) as source:\r\n        # Offset and duration to read specific segment\r\n        audio_chunk = recognizer.record(source, offset=start_time, duration=end_time - start_time)\r\n\r\n    try:\r\n        # Google Speech Recognition\r\n        transcript = recognizer.recognize_google(audio_chunk)\r\n    except sr.UnknownValueError:\r\n        transcript = \"Unrecognized or Silent\"\r\n    except sr.RequestError:\r\n        transcript = \"API Request Failed\"\r\n\r\n    results.append({\r\n        \"ChunkID\": i + 1,\r\n        \"StartTime (s)\": round(start_time, 0),\r\n        \"EndTime (s)\": round(end_time, 1),\r\n        \"Transcript\": transcript\r\n    })\r\n\r\n# --------------------------------------------\r\n# 3. Save and Display\r\n# --------------------------------------------\r\ndf = pd.DataFrame(results)\r\ncsv_name = \"solution.csv\"\r\ndf.to_csv(csv_name, index=False)\r\n\r\nprint(f\"\\n\u2705 Transcription completed. File saved as: {csv_name}\\n\")\r\nprint(\"Sample Output (first 5 rows):\\n\")\r\nprint(df.head(5))\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-10T12:44:56.933214",
+    "answers": [
+      {
+        "questionId": "G_004",
+        "partId": "1",
+        "code": "import speech_recognition as sr\r\nfrom pydub import AudioSegment\r\nimport pandas as pd\r\nimport os\r\n\r\n# Load the audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_004/input.wav\"\r\nsound = AudioSegment.from_wav(audio_file)\r\n\r\n# Split into 1-second chunks\r\nchunk_length_ms = 1000  # 1 second = 1000 ms\r\nchunks = [sound[i:i + chunk_length_ms] for i in range(0, len(sound), chunk_length_ms)]\r\n\r\nrecognizer = sr.Recognizer()\r\nresults = []\r\n\r\n# Process each chunk\r\nfor i, chunk in enumerate(chunks):\r\n    chunk_filename = f\"chunk_{i}.wav\"\r\n    chunk.export(chunk_filename, format=\"wav\")\r\n\r\n    with sr.AudioFile(chunk_filename) as source:\r\n        audio_data = recognizer.record(source)\r\n        try:\r\n            # Transcribe the chunk\r\n            text = recognizer.recognize_google(audio_data)\r\n        except sr.UnknownValueError:\r\n            text = \"Unrecognized or Silent\"\r\n        except sr.RequestError:\r\n            text = \"API Request Error\"\r\n\r\n    # Compute start and end times\r\n    start_time = i\r\n    end_time = i + 1\r\n    results.append([i + 1, start_time, end_time, text])\r\n\r\n    # Remove temporary chunk file\r\n    os.remove(chunk_filename)\r\n\r\n# Create a DataFrame and save to CSV\r\ndf = pd.DataFrame(results, columns=[\"ChunkID\", \"StartTime (s)\", \"EndTime (s)\", \"Transcript\"])\r\ndf.to_csv(\"solution.csv\", index=False)\r\n\r\n# Display the first 5 rows\r\nprint(df.head())\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-10T14:03:39.490622",
+    "answers": [
+      {
+        "questionId": "G_006",
+        "partId": "1",
+        "code": "# Simple Speech Recognition using Google Web Speech API\r\n\r\nimport speech_recognition as sr\r\nimport csv\r\n\r\n# Step 1: Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Step 2: Load the audio file\r\naudio_path = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_006/input.wav\"\r\nwith sr.AudioFile(audio_path) as source:\r\n    print(f\"\u2705 Loading audio file: {audio_path}\")\r\n    audio_data = recognizer.record(source)\r\n\r\n# Step 3: Transcribe using Google Web Speech API\r\ntry:\r\n    print(\"\ud83c\udfa7 Transcribing audio using Google API...\")\r\n    transcription = recognizer.recognize_google(audio_data)\r\n    print(\"\\n\ud83d\udd39 Transcription Result:\")\r\n    print(transcription)\r\n\r\n    # Step 4: Save the transcription to CSV\r\n    with open(\"solution.csv\", \"w\", newline='', encoding=\"utf-8\") as f:\r\n        writer = csv.writer(f)\r\n        writer.writerow([\"Transcription\"])\r\n        writer.writerow([transcription])\r\n\r\n    print(\"\\n\u2705 Transcription saved to transcript_output.csv\")\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"\u26a0\ufe0f Google Speech Recognition could not understand the audio.\")\r\nexcept sr.RequestError as e:\r\n    print(f\"\u274c Could not request results from Google Speech Recognition service; {e}\")\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-10T14:14:19.402753",
+    "answers": [
+      {
+        "questionId": "G_007",
+        "partId": "1",
+        "code": "# Q4) Speech-to-Text with Error Handling\r\n\r\nimport speech_recognition as sr\r\nimport csv\r\n\r\n# Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Load the audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_007/input.wav\"\r\n\r\ntry:\r\n    with sr.AudioFile(audio_file) as source:\r\n        print(\"Loading audio...\")\r\n        audio_data = recognizer.record(source)\r\n\r\n    print(\"Transcribing audio...\")\r\n    # Try recognizing speech using Google Web Speech API\r\n    text = recognizer.recognize_google(audio_data)\r\n    print(\"Transcription Successful:\")\r\n    print(text)\r\n\r\n    # Save transcription to CSV file\r\n    with open(\"solution.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f:\r\n        writer = csv.writer(f)\r\n        writer.writerow([\"Transcription\"])\r\n        writer.writerow([text])\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"No speech detected.\")\r\nexcept sr.RequestError:\r\n    print(\"Network error or API unavailable.\")\r\nexcept Exception as e:\r\n    print(f\"An unexpected error occurred: {e}\")\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-10T14:15:42.156722",
+    "answers": [
+      {
+        "questionId": "G_008",
+        "partId": "1",
+        "code": "# Q4) Speech-to-Text with Error Handling\r\n\r\nimport speech_recognition as sr\r\nimport csv\r\n\r\n# Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Load the audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_008/input.wav\"\r\n\r\ntry:\r\n    with sr.AudioFile(audio_file) as source:\r\n        print(\"Loading audio...\")\r\n        audio_data = recognizer.record(source)\r\n\r\n    print(\"Transcribing audio...\")\r\n    # Try recognizing speech using Google Web Speech API\r\n    text = recognizer.recognize_google(audio_data)\r\n    print(\"Transcription Successful:\")\r\n    print(text)\r\n\r\n    # Save transcription to CSV file\r\n    with open(\"solution.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f:\r\n        writer = csv.writer(f)\r\n        writer.writerow([\"Transcription\"])\r\n        writer.writerow([text])\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"No speech detected.\")\r\nexcept sr.RequestError:\r\n    print(\"Network error or API unavailable.\")\r\nexcept Exception as e:\r\n    print(f\"An unexpected error occurred: {e}\")\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-10T14:21:47.611625",
+    "answers": [
+      {
+        "questionId": "G_009",
+        "partId": "1",
+        "code": "# Q5) Multi-line Transcription Storage\r\n\r\nimport speech_recognition as sr\r\nimport nltk\r\nimport csv\r\n\r\n# Download required NLTK resources\r\nnltk.download('punkt', quiet=True)\r\nnltk.download('punkt_tab', quiet=True)\r\n\r\n# Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Load audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_009/input.wav\"\r\n\r\ntry:\r\n    with sr.AudioFile(audio_file) as source:\r\n        print(\"Loading audio...\")\r\n        audio_data = recognizer.record(source)\r\n\r\n    print(\"Transcribing audio...\")\r\n    # Transcribe the speech using Google Web Speech API\r\n    transcription = recognizer.recognize_google(audio_data)\r\n\r\n    # Split text into sentences\r\n    sentences = nltk.sent_tokenize(transcription)\r\n\r\n    # Export each sentence as a separate row in CSV\r\n    with open(\"solution.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f:\r\n        writer = csv.writer(f)\r\n        writer.writerow([\"Sentence\"])\r\n        for sentence in sentences:\r\n            writer.writerow([sentence])\r\n\r\n    # Display the first 5 sentences\r\n    print(\"\\nFirst 5 Sentences:\")\r\n    for i, sentence in enumerate(sentences[:5], start=1):\r\n        print(f\"{i}. {sentence}\")\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"No speech detected or unclear audio.\")\r\nexcept sr.RequestError:\r\n    print(\"Network error or API service unavailable.\")\r\nexcept Exception as e:\r\n    print(f\"Unexpected error: {e}\")\r\n\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-10T14:24:00.967645",
+    "answers": [
+      {
+        "questionId": "G_010",
+        "partId": "1",
+        "code": "# Q5) Multi-line Transcription Storage\r\n\r\nimport speech_recognition as sr\r\nimport nltk\r\nimport csv\r\n\r\n# Download required NLTK resources\r\nnltk.download('punkt', quiet=True)\r\nnltk.download('punkt_tab', quiet=True)\r\n\r\n# Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Load audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_010/input.wav\"\r\n\r\ntry:\r\n    with sr.AudioFile(audio_file) as source:\r\n        print(\"Loading audio...\")\r\n        audio_data = recognizer.record(source)\r\n\r\n    print(\"Transcribing audio...\")\r\n    # Transcribe the speech using Google Web Speech API\r\n    transcription = recognizer.recognize_google(audio_data)\r\n\r\n    # Split text into sentences\r\n    sentences = nltk.sent_tokenize(transcription)\r\n\r\n    # Export each sentence as a separate row in CSV\r\n    with open(\"solution.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f:\r\n        writer = csv.writer(f)\r\n        writer.writerow([\"Sentence\"])\r\n        for sentence in sentences:\r\n            writer.writerow([sentence])\r\n\r\n    # Display the first 5 sentences\r\n    print(\"\\nFirst 5 Sentences:\")\r\n    for i, sentence in enumerate(sentences[:5], start=1):\r\n        print(f\"{i}. {sentence}\")\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"No speech detected or unclear audio.\")\r\nexcept sr.RequestError:\r\n    print(\"Network error or API service unavailable.\")\r\nexcept Exception as e:\r\n    print(f\"Unexpected error: {e}\")\r\n\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Deep Learning",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-10T16:03:52.865389",
+    "answers": [
+      {
+        "questionId": "D_002",
+        "code": "print(1)",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-10T16:12:54.900061",
+    "answers": [
+      {
+        "questionId": "G_009",
+        "partId": "1",
+        "code": "# Q5) Multi-line Transcription Storage\r\n\r\nimport speech_recognition as sr\r\nimport nltk\r\nimport csv\r\n\r\n# Download required NLTK resources\r\nnltk.download('punkt', quiet=True)\r\nnltk.download('punkt_tab', quiet=True)\r\n\r\n# Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Load audio file\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_009/input.wav\"\r\n\r\ntry:\r\n    with sr.AudioFile(audio_file) as source:\r\n        print(\"Loading audio...\")\r\n        audio_data = recognizer.record(source)\r\n\r\n    print(\"Transcribing audio...\")\r\n    # Transcribe the speech using Google Web Speech API\r\n    transcription = recognizer.recognize_google(audio_data)\r\n\r\n    # Split text into sentences\r\n    sentences = nltk.sent_tokenize(transcription)\r\n\r\n    # Export each sentence as a separate row in CSV\r\n    with open(\"solution.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f:\r\n        writer = csv.writer(f)\r\n        writer.writerow([\"Sentence\"])\r\n        for sentence in sentences:\r\n            writer.writerow([sentence])\r\n\r\n    # Display the first 5 sentences\r\n    print(\"\\nFirst 5 Sentences:\")\r\n    for i, sentence in enumerate(sentences[:5], start=1):\r\n        print(f\"{i}. {sentence}\")\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"No speech detected or unclear audio.\")\r\nexcept sr.RequestError:\r\n    print(\"Network error or API service unavailable.\")\r\nexcept Exception as e:\r\n    print(f\"Unexpected error: {e}\")\r\n\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-10T16:20:28.201325",
+    "answers": [
+      {
+        "questionId": "G_010",
+        "partId": "1",
+        "code": "import speech_recognition as sr\r\nfrom collections import Counter\r\nimport pandas as pd\r\n\r\n# Step 1: Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# Step 2: Load and transcribe the audio\r\naudio_path = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_010/input.wav\"\r\nprint(\"\ud83c\udf99\ufe0f Loading audio and starting transcription...\")\r\n\r\ntry:\r\n    with sr.AudioFile(audio_path) as source:\r\n        audio_data = recognizer.record(source)\r\n        text = recognizer.recognize_google(audio_data)\r\n        print(\"\u2705 Transcription complete:\")\r\n        print(text)\r\n\r\n    # Step 3: Split text into individual words\r\n    words = text.lower().split()\r\n\r\n    # Step 4: Count word frequencies\r\n    word_counts = Counter(words)\r\n\r\n    # Step 5: Get top 5 keywords\r\n    top_keywords = word_counts.most_common(5)\r\n    print(\"\\n\ud83d\udd1d Top 5 Keywords:\")\r\n    for word, count in top_keywords:\r\n        print(f\"{word}: {count}\")\r\n\r\n    # Step 6: Save to CSV\r\n    df = pd.DataFrame(top_keywords, columns=[\"Keyword\", \"Frequency\"])\r\n    df.to_csv(\"solution.csv\", index=False)\r\n    print(\"\\n\u2705 Keywords exported to speech_keywords.csv\")\r\n\r\nexcept sr.UnknownValueError:\r\n    print(\"\u274c Speech not understood \u2014 no transcription available.\")\r\nexcept sr.RequestError as e:\r\n    print(f\"\u26a0\ufe0f API Error: {e}\")\r\nexcept Exception as e:\r\n    print(f\"\u26a0\ufe0f Unexpected error: {e}\")\r\n\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-11T11:33:22.829319",
+    "answers": [
+      {
+        "questionId": "G_011",
+        "partId": "1",
+        "code": "from pydub import AudioSegment\r\nimport pandas as pd\r\nimport os\r\n\r\n# === Step 1: Load the audio file ===\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_011/input.wav\"\r\nsound = AudioSegment.from_wav(audio_file)\r\n\r\n# Convert to mono and standardize sampling rate\r\nsound = sound.set_channels(1)\r\nsound = sound.set_frame_rate(16000)\r\n\r\n# === Step 2: Split into 1-second chunks ===\r\nchunk_length_ms = 1000  # 1 second = 1000 ms\r\nchunks = [sound[i:i + chunk_length_ms] for i in range(0, len(sound), chunk_length_ms)]\r\n\r\n# === Step 3: Export chunks (optional) and record metadata ===\r\nresults = []\r\noutput_folder = \"chunks\"\r\nos.makedirs(output_folder, exist_ok=True)\r\n\r\nfor i, chunk in enumerate(chunks):\r\n    chunk_filename = os.path.join(output_folder, f\"chunk_{i + 1}.wav\")\r\n    chunk.export(chunk_filename, format=\"wav\")\r\n\r\n    start_time = i\r\n    end_time = i + 1\r\n    results.append([i + 1, start_time, end_time])\r\n\r\n# === Step 4: Save metadata to CSV ===\r\ndf = pd.DataFrame(results, columns=[\"ChunkID\", \"StartTime(s)\", \"EndTime(s)\"])\r\ndf.to_csv(\"solution.csv\", index=False)\r\n\r\n# === Step 5: Display first 3 rows ===\r\nprint(df.head(3))\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "failed",
+    "timestamp": "2025-11-12T09:27:38.494164",
+    "answers": [
+      {
+        "questionId": "G_016",
+        "partId": "1",
+        "code": "import speech_recognition as sr\r\nfrom pydub import AudioSegment\r\nimport pandas as pd\r\nimport os\r\n\r\n# === Step 1: Load the audio file ===\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_016/input.wav\"\r\nsound = AudioSegment.from_wav(audio_file)\r\n\r\n# Convert to mono and 16kHz for better compatibility\r\nsound = sound.set_channels(1)\r\nsound = sound.set_frame_rate(16000)\r\n\r\n# === Step 2: Split audio into 1-second chunks ===\r\nchunk_length_ms = 1000  # 1 second = 1000 milliseconds\r\nchunks = [sound[i:i + chunk_length_ms] for i in range(0, len(sound), chunk_length_ms)]\r\n\r\nrecognizer = sr.Recognizer()\r\nresults = []\r\n\r\n# Create a temporary folder for chunks\r\nos.makedirs(\"temp_chunks\", exist_ok=True)\r\n\r\n# === Step 3: Process and transcribe each chunk ===\r\nfor i, chunk in enumerate(chunks):\r\n    start_time = i\r\n    end_time = i + 1\r\n    chunk_filename = f\"temp_chunks/chunk_{i + 1}.wav\"\r\n    chunk.export(chunk_filename, format=\"wav\")\r\n\r\n    # Skip silent chunks based on amplitude threshold\r\n    if chunk.dBFS < -50:\r\n        text = \"Unrecognized or Silent\"\r\n    else:\r\n        with sr.AudioFile(chunk_filename) as source:\r\n            audio_data = recognizer.record(source)\r\n            try:\r\n                text = recognizer.recognize_google(audio_data)\r\n            except sr.UnknownValueError:\r\n                text = \"Unrecognized or Silent\"\r\n            except sr.RequestError:\r\n                text = \"API Request Error\"\r\n            except Exception as e:\r\n                text = f\"Error: {e}\"\r\n\r\n    results.append([i + 1, start_time, end_time, text])\r\n\r\n# === Step 4: Save results to CSV ===\r\ndf = pd.DataFrame(results, columns=[\"ChunkID\", \"StartTime(s)\", \"EndTime(s)\", \"Transcript\"])\r\ndf.to_csv(\"solution.csv\", index=False)\r\n\r\n# === Step 5: Display first 3 rows ===\r\nprint(df.head(3))\r\n",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-12T11:40:48.527752",
+    "answers": [
+      {
+        "questionId": "G_011",
+        "partId": "1",
+        "code": "import speech_recognition as sr\r\nfrom pydub import AudioSegment\r\nimport pandas as pd\r\nimport os\r\nimport shutil\r\n\r\n# === Step 1: Load the audio file ===\r\naudio_file = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_011/input.wav\"\r\nsound = AudioSegment.from_wav(audio_file)\r\n\r\n# Convert to mono and 16kHz for better compatibility\r\nsound = sound.set_channels(1)\r\nsound = sound.set_frame_rate(16000)\r\n\r\n# === Step 2: Split audio into 1-second chunks ===\r\nchunk_length_ms = 1000  # 1 second = 1000 milliseconds\r\nchunks = [sound[i:i + chunk_length_ms] for i in range(0, len(sound), chunk_length_ms)]\r\n\r\nrecognizer = sr.Recognizer()\r\nresults = []\r\n\r\n# Create a temporary folder for chunks\r\nos.makedirs(\"temp_chunks\", exist_ok=True)\r\n\r\n# === Step 3: Process and transcribe each chunk ===\r\nfor i, chunk in enumerate(chunks):\r\n    start_time = i\r\n    end_time = i + 1\r\n    chunk_filename = f\"temp_chunks/chunk_{i + 1}.wav\"\r\n    chunk.export(chunk_filename, format=\"wav\")\r\n\r\n    # Skip silent chunks based on amplitude threshold\r\n    if chunk.dBFS < -50:\r\n        text = \"Unrecognized or Silent\"\r\n    else:\r\n        with sr.AudioFile(chunk_filename) as source:\r\n            audio_data = recognizer.record(source)\r\n            try:\r\n                text = recognizer.recognize_google(audio_data)\r\n            except sr.UnknownValueError:\r\n                text = \"Unrecognized or Silent\"\r\n            except sr.RequestError:\r\n                text = \"API Request Error\"\r\n            except Exception as e:\r\n                text = f\"Error: {e}\"\r\n\r\n    results.append([i + 1, start_time, end_time, text])\r\n\r\n# === Step 4: Save results to CSV ===\r\ndf = pd.DataFrame(results, columns=[\"ChunkID\", \"StartTime(s)\", \"EndTime(s)\", \"Transcript\"])\r\ndf.to_csv(\"solution.csv\", index=False)\r\n\r\n# === Step 5: Display first 3 rows with left indent ===\r\nprint(\"   \" + df.head(3).to_string(index=False).replace(\"\\n\", \"\\n   \"))\r\n\r\n\r\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "Generative AI",
+    "level": "level2",
+    "status": "passed",
+    "timestamp": "2025-11-12T11:49:59.073374",
+    "answers": [
+      {
+        "questionId": "G_012",
+        "partId": "1",
+        "code": "import speech_recognition as sr\r\nfrom pydub import AudioSegment\r\nimport pandas as pd\r\nimport math\r\n\r\n# File path\r\naudio_path = \"/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Generative AI/level_2/G_012/input.wav\"\r\n\r\n# Load audio using pydub\r\nprint(\"\ud83d\udd0a Loading audio...\")\r\naudio = AudioSegment.from_wav(audio_path)\r\nduration_ms = len(audio)\r\nchunk_length_ms = 2000  # 2-second chunks\r\nchunks = math.ceil(duration_ms / chunk_length_ms)\r\n\r\n# Initialize recognizer\r\nrecognizer = sr.Recognizer()\r\n\r\n# List to store results\r\nresults = []\r\n\r\nprint(\"\ud83c\udfa7 Processing audio chunks...\")\r\nfor i in range(chunks):\r\n    start_time = i * chunk_length_ms\r\n    end_time = min((i + 1) * chunk_length_ms, duration_ms)\r\n    chunk_audio = audio[start_time:end_time]\r\n    \r\n    # Export temporary chunk\r\n    chunk_filename = f\"chunk_{i}.wav\"\r\n    chunk_audio.export(chunk_filename, format=\"wav\")\r\n\r\n    # Load chunk into recognizer\r\n    with sr.AudioFile(chunk_filename) as source:\r\n        audio_data = recognizer.record(source)\r\n\r\n        try:\r\n            # Transcribe with Google API\r\n            text = recognizer.recognize_google(audio_data)\r\n        except sr.UnknownValueError:\r\n            text = \"[Unrecognized Speech]\"\r\n        except sr.RequestError:\r\n            text = \"[API Error]\"\r\n\r\n    # Alternate speaker tags\r\n    speaker = \"Speaker 1\" if i % 2 == 0 else \"Speaker 2\"\r\n    \r\n    # Append results\r\n    results.append({\r\n        \"Speaker\": speaker,\r\n        \"StartTime(s)\": round(start_time / 1000, 2),\r\n        \"EndTime(s)\": round(end_time / 1000, 2),\r\n        \"Transcript\": text\r\n    })\r\n\r\n# Create DataFrame\r\ndf = pd.DataFrame(results)\r\n\r\n# Save to CSV\r\noutput_file = \"solution.csv\"\r\ndf.to_csv(output_file, index=False)\r\n\r\n# Display output\r\nprint(f\"\\n\u2705 Segmentation complete! Saved to {output_file}\\n\")\r\nprint(df.head(4))  # Display first 4 rows\r\n\r\n",
+        "passed": true
+      }
+    ]
+  }
+]

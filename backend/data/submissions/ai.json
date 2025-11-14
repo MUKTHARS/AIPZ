@@ -1,0 +1,54 @@
+[
+  {
+    "subject": "ml",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-11-05T17:29:31.738458",
+    "answers": [
+      {
+        "questionId": "M_002",
+        "partId": "Model Training",
+        "code": "import pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import Ridge\nfrom sklearn.metrics import r2_score\n\n# Paths\ntrain_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/train.csv'\ntest_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/test.csv'\n\n# Load data\ntrain = pd.read_csv(train_path)\ntest = pd.read_csv(test_path)\n\n# Features and target\nX = train.drop(columns=['price'])\ny = train['price']\n\n# Split data (80%-20%)\nX_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Ridge Regression\nridge = Ridge(alpha=1.0, fit_intercept=True)\nridge.fit(X_train, y_train)\n\n# Predict on validation set\ny_val_pred = ridge.predict(X_val)\n\n# R\u00b2 Score\nr2 = round(r2_score(y_val, y_val_pred), 4)\nprint(f\"R-squared Score: {r2}\")\n\n# Predict on test dataset\nX_test = test\ny_test_pred = ridge.predict(X_test)\n\n# Optional: Save predictions if needed\nsubmission = pd.DataFrame({\n    'Predicted_Price': y_test_pred\n})\nsubmission.to_csv('submission.csv', index=False)\n",
+        "passed": true
+      },
+      {
+        "questionId": "M_002",
+        "partId": "Prediction",
+        "code": "import pandas as pd\nfrom sklearn.linear_model import Ridge\n\n# Paths\ntrain_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/train.csv'\ntest_path = '/home/student/Desktop/PS/backend/data/datasets/ml/level_1/M_002/test.csv'\n\n# Load data\ntrain = pd.read_csv(train_path)\ntest = pd.read_csv(test_path)\n\n# Features and target\nX_train = train.drop(columns=['price'])\ny_train = train['price']\n\n# Train Ridge Regression model (reuse Part 1 settings)\nridge = Ridge(alpha=1.0, fit_intercept=True)\nridge.fit(X_train, y_train)\n\n# Predict on test dataset\ny_test_pred = ridge.predict(test)\n\n# Prepare submission DataFrame\nsubmission = pd.DataFrame({\n    'Id': test.index + 1,   # Row index as ID starting from 1\n    'SalePrice': y_test_pred\n})\n\n# Save to CSV\nsubmission.to_csv('submission.csv', index=False)\n",
+        "passed": true
+      }
+    ]
+  },
+  {
+    "subject": "LLM",
+    "level": "level1",
+    "status": "failed",
+    "timestamp": "2025-11-05T17:30:57.392592",
+    "answers": [
+      {
+        "questionId": "9",
+        "partId": "9",
+        "code": "import re\n\n# Input text\ntext = \"This product is excellent\"\n\n# Word-level tokenization\ntokens = re.findall(r'\\b\\w+\\b', text)\n\nprint(\"Tokens     :\", tokens)\n",
+        "passed": false
+      },
+      {
+        "questionId": "31",
+        "partId": "31",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "10",
+        "partId": "10",
+        "code": "",
+        "passed": false
+      },
+      {
+        "questionId": "4",
+        "partId": "4",
+        "code": "",
+        "passed": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,270 @@
+[
+  {
+    "id": "D_001",
+    "title": "Crop Image 1",
+    "description": "Given an image that contains both a dog and a human, process the image so that the faces of the dog and the human are extracted as separate images. Begin by loading the original image, then determine the exact pixel coordinates that define the rectangular regions for each face. Using these coordinates, crop out each face from the image, ensuring that the cropped sections clearly show the intended subject without unnecessary background. Save the resulting cropped faces as separate image files in a suitable format, and finally display both cropped outputs for verification.\r\n",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.8,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/D_002/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/D_002/output1.png",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/D_002/output2.png"
+  },
+  {
+    "id": "I_003",
+    "title": "Crop image 2",
+    "description": "Given an image containing a cat sitting next to a bowl of food, process the image to separately extract the cat’s face and the bowl. Identify the pixel coordinates for both regions, crop them precisely, save them as individual image files, and display the outputs.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_003/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_003/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_003/output2.jpg"
+  },
+  {
+    "id": "I_004",
+    "title": "Crop Image 3",
+    "description": "You are provided with a photograph showing two football players during a match. Extract the face of each player by determining their respective pixel coordinates, crop them accurately, save the cropped images in a standard format, and present them for review.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_004/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_004/output1.png",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_004/output2.png"
+  },
+  {
+    "id": "I_005",
+    "title": "Crop Image 4",
+    "description": "An image contains a bird perched on a tree branch beside a flower. Locate the regions corresponding to the bird and the flower, crop them based on manually identified pixel boundaries, save them separately, and display the results.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_005/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_005/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_005/output2.jpg"
+  },
+  {
+    "id": "I_006",
+    "title": "Crop Image 5",
+    "description": "A street photograph shows a car parked beside a street vendor’s cart. Identify the exact rectangular regions for the car and the cart, crop each from the image, store them as separate files, and display them for confirmation.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_006/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_006/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_006/output2.png"
+  },
+  {
+    "id": "I_007",
+    "title": "Crop Image 6",
+    "description": "An image displays a group of three friends posing together. Extract the face of each friend individually by specifying their pixel coordinates, crop each face, save them separately, and display them all in sequence.",
+    "No_of_outputs": "3",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_007/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_007/output1.png",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_007/output2.png",
+    "output_3": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_007/output3.png"
+  },
+  {
+    "id": "I_008",
+    "title": "Crop Image 7",
+    "description": "A wildlife photograph captures a lion resting under a tree with a nearby zebra. Identify and crop the lion face and zebra face from the image using their pixel coordinate ranges, save each cropped image, and display them.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_008/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_008/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_008/output2.jpg"
+  },
+  {
+    "id": "I_009",
+    "title": "Crop Image 8",
+    "description": "A beach photograph includes a surfer holding a surfboard and a lifeguard tower in the background. Determine and crop the surfer with the surfboard and the lifeguard tower separately, save them, and show the cropped sections.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_009/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_009/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_009/output2.jpg"
+  },
+  {
+    "id": "I_010",
+    "title": "Crop Image 9",
+    "description": "A cooking scene image features a chef and a plate of food. Determine the pixel coordinates for the chef’s face and the plate, crop both regions, store them separately, and present the cropped outputs.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.5,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_010/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_010/output1.png",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_010/output2.png"
+  },
+  {
+    "id": "I_011",
+    "title": "Crop Image 10",
+    "description": "A pet store advertisement image displays a rabbit and a parrot on a perch. Identify the regions for the rabbit and the parrot, crop them based on their pixel coordinates, save the cropped outputs, and display them for review.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_011/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_011/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_011/output2.jpg"
+  },
+  {
+    "id": "I_012",
+    "title": "Crop Image 11",
+    "description": "A space agency poster shows an astronaut floating in space. Identify the regions containing the astronaut, crop the astronaut based on their pixel coordinates, save the cropped image, and display the image for review.",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_012/input.jpeg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_012/output1.jpg"
+  },
+  {
+    "id": "I_013",
+    "title": "Crop Image 12",
+    "description": "Identify the regions containing the boy image , crop the boy image based on the pixel coordinates, save the cropped image, and display the image for review.",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.95,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_013/input.jpeg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_013/output1.jpg"
+  },
+  {
+    "id": "I_014",
+    "title": "Crop Image 13",
+    "description": "Identify the regions of the human being and the animal, crop them based on their pixel coordinates, save the cropped outputs, and display them for review.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_014/input.jpeg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_014/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_014/output2.jpg"
+  },
+  {
+    "id": "I_015",
+    "title": "Crop Image 14",
+    "description": "Find regions of the dog and girl objects from the image, crop them based on their pixel coordinates, save the cropped outputs, and display them for review.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_015/input.jpeg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_015/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_015/output2.jpg"
+  },
+  {
+    "id": "I_016",
+    "title": "Crop 15",
+    "description": "Find regions of the baby and cat objects from the image, crop them based on their pixel coordinates, save the cropped outputs, and display them for review.",
+    "No_of_outputs": "2",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_016/input.jpeg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_016/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_016/output2.jpg"
+  },
+  {
+    "id": "I_017",
+    "title": "Crop Image 16",
+    "description": "Find regions of the cat object from the image, crop the object based on the pixel coordinates, save the cropped outputs, and display the object for review.",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.95,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_017/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_017/output1.jpg"
+  },
+  {
+    "id": "I_018",
+    "title": "Crop Image 17",
+    "description": "Find regions of the marked fingerprint object from the image, crop the object based on the pixel coordinates, save the cropped outputs, and display the object for review.",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.95,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_018/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_018/output1.jpg"
+  },
+  {
+    "id": "I_019",
+    "title": "Crop Image 18",
+    "description": "Find regions of the iris object from the image, crop the object based on the pixel coordinates, save the cropped outputs, and display the object for review.",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.95,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_019/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_019/output1.jpg"
+  },
+  {
+    "id": "I_020",
+    "title": "Crop Image 19",
+    "description": "Identify the patterns of object regions of the fingerprint image, crop the objects based on their pixel coordinates, save the cropped outputs separately, and display the objects for the review.",
+    "No_of_outputs": "3",
+    "compare_similarity": 0.9,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_020/input.jpg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_020/output1.jpg",
+    "output_2": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_020/output2.jpg",
+    "output_3": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_020/output3.jpg"
+  },
+  {
+    "id": "I_021",
+    "title": "Crop Image 11",
+    "description": "A space agency poster shows an astronaut floating in space. Identify the regions containing the astronaut, crop the astronaut based on their pixel coordinates, save the cropped image, and display the image for review.",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.95,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_021/input.jpeg"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS/backend/data/datasets/Deep Learning/level_1/I_021/output1.jpg"
+  },
+  {
+    "id": "D_002",
+    "title": "erger",
+    "description": "gerger",
+    "No_of_outputs": "1",
+    "compare_similarity": 0.8,
+    "datasets": {
+      "input_image": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Deep Learning/level_1/D_002/input.png"
+    },
+    "starter_code": "",
+    "output_1": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/Deep Learning/level_1/D_002/output1.png"
+  }
+]

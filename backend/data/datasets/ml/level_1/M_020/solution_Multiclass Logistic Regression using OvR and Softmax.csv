@@ -1,0 +1,7 @@
+sno,precision,recall,f1-score,support
+setosa,1,1,1,19
+versicolor,1,1,1,13
+virginica,1,1,1,13
+accuracy,1,1,1,1
+macro avg,1,1,1,45
+weighted avg,1,1,1,45

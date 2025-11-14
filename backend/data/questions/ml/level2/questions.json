@@ -1,0 +1,211 @@
+[
+  {
+    "id": "M_001",
+    "title": "Adult Income using Naive Bayes Classifier",
+    "description": "You are provided with the Adult Income dataset (adult.csv), which contains demographic and employment-related information about individuals.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_001/train.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "Your task is to develop a Naive Bayes Classifier to predict whether a person’s income exceeds $50,000 per year based on various attributes such as age, education, occupation, hours worked per week, and more.\nPredict the Precision value using the Naïve Bayes Classifier for the Adult Income Dataset.\n\nConstraints:\n\n1.\tLoad the dataset using pandas and handle any missing values by dropping the corresponding rows.\n2.\tEncode all categorical features using LabelEncoder from sklearn.preprocessing.\n3.\tSeparate the dataset into input features (X) and the target column (income).\n4.\tSplit the dataset into training (70%) and testing (30%) sets using train_test_split() with random_state = 42.\n5.\tTrain a Gaussian Naive Bayes (GaussianNB) model from sklearn.naive_bayes on the training data.\n6.\tPredict the income classes on the test dataset.\n7.\tEvaluate the model performance using the following metrics (with weighted averages):\n•\tPrecision\n•\tRecall\n•\tF1-Score\n8.\tDisplay the Precision value rounded to 4 decimal places.",
+        "evaluation_label": "Precision:",
+        "expected_value": 0.7758,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "csv_similarity",
+        "description": "Predict the Classification Report using the Decision Tree Classifier for the Adult Income Dataset.\n\nConstraints:\n\n1.\tLoad the dataset using pandas and handle any missing values by dropping the corresponding rows.\n2.\tEncode all categorical features using LabelEncoder from sklearn.preprocessing.\n3.\tSeparate the dataset into input features (X) and the target column (income).\n4.\tSplit the dataset into training (70%) and testing (30%) sets using train_test_split() with random_state = 42.\n5.\tTrain a DecisionTreeClassifier model from sklearn.tree on the training data with max_depth=10.\n6.\tPredict the income classes on the test dataset.\n7.\tEvaluate the model performance using the following metrics (with weighted averages):\n     •\tPrecision\n     •\tRecall\n     •\tF1-Score\n8.\tDisplay the Classification Report using classification_report() from sklearn.metrics.\n9.\tPrint the Classification Report saved in the 'classification.csv' file.",
+        "placeholder_filename": "classification.csv",
+        "key_columns": [
+          "index",
+          "precision",
+          "recall",
+          "f1-score",
+          "support"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_001/solution_Prediction.csv"
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_002",
+    "title": "Adult Income to predict recall and confusion matrix",
+    "description": "You are provided with the Adult Income dataset (adult.csv), which contains demographic and employment-related information about individuals.\r\n",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_002/train.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "Your task is to develop a Naive Bayes Classifier to predict whether a person’s income exceeds $50,000 per year based on various attributes such as age, education, occupation, hours worked per week, and more.\n\nPredict the Recall value using the Naïve Bayes Classifier for the Adult Income Dataset.\n\nConstraints:\n\n1. Load the dataset using pandas and handle any missing values by dropping the corresponding rows.\n2.  Encode all categorical features using LabelEncoder from sklearn.preprocessing.\n3.  Separate the dataset into input features (X) and the target column (income).\n4. Split the dataset into training (70%) and testing (30%) sets using train_test_split() with random_state = 42.\n5. Train a Gaussian Naive Bayes (GaussianNB) model from sklearn.naive_bayes on the training data.\n6.  Predict the income classes on the test dataset.\n7. Evaluate the model performance using the following metrics (with weighted averages):\n·       Precision\n·       Recall\n·       F1-Score\n8. Display the Recall value rounded to 4 decimal places.",
+        "evaluation_label": "Recall:",
+        "expected_value": 0.7958,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "csv_similarity",
+        "description": "Predict the Confusion Matrix using the Decision Tree Classifier for the Adult Income Dataset.\n\nConstraints:\n\n1.\tLoad the dataset using pandas and handle any missing values by dropping the corresponding rows.\n2.\tEncode all categorical features using LabelEncoder from sklearn.preprocessing.\n3.\tSeparate the dataset into input features (X) and the target column (income).\n4.\tSplit the dataset into training (70%) and testing (30%) sets using train_test_split() with random_state = 42.\n5.\tTrain a DecisionTreeClassifier model from sklearn.tree on the training data with max_depth=10.\n6.\tPredict the income classes on the test dataset.\n7.\tDisplay the Confusion Matrix using confusion_matrix() from sklearn.metrics. [index= 'Actual_0' and 'Actual_1'], columns= 'Pred_0' and 'Pred_1']",
+        "placeholder_filename": "confusion_matrix.csv",
+        "key_columns": [
+          "index",
+          "pred_0",
+          "pred_1"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_002/solution_Prediction.csv"
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_003",
+    "title": "Bank Marketing using Random Forest to print confusion matrix",
+    "description": "You are provided with a dataset named bank.csv, which contains customer information related to a bank’s marketing campaign.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_003/train.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "csv_similarity",
+        "description": "Build a Random Forest Classifier to predict whether a customer will subscribe to a term deposit.\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tEncode categorical columns using LabelEncoder.\n3.\tSplit data into 70% train and 30% test (random_state=42).\n4.\tTrain a RandomForestClassifier with n_estimators=100, max_depth=None, and random_state=42.\n5. Predict the confusion matrix using the confusion_matrix() from sklearn.metrics. [index= 'Actual_No' and 'Actual_Yes'], columns= 'Pred_No' and 'Pred_Yes']\n6. Save the file in the form of rf_confusion_matrix.csv.",
+        "placeholder_filename": "rf_confusion_matrix.csv",
+        "key_columns": [
+          "index",
+          "Pred_No",
+          "Pred_Yes"
+        ],
+        "similarity_threshold": 0.9,
+        "solution_file": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_003/solution_Preprocessing.csv"
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "Your task is to apply a Decision Tree Classifier to predict whether a customer will subscribe to a term deposit (deposit column).\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tEncode categorical columns using LabelEncoder.\n3.\tSplit data into 70% train and 30% test (random_state=42).\n4.\tTrain a DecisionTreeClassifier with max_depth = 10 and random_state = 42.\n5.\tEvaluate performance and print the precision value rounded to 4 decimals.",
+        "evaluation_label": "Precision:",
+        "expected_value": 0.8079,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_004",
+    "title": "Bank Marketing using Decision Tree Classifier to print F1-Score",
+    "description": "You are provided with a dataset named bank.csv, which contains customer information related to a bank’s marketing campaign.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_004/train.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "Your task is to apply a Decision Tree Classifier to predict whether a customer will subscribe to a term deposit (deposit column).\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tEncode categorical columns using LabelEncoder.\n3.\tSplit data into 70% train and 30% test (random_state=42).\n4.\tTrain a DecisionTreeClassifier with max_depth = 10 and random_state = 42.\n5.\tEvaluate performance and print the F1-Score value rounded to 4 decimals, Use weighted average for multi-class problems.",
+        "evaluation_label": "F1-Score:",
+        "expected_value": 0.8075,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "Build a SVM Classifier to predict whether a customer will subscribe to a term deposit.\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tEncode categorical columns using LabelEncoder.\n3.\tSplit the data into 70% train and 30% test.\n4.\tTrain an SVM model(random_state=42).\n5.\tEvaluate the performance and print the Recall value rounded to 4 decimals, Use weighted average for multi-class problems.",
+        "evaluation_label": "Recall:",
+        "expected_value": 0.7342,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_005",
+    "title": "Bank Marketing using Random Forest classifier to print the model accuracy",
+    "description": "You are provided with a dataset named bank.csv, which contains customer information related to a bank’s marketing campaign.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_005/train.csv",
+      "test": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_005/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing",
+        "type": "numerical_evaluation",
+        "description": "Build a Random Forest Classifier to predict whether a customer will subscribe to a term deposit.\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tEncode categorical columns using LabelEncoder.\n3.\tSplit data into 70% train and 30% test (random_state=42).\n4.\tTrain a RandomForestClassifier with n_estimators=100, max_depth=None, and random_state=42.\n5.\tPrint the Random Forest Model Accuracy using y_test with 4 decimal values.[Sample output: Random Forest Model Accuracy: x.xxxx]",
+        "evaluation_label": "Random Forest Model Accuracy:",
+        "expected_value": 0.8397,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "Build a SVM Classifier to predict whether a customer will subscribe to a term deposit.\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tEncode categorical columns using LabelEncoder.\n3.\tSplit the data into 70% train and 30% test.\n4.\tTrain an SVM model(random_state=42).\n5.\tEvaluate the performance using test data(y_test) and print the Precision value rounded to 4 decimals, Use weighted average for multi-class problems.",
+        "evaluation_label": "Precision:",
+        "expected_value": 0.7389,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_006",
+    "title": "Wine Quality Prediction using Random Forest Classifier to predict the quality category of the wine (good or bad).",
+    "description": "You are provided with a dataset named WineQT.csv, which contains various physicochemical properties of wines and their corresponding quality scores.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_006/train.csv",
+      "test": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_006/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing and Model Evaluation",
+        "type": "numerical_evaluation",
+        "description": "Build a Random Forest Classifier to predict the quality category of the wine (good or bad).\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tConvert the quality column into a binary target variable:\n•\tAssign 1 if quality >= 7 (Good quality wine)\n•\tAssign 0 if quality < 7 (Bad quality wine).\n3.\tSplit the data into 70% training and 30% testing sets (random_state=42).\n4.\tTrain a RandomForestClassifier with n_estimators=100, max_depth=None, and random_state=42.\n5.\tPrint the Random Forest Model Accuracy on the test data (y_test) with 4 decimal places.\n[Sample Output: Random Forest Model Accuracy: x.xxxx]",
+        "evaluation_label": "Random Forest Model Accuracy:",
+        "expected_value": 0.895,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "You are provided with a dataset named WineQT.csv, which contains various physicochemical properties of wines and their corresponding quality scores.\nBuild a Support Vector Machine (SVM) Classifier to predict the quality category of the wine (good or bad).\n\nConstraints:\n1.\tLoad the dataset and drop missing values.\n2.\tConvert the quality column into a binary target variable:\n•\tAssign 1 if quality >= 7 (Good quality wine).\n•\tAssign 0 if quality < 7 (Bad quality wine).\n3.\tStandardize all feature values using StandardScaler.\n4.\tSplit the data into 70% training and 30% testing sets (random_state=42).\n5.\tTrain a SVC (Support Vector Classifier) with kernel='rbf', C=1.0, and gamma='scale'.\n6.\tPrint the SVM Model Accuracy on the test data (y_test) with 4 decimal places.\n[Sample output: SVM Model Accuracy: x.xxxx]",
+        "evaluation_label": "SVM Model Accuracy: ",
+        "expected_value": 0.898,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  },
+  {
+    "id": "M_007",
+    "title": "Wine Quality Prediction using Random Forest Classifier to predict the loss value",
+    "description": "You are provided with a dataset named WineQT.csv, which contains various physicochemical properties of wines and their corresponding quality scores.",
+    "datasets": {
+      "train": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_007/train.csv",
+      "test": "/home/student/Desktop/PS711FINAL/PS/backend/data/datasets/ml/level_2/M_007/test.csv"
+    },
+    "parts": [
+      {
+        "part_id": "Preprocessing and loss evaluation",
+        "type": "numerical_evaluation",
+        "description": "Build a Random Forest Classifier to predict the quality category of the wine (good or bad).\n\nConstraints:\n\n1.\tLoad the dataset and drop missing values.\n2.\tConvert the quality column into a binary target variable:\n•\tAssign 1 if quality >= 7 (Good quality wine)\n•\tAssign 0 if quality < 7 (Bad quality wine).\n3.\tSplit the data into 70% training and 30% testing sets (random_state=42).\n4.\tApply feature standardization using StandardScaler.\n5.\tTrain a RandomForestClassifier with:\n•\tn_estimators=100\n•\tmax_depth=None\n•\trandom_state=42\n6.\tUse the trained model to predict class probabilities on the test set using predict_proba().\n7.\tCompute and print the Log Loss between the true labels (y_test) and predicted probabilities (y_pred_proba), rounded to 4 decimal places.[Sample Output: Random Forest Log Loss: x.xxxx]",
+        "evaluation_label": "Random Forest Log Loss:",
+        "expected_value": 0.216,
+        "tolerance": 0.02
+      },
+      {
+        "part_id": "Prediction",
+        "type": "numerical_evaluation",
+        "description": "You are provided with a dataset named WineQT.csv, which contains various physicochemical properties of wines and their corresponding quality scores.\nBuild a Support Vector Machine (SVM) Classifier to predict the quality category of the wine (good or bad).\n\nConstraints:\n\n1.\tUse the WineQT.csv dataset and remove any missing values.\n2.\tConvert the quality column into a binary target variable where:\n•\t1 → quality ≥ 7 (good wine)\n•\t0 → otherwise (average or poor wine)\n3.\tSplit the dataset into 70% training and 30% testing sets using random_state=42.\n4.\tApply feature standardization using StandardScaler.\n5.\tTrain an SVM classifier with the following parameters:\n•\tkernel = 'rbf'\n•\tC = 1.0\n•\tgamma = 'scale'\n•\tprobability = True\n•\trandom_state = 42\n6.\tCompute and display the weighted recall score for model evaluation.\n[Sample output: Recall: x.xxxx]",
+        "evaluation_label": "Recall:",
+        "expected_value": 0.898,
+        "tolerance": 0.02
+      }
+    ],
+    "isValidated": true
+  }
+]

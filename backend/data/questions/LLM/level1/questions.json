@@ -1,0 +1,752 @@
+[
+  {
+    "title": "Byte Pair Encoding Tokenizer for Short Phone Reviews",
+    "description": "Train a BPE tokenizer on a small corpus of phone-related sentences and tokenize user inputs that may contain spelling variations, slang, or elongated words.\nThis tests subword segmentation, unknown token handling ([UNK]), and vocabulary generalization.",
+    "test_cases": [
+      {
+        "input": "This phone is amaaazing!",
+        "output": "Tokens     : ['[UNK]', 'h', 'is', '[UNK]', 'phone', '[UNK]', 'is', '[UNK]', 'am', 'a', 'a', 'az', 'ing', '[UNK]']\nToken IDs  : [0, 11, 27, 0, 34, 0, 27, 0, 29, 4, 4, 36, 41, 0]"
+      },
+      {
+        "input": "Battery life is amazng",
+        "output": "'[UNK]', 'at', 't', 'er', 'y', '[UNK]', 'li', 'fe', '[UNK]', 'is', '[UNK]', 'amaz', 'n', 'g']\nToken IDs  : [0, 35, 21, 30, 25, 0, 38, 47, 0, 27, 0, 40, 15, 10]"
+      },
+      {
+        "input": "Super quality phone",
+        "output": "Tokens     : ['[UNK]', 'u', 'p', 'er', '[UNK]', 'q', 'u', 'ali', 't', 'y', '[UNK]', 'phone']\nToken IDs  : [0, 22, 17, 30, 0, 18, 22, 43, 21, 25, 0, 34]"
+      },
+      {
+        "input": "The camerra is amazing!",
+        "output": "Tokens     : ['[UNK]', 'h', 'e', '[UNK]', 'cam', 'er', 'r', 'a', '[UNK]', 'is', '[UNK]', 'amazing', '[UNK]']\nToken IDs  : [0, 11, 8, 0, 45, 30, 19, 4, 0, 27, 0, 42, 0]"
+      },
+      {
+        "input": "I love this phone so much",
+        "output": "Tokens     : ['[UNK]', '[UNK]', 'l', 'o', 'v', 'e', '[UNK]', 'this', '[UNK]', 'phone', '[UNK]', 's', 'o', '[UNK]', 'm', 'u', 'c', 'h']\nToken IDs  : [0, 0, 13, 16, 23, 8, 0, 39, 0, 34, 0, 20, 16, 0, 14, 22, 6, 11]"
+      }
+    ],
+    "id": "1"
+  },
+  {
+    "title": "Custom Tokenizer for Chatbot Input Preprocessing Scenario",
+    "description": "You are building a chatbot system that receives informal and expressive text messages from users. Words like “heyyy”, “sooo good”, or “yaaay!” often appear in feedback. To ensure your LLM model handles unseen words, you must build a BPE tokenizer that splits such spelling variants into meaningful subwords using a custom vocabulary trained on a sample chat corpus.\n\nSample corpus\nchat_corpus = [\n    \"hey how are you\",\n    \"this is so good\",\n    \"what are you doing now\",\n    \"yaaay I love this\",\n    \"this is amazing\",\n    \"feeling happy and relaxed\",\n    \"that’s sooo funny\",\n    \"I am so excited!\",\n    \"heyyy what’s up\",\n    \"cool cool cool!\"\n]",
+    "test_cases": [
+      {
+        "input": "heyyy I’m so happy!",
+        "output": "Tokens     : ['heyyy', '[UNK]', '[UNK]', '’', 'm', '[UNK]', 'so', '[UNK]', 'happy', '!']\nToken IDs  : [78, 0, 0, 27, 14, 0, 47, 0, 89, 4]"
+      },
+      {
+        "input": "yaaay this is cool",
+        "output": "Tokens     : ['yaaay', '[UNK]', 'this', '[UNK]', 'is', '[UNK]', 'cool']\nToken IDs  : [88, 0, 35, 0, 29, 0, 37]"
+      },
+      {
+        "input": "that’s sooo nice",
+        "output": "Tokens     : ['that', '’', 's', '[UNK]', 'sooo', '[UNK]', 'n', 'i', 'c', 'e']\nToken IDs  : [69, 27, 19, 0, 87, 0, 15, 12, 6, 8]"
+      },
+      {
+        "input": "what’s up??",
+        "output": "Tokens     : ['what', '’', 's', '[UNK]', 'up', '[UNK]', '[UNK]']\nToken IDs  : [48, 27, 19, 0, 71, 0, 0]"
+      },
+      {
+        "input": "",
+        "output": ""
+      }
+    ],
+    "id": "2"
+  },
+  {
+    "title": "Testing BPE Tokenizer on Chat Corpus",
+    "description": "The program trains a Byte Pair Encoding (BPE) tokenizer using a small chat corpus.\n It applies lowercasing and accent stripping normalization, splits text by whitespace, and encodes input sentences into subword tokens and token IDs.\nThe goal is to verify that the tokenizer correctly handles normalization, punctuation, unknown tokens, and merge behavior.",
+    "test_cases": [
+      {
+        "input": "HeYyy I’m So HapPy!",
+        "output": "Tokens: ['heyyy', 'im', 'so', 'happy', '!']\n Token IDs: [12, 45, 8, 23, 5]"
+      },
+      {
+        "input": "yaaay this is cool",
+        "output": "Tokens: ['yaaay', 'this', 'is', 'cool']\nToken IDs: [14, 7, 9, 11]"
+      },
+      {
+        "input": "what’s up??",
+        "output": "Tokens: ['whats', 'up', '?', '?']\n Token IDs: [10, 15, 5, 5]"
+      },
+      {
+        "input": "feeling excited and relaxed",
+        "output": "Tokens: ['feeling', 'excited', 'and', 'relaxed']\n Token IDs: [18, 42, 13, 27]"
+      }
+    ],
+    "id": "3"
+  },
+  {
+    "title": "Custom Tokenizer for Medical Notes",
+    "description": "Scenario:\n You are developing an LLM assistant for doctors to process handwritten EMR (Electronic Medical Record) notes converted to text. These notes are often fragmented, with non-standard spellings and abbreviations. You need to build a BPE tokenizer that can effectively tokenize such input.\n\nSample Corpus:\nmedical_notes = [\n    \"pt has diab\",\n    \"BP is 140/90\",\n    \"sched for ECG\",\n    \"pt feels anxi\",\n    \"meds include metformin\",\n    \"pt c/o chest pain\",\n    \"followup in 2wks\",\n    \"HbA1c high\",\n    \"no hx of CAD\",\n    \"rx: atenolol 50mg\"\n]\n",
+    "test_cases": [
+      {
+        "input": "pt has diab and HTN",
+        "output": "Tokens     : ['pt', '[UNK]', 'has', '[UNK]', 'diab', '[UNK]', 'an', 'd', '[UNK]', '[UNK]', '[UNK]', '[UNK]']\nToken IDs  : [35, 0, 70, 0, 97, 0, 49, 15, 0, 0, 0, 0]"
+      },
+      {
+        "input": "sched for ECG next wk",
+        "output": "Tokens     : ['sch', 'ed', '[UNK]', 'for', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'n', 'e', 'x', 't', '[UNK]', 'w', 'k']\nToken IDs  : [82, 37, 0, 40, 0, 0, 0, 0, 0, 24, 16, 32, 29, 0, 31, 21]"
+      },
+      {
+        "input": "pt feels anxi again",
+        "output": "Tokens     : ['pt', '[UNK]', 'feels', '[UNK]', 'anxi', '[UNK]', 'a', 'g', 'ain']\nToken IDs  : [35, 0, 98, 0, 95, 0, 12, 18, 52]"
+      },
+      {
+        "input": "rx includes aspirin",
+        "output": "Tokens     : ['rx', '[UNK]', 'incl', 'ude', 's', '[UNK]', 'as', 'p', 'i', 'r', 'in']\nToken IDs  : [81, 0, 87, 84, 28, 0, 50, 26, 20, 27, 33]"
+      },
+      {
+        "input": "",
+        "output": "Tokens     : []\nToken IDs  : []"
+      }
+    ],
+    "id": "4"
+  },
+  {
+    "title": "Tokenizer for Product Review Classification",
+    "description": "Scenario:\n You’re building a model that processes informal product reviews. Users use spelling variants like “greeeeat”, “wooow”, or “baaad”. A BPE tokenizer must be trained to deal with these reviews effectively.\nSample Corpus:\nreviews = [\n    \"this is great\",\n    \"baaad quality\",\n    \"wooow amazing!\",\n    \"so disappointed\",\n    \"greeeeat product\",\n    \"works well\",\n    \"terrible service\",\n    \"love this phone\",\n    \"not good at all\",\n    \"perfect fit\"\n]\n",
+    "test_cases": [
+      {
+        "input": "greeeeat quality",
+        "output": "Tokens     : ['greeeeat', '[UNK]', 'qu', 'alit', 'y']\nToken IDs  : [89, 0, 73, 87, 27]"
+      },
+      {
+        "input": "not baaad",
+        "output": "Tokens     : ['not', '[UNK]', 'baaad']\nToken IDs  : [97, 0, 93]"
+      },
+      {
+        "input": "wooow and amazing",
+        "output": "Tokens     : ['woo', 'ow', '[UNK]', 'a', 'n', 'd', '[UNK]', 'amaz', 'ing']\nToken IDs  : [81, 66, 0, 5, 17, 8, 0, 91, 90]"
+      },
+      {
+        "input": "service was terrible",
+        "output": "Tokens     : ['ser', 'vice', '[UNK]', 'w', 'a', 's', '[UNK]', 'ter', 'ribl', 'e']\nToken IDs  : [76, 80, 0, 26, 5, 22, 0, 77, 74, 9]"
+      },
+      {
+        "input": "works perfectly",
+        "output": "Tokens     : ['wor', 'ks', '[UNK]', 'per', 'fect', 'l', 'y']\nToken IDs  : [83, 61, 0, 70, 56, 15, 27]"
+      }
+    ],
+    "id": "5"
+  },
+  {
+    "title": "Tokenizer for Student Chat App",
+    "description": "Scenario:\n You're designing an app for university students that receives casual chats like “sup?”, “yooo”, or “gotta gooo!”. You must train a BPE tokenizer on this student slang.\nSample Corpus:\nstudent_chat = [\n    \"yooo whatsup\",\n    \"gotta go now\",\n    \"sup bro\",\n    \"you coming?\",\n    \"see yaaa\",\n    \"i’m chillin\",\n    \"exams suck!\",\n    \"let's party\",\n    \"assignment due tmrw\",\n    \"nooo wayyy\"\n]\n",
+    "test_cases": [
+      {
+        "input": "nooo I’m chillin",
+        "output": "Tokens     : ['nooo', '[UNK]', '[UNK]', '’', 'm', '[UNK]', 'chillin']\nToken IDs  : [61, 0, 0, 28, 17, 0, 92]"
+      },
+      {
+        "input": "gotta party yaaa",
+        "output": "Tokens     : ['gotta', '[UNK]', 'party', '[UNK]', 'yaaa']\nToken IDs  : [76, 0, 86, 0, 90]"
+      },
+      {
+        "input": "sup broooo!",
+        "output": "Tokens     : ['sup', '[UNK]', 'br', 'oo', 'oo', '!']\nToken IDs  : [36, 0, 42, 29, 29, 4]"
+      },
+      {
+        "input": "exams tmrw suck",
+        "output": "Tokens     : ['exams', '[UNK]', 'tmrw', '[UNK]', 'suck']\nToken IDs  : [83, 0, 87, 0, 75]"
+      },
+      {
+        "input": "",
+        "output": "Tokens     : []\nToken IDs  : []"
+      }
+    ],
+    "id": "6"
+  },
+  {
+    "title": "Tokenizer for News Headlines",
+    "description": "Scenario:\n You are developing a tokenizer for real-time news headlines. The headlines are short, contain all-caps words, and sometimes use hashtags or punctuation without spacing. Your tokenizer should segment meaningful units.\nSample Corpus:\nnews = [\n    \"BREAKING: FIRE IN CITY\",\n    \"PM visits flood-hit area\",\n    \"Market hits all-time high\",\n    \"Tech stocks surge\",\n    \"Elections 2024 coming\",\n    \"India wins gold!\",\n    \"WHO issues alert\",\n    \"COVID cases rising\",\n    \"Big crash on highway\",\n    \"Alert: thunderstorm warning\"\n]\n",
+    "test_cases": [
+      {
+        "input": "BREAKING NEWS TODAY!",
+        "output": "Tokens     : ['[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '!']\nToken IDs  : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4]"
+      },
+      {
+        "input": "COVID cases hit high",
+        "output": "Tokens     : ['[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'cas', 'es', '[UNK]', 'hit', '[UNK]', 'high']\nToken IDs  : [0, 0, 0, 0, 0, 0, 62, 43, 0, 50, 0, 51]"
+      },
+      {
+        "input": "PM meets WHO reps",
+        "output": "Tokens     : ['[UNK]', '[UNK]', '[UNK]', 'me', 'et', 's', '[UNK]', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 're', 'p', 's']\nToken IDs  : [0, 0, 0, 78, 67, 26, 0, 0, 0, 0, 0, 86, 24, 26]"
+      },
+      {
+        "input": "market sees dip",
+        "output": "Tokens     : ['mar', 'ket', '[UNK]', 's', 'e', 'es', '[UNK]', 'di', 'p']\nToken IDs  : [80, 76, 0, 26, 14, 43, 0, 64, 24]"
+      },
+      {
+        "input": "Elections in 2024",
+        "output": "Tokens     : ['[UNK]', 'l', 'ec', 'ti', 'on', 's', '[UNK]', 'in', '[UNK]', '202', '4']\nToken IDs  : [0, 20, 42, 49, 46, 26, 0, 32, 0, 56, 8]"
+      }
+    ],
+    "id": "7"
+  },
+  {
+    "title": "Tokenizer for Code Comments in IDE Assistant",
+    "description": "Scenario:\n You’re building an LLM-based assistant to help programmers. It must understand comments like “func not working” or “pls fix this bug asap”. Informal language is common, so train a BPE tokenizer on code comments.\nSample Corpus:\n\ncode_comments = [\n    \"init not defined\",\n    \"pls fix asap\",\n    \"bug in login func\",\n    \"check db conn\",\n    \"handle err gracefully\",\n    \"timeout issue\",\n    \"loop not exiting\",\n    \"need retry logic\",\n    \"add null check\",\n    \"deprecated api used\"\n]",
+    "test_cases": [
+      {
+        "input": "bug in func",
+        "output": "Tokens     : ['bug', '[UNK]', 'in', '[UNK]', 'func']\nToken IDs  : [92, 0, 25, 0, 84]"
+      },
+      {
+        "input": "pls fix timeout asap",
+        "output": "Tokens     : ['pls', '[UNK]', 'fix', '[UNK]', 'tim', 'eout', '[UNK]', 'asap']\nToken IDs  : [69, 0, 98, 0, 74, 95, 0, 91]"
+      },
+      {
+        "input": "login loop not exiting",
+        "output": "Tokens     : ['login', '[UNK]', 'loop', '[UNK]', 'not', '[UNK]', 'exiting']\nToken IDs  : [87, 0, 80, 0, 39, 0, 97]"
+      },
+      {
+        "input": "deprecated api err",
+        "output": "Tokens     : ['depr', 'ecat', 'ed', '[UNK]', 'api', '[UNK]', 'err']\nToken IDs  : [83, 79, 26, 0, 81, 0, 96]"
+      },
+      {
+        "input": "",
+        "output": "Tokens     : []\nToken IDs  : []"
+      }
+    ],
+    "id": "8"
+  },
+  {
+    "title": "Word-Level Tokenizer – Sentiment Analysis Scenario",
+    "description": "You're building a simple sentiment analysis system. You tokenize text at the word level, meaning each word is separated by spaces and basic punctuation splitting is applied.",
+    "test_cases": [
+      {
+        "input": "This product is excellent",
+        "output": "Tokens     : ['This', 'product', 'is', 'excellent']"
+      },
+      {
+        "input": "It's not good at all",
+        "output": "Tokens     : ['It', \"'\", 's', 'not', 'good', 'at', 'all']"
+      },
+      {
+        "input": "Unbelievably awesome!",
+        "output": "['Unbelievably', 'awesome', '!']"
+      }
+    ],
+    "id": "9"
+  },
+  {
+    "title": "Character-Level Tokenizer",
+    "description": " Scenario: Name Spell Checker with Character-Level Tokenizer\nYou are developing a name spell checker module for a government identity system that handles millions of user entries. Users often misspell or exaggerate names in forms (e.g., \"Daaavid\", \"Saaam\"). The system must detect these variations and normalize them.\nSince exact word matching fails with these variants, you implement a Character-Level Tokenizer to:\nIdentify patterns like repeated characters\n\n\nDetect prefixes/suffixes\n\n\nPrepare character-level embeddings for ML models\n",
+    "test_cases": [
+      {
+        "input": "David",
+        "output": "Tokens     : ['D', 'a', 'v', 'i', 'd']"
+      },
+      {
+        "input": "Daaavid",
+        "output": "Tokens     : ['D', 'a', 'a', 'a', 'v', 'i', 'd']"
+      },
+      {
+        "input": "John!",
+        "output": "['J', 'o', 'h', 'n', '!']"
+      },
+      {
+        "input": "Saaam🤦",
+        "output": "['S', 'a', 'a', 'a', 'm', '🤦']"
+      },
+      {
+        "input": "An@123",
+        "output": "['A', 'n', '@', '1', '2', '3']"
+      }
+    ],
+    "id": "10"
+  },
+  {
+    "title": "WordPiece Tokenizer – Subword Handling for BERT-like Feedback Understanding",
+    "description": "You are developing a BERT-like transformer model to process user feedback on products and services. Since users often use rare or exaggerated words like \"greeeeat\" or \"unbelievable\", you use a WordPiece tokenizer to break unknown or long words into meaningful subword units.",
+    "test_cases": [
+      {
+        "input": "unbelievable",
+        "output": "Tokens     : ['unbelievable']"
+      },
+      {
+        "input": "disappointed",
+        "output": "Tokens     : ['disappointed']"
+      },
+      {
+        "input": "greeeeat",
+        "output": "Tokens     : ['gr', '##ee', '##ee', '##at']"
+      }
+    ],
+    "id": "11"
+  },
+  {
+    "title": "SentencePiece (Unigram LM)",
+    "description": "Scenario:\nYou are building a text normalization system for a shopping app's chatbot. Users frequently enter continuous words without spaces like \"checkoutnow\" or \"bestdealoffer\".\n To handle such cases, you use SentencePiece with Unigram LM, which can segment words from raw character sequences and learn meaningful subword units without relying on whitespace.\nSave corpus for training (file: english_corpus.txt)\ngood product\nsuper man\ncheckout now\nlimited offer\nbest buy on mobile\ndeal of the day\ndiscount applied\nfree delivery now\nbuy 1 get 1\nbig sale happening\n[Requirements:      \ninput='/content/drive/MyDrive/LLM SKILL QUESTIONS/sample.txt',\n    model_prefix='sp_en',\n    vocab_size=40,  \n    model_type='unigram',\n    character_coverage=1.0\n]\n",
+    "test_cases": [
+      {
+        "input": "goodproduct",
+        "output": "Tokens     : ['▁', 'g', 'o', 'od', 'p', 'r', 'od', 'u', 'c', 't']"
+      },
+      {
+        "input": "superman",
+        "output": "Tokens     : ['▁', 's', 'u', 'p', 'er', 'm', 'a', 'n']"
+      },
+      {
+        "input": "checkoutnow",
+        "output": "Tokens     : ['▁', 'c', 'he', 'c', 'k', 'o', 'u', 't', 'n', 'o', 'w']"
+      },
+      {
+        "input": "limitedoffer",
+        "output": "Tokens     : ['▁', 'li', 'm', 'i', 't', 'ed', 'o', 'f', 'f', 'er']"
+      },
+      {
+        "input": "bestbuyonmobile",
+        "output": "Tokens     : ['▁b', 'e', 's', 't', 'b', 'u', 'y', 'o', 'n', 'm', 'o', 'b', 'i', 'l', 'e']"
+      }
+    ],
+    "id": "12"
+  },
+  {
+    "title": "Byte-Level BPE Tokenizer",
+    "description": "Scenario:\nYou’re developing a tokenizer for a social media analysis system. Since posts often include emojis, non-ASCII characters, and noisy multilingual text, you use a Byte-Level BPE tokenizer similar to what GPT-2/GPT-3 use.\nIt operates at the byte level and can encode any Unicode character (e.g., emojis, accented letters) without [UNK].\n",
+    "test_cases": [
+      {
+        "input": "I ❤️ Python!",
+        "output": "Tokens     : ['I', 'ĠâĿ', '¤', 'ï¸ı', 'ĠPython', '!']"
+      },
+      {
+        "input": "gr8 work 👍",
+        "output": "Tokens     : ['gr', '8', 'Ġwork', 'ĠðŁĳ', 'į']"
+      },
+      {
+        "input": "Olá",
+        "output": "Tokens     : ['Ol', 'Ã¡']"
+      }
+    ],
+    "id": "13"
+  },
+  {
+    "title": "Sentence-Level (Whitespace) Tokenizer",
+    "description": "Scenario:\nYou’re building a lightweight NLP prototype where tokens are simply split based on whitespace. It’s fast, naive, and requires no training.",
+    "test_cases": [
+      {
+        "input": "Welcome to AI world!",
+        "output": "Tokens     : ['Welcome', 'to', 'AI', 'world!']"
+      },
+      {
+        "input": "Hello   there",
+        "output": "Tokens     : ['Hello', 'there']"
+      },
+      {
+        "input": "See you soon!",
+        "output": "Tokens     : ['See', 'you', 'soon!']"
+      }
+    ],
+    "id": "14"
+  },
+  {
+    "title": "Regex-Based Tokenizer",
+    "description": "Scenario:\nYou are building a tweet processor to extract structured tokens like hashtags, mentions, URLs, emojis, and words using custom regular expressions.\n",
+    "test_cases": [
+      {
+        "input": "@user thanks for #help!",
+        "output": "Tokens     : ['@user', 'thanks', 'for', '#help', '!']"
+      },
+      {
+        "input": "Visit http://bit.ly/link",
+        "output": "Tokens     : ['Visit', 'http://bit.ly/link']"
+      },
+      {
+        "input": "LOL😂!!!",
+        "output": "Tokens     : ['LOL', '😂', '!', '!', '!']"
+      }
+    ],
+    "id": "15"
+  },
+  {
+    "title": "Word-Level Tokenizer – Scenario: Tokenizing Legal Documents",
+    "description": "You’re developing a Legal Document Preprocessor for a law firm. Legal contracts contain formal phrases, clauses separated by semicolons or commas, and compound terms (e.g., “non-disclosure”, “third-party”). You need to tokenize the sentences into meaningful words while preserving punctuation and legal terminology for downstream processing (like clause classification or entity extraction).\n",
+    "test_cases": [
+      {
+        "input": "This Agreement is made on July 8, 2025.",
+        "output": "Tokens     : ['This', 'Agreement', 'is', 'made', 'on', 'July', '8', ',', '2025', '.']"
+      },
+      {
+        "input": "The party agrees to a non-disclosure obligation.",
+        "output": "Tokens     : ['The', 'party', 'agrees', 'to', 'a', 'non', '-disclosure', 'obligation', '.']"
+      },
+      {
+        "input": "Payment shall be made within 30 days; interest applies thereafter.",
+        "output": "Tokens     : ['Payment', 'shall', 'be', 'made', 'within', '30', 'days', ';', 'interest', 'applies', 'thereafter', '.']"
+      },
+      {
+        "input": "Any breach by a third-party shall be liable.",
+        "output": "Tokens     : ['Any', 'breach', 'by', 'a', 'third', '-party', 'shall', 'be', 'liable', '.']"
+      },
+      {
+        "input": "Subject to applicable law, changes may occur.",
+        "output": "Tokens     : ['Subject', 'to', 'applicable', 'law', ',', 'changes', 'may', 'occur', '.']"
+      }
+    ],
+    "id": "16"
+  },
+  {
+    "title": "Handling Out-of-Vocabulary (OOV) Words with BPE",
+    "description": "In real-world chat applications, users often make spelling mistakes or use new slang. A BPE tokenizer must handle these out-of-vocabulary words by breaking them into known subword units instead of dropping them. Your task is to implement a simple tokenizer that simulates this behavior.\n",
+    "test_cases": [
+      {
+        "input": "The chatbot's respsonse was unbeleivable.",
+        "output": "['the', 'chat', '##bot', \"##'s\", 'res', '##p', '##son', '##se', 'was', 'un', '##bel', '##ie', '##vable', '.']"
+      },
+      {
+        "input": "He made a typo: respsonse.",
+        "output": "['he', 'made', 'a', 'typo', ':', 'res', '##p', '##son', '##se', '.']"
+      },
+      {
+        "input": "Unbeleivable effort!",
+        "output": "['un', '##bel', '##ie', '##vable', 'effort', '!']"
+      },
+      {
+        "input": "The chatbot worked well.",
+        "output": "['the', 'chat', '##bot', 'worked', 'well', '.']"
+      },
+      {
+        "input": "Fix the respsonse quickly.",
+        "output": "['fix', 'the', 'res', '##p', '##son', '##se', 'quickly', '.']"
+      }
+    ],
+    "id": "17"
+  },
+  {
+    "title": "Tokenizing Social Media Text",
+    "description": "Social media posts often contain hashtags, usernames, and emojis. A tokenizer must split hashtags into meaningful subwords while keeping emojis intact as separate tokens. Your task is to implement such a tokenizer.\n",
+    "test_cases": [
+      {
+        "input": "I am so excited! #LLMlove",
+        "output": "['i', 'am', 'so', 'excited', '!', '#', 'll', '##m', '##love']"
+      },
+      {
+        "input": "Follow me @AI_bot 🤖",
+        "output": "['follow', 'me', '@', 'ai', '_', 'bot', '🤖']"
+      },
+      {
+        "input": "#MachineLearning is fun!",
+        "output": "['#', 'machine', '##learning', 'is', 'fun', '!']"
+      },
+      {
+        "input": "This model rocks 💯🔥",
+        "output": "['this', 'model', 'rocks', '💯', '🔥']"
+      },
+      {
+        "input": "New post by @JohnDoe!",
+        "output": "['new', 'post', 'by', '@', 'john', 'doe', '!']"
+      }
+    ],
+    "id": "18"
+  },
+  {
+    "title": "Tokenizing Contractions and Possessives",
+    "description": "In English, contractions like \"don't\" or possessives like \"Mary's\" must be split into meaningful tokens. Your task is to implement a tokenizer that correctly handles these cases.\n",
+    "test_cases": [
+      {
+        "input": "I don't know who's there.",
+        "output": "['i', 'don', \"##'t\", 'know', 'who', \"##'s\", 'there', '.']"
+      },
+      {
+        "input": "It's amazing!",
+        "output": "['it', \"##'s\", 'amazing', '!']"
+      },
+      {
+        "input": "Mary's book is here.",
+        "output": "['mary', \"##'s\", 'book', 'is', 'here', '.']"
+      },
+      {
+        "input": "They've done it.",
+        "output": "['they', \"##'ve\", 'done', 'it', '.']"
+      },
+      {
+        "input": "You're right.",
+        "output": "['you', \"##'re\", 'right', '.']"
+      }
+    ],
+    "id": "19"
+  },
+  {
+    "title": "Tokenizing Numbers and Scientific Notation",
+    "description": "Numbers appear in different formats like integers, decimals, and scientific notation. A tokenizer must break them consistently into smaller units without losing meaning.",
+    "test_cases": [
+      {
+        "input": "The distance is 1.5 million km.",
+        "output": "['the', 'distance', 'is', '1', '.', '5', 'million', 'km', '.']"
+      },
+      {
+        "input": "Value = 2.75e3",
+        "output": "['value', '=', '2', '.', '75', '##e', '##3']"
+      },
+      {
+        "input": "Pi ≈ 3.1415",
+        "output": "['pi', '≈', '3', '.', '1415']"
+      },
+      {
+        "input": "Temperature is -12.6C",
+        "output": "['temperature', 'is', '-', '12', '.', '6', 'c']"
+      },
+      {
+        "input": "Avogadro number 6.022e23",
+        "output": "['avogadro', 'number', '6', '.', '022', '##e', '##23']"
+      }
+    ],
+    "id": "20"
+  },
+  {
+    "title": " Handling Emojis as Distinct Tokens",
+    "description": "In modern chat and social media, emojis carry semantic meaning. A tokenizer should treat them as separate tokens and not merge them with words.\n",
+    "test_cases": [
+      {
+        "input": "That's awesome! 👍",
+        "output": "['that', \"##'s\", 'awesome', '!', '👍']"
+      },
+      {
+        "input": "Happy Birthday 🎉🎂",
+        "output": "['happy', 'birthday', '🎉', '🎂']"
+      },
+      {
+        "input": "Good job 💯🔥",
+        "output": "['good', 'job', '💯', '🔥']"
+      },
+      {
+        "input": "Let's party 🥳🎊",
+        "output": "['let', \"##'s\", 'party', '🥳', '🎊']"
+      },
+      {
+        "input": "I love it 😂😍",
+        "output": "['i', 'love', 'it', '😂', '😍']"
+      }
+    ],
+    "id": "21"
+  },
+  {
+    "title": "Multilingual Tokenization (German)",
+    "description": "Modern tokenizers must handle diacritics, compound words, and inflections in multilingual contexts.  In German, long compound words and accented characters should be split into meaningful subwords.  You are asked to tokenize German sentences into subwords and assign token IDs.\nSample vocabulary with token IDs (toy example)\nvocab = {\n    'guten': 23, 'morgen': 45, ',': 12, 'mein': 88, 'freund': 99, '.': 11,\n    'sch': 50, '##ön': 51, '##en': 52, 'tag': 53, '!': 1, 'wie': 54,\n    'geht': 55, \"'s\": 56, '?': 16,\n    'donau': 60, '##dampf': 61, '##schiff': 62, '##fahrts': 63, '##gesellschaft': 64,\n    'für': 70, 'dich': 71,\n    'stra': 72, '##ße': 73, 'ist': 11, 'lang': 74\n}\n",
+    "test_cases": [
+      {
+        "input": " Guten Morgen, mein Freund.",
+        "output": "Tokens: ['guten', 'morgen', ',', 'mein', 'freund', '.']\nToken IDs: [23, 45, 12, 88, 99, 11]\nExpected IDs: [23, 45, 12, 88, 99, 11]\nMatch: True"
+      },
+      {
+        "input": "Schönen Tag! Wie geht's?",
+        "output": "Tokens: ['sch', '##ön', '##en', 'tag', '!', 'wie', 'geht', \"'s\", '?']\nToken IDs: [50, 51, 52, 53, 1, 54, 55, 56, 16]\nExpected IDs: [50, 51, 52, 53, 1, 54, 55, 56, 16, 1]\nMatch: False"
+      },
+      {
+        "input": "Donaudampfschifffahrtsgesellschaft",
+        "output": "Tokens: ['donau', '##dampf', '##schiff', '##fahrts', '##gesellschaft']\nToken IDs: [60, 61, 62, 63, 64]\nExpected IDs: [60, 61, 62, 63, 64]\nMatch: True"
+      },
+      {
+        "input": "für dich",
+        "output": "Tokens: ['für', 'dich']\nToken IDs: [70, 71]\nExpected IDs: [70, 71]\nMatch: True"
+      },
+      {
+        "input": "straße ist lang.",
+        "output": "Tokens: ['stra', '##ße', 'ist', 'lang', '.']\nToken IDs: [72, 73, 11, 74, 11]\nExpected IDs: [72, 73, 11, 74, 3]\nMatch: False"
+      }
+    ],
+    "id": "22"
+  },
+  {
+    "title": "Tokenization of Numbers and Scientific Notation",
+    "description": "In text data, numbers appear in various forms such as integers, decimals, and scientific notation.  A tokenizer must consistently split digits, decimal points, and scientific symbols into subwords.  You are asked to tokenize sentences containing numbers, decimals, and exponential formats.\n\nvocab = {\n    'the': 4, 'distance': 34, 'is': 12, '1': 55, '.': 88, '5': 42, 'million': 78,\n    'kilometers': 90, 'or': 11, '##e': 33, '##6': 31, 'km': 22,\n    'value': 65, '=': 10, '2': 21, '-': 19, '3': 22,\n    'temp': 35, '273': 94, '15': 95, '°': 96, 'c': 67,\n    'pi': 13, 'approx': 36, '14159': 97,\n    ',': 89, '000': 98\n}\n",
+    "test_cases": [
+      {
+        "input": "The distance is 1.5 million kilometers or 1.5e6 km.",
+        "output": "Tokens: ['the', 'distance', 'is', '1', '.', '5', 'million', 'kilometers', 'or', '1', '.', '5', '##e', '##6', 'km', '.']\nToken IDs: [4, 34, 12, 55, 88, 42, 78, 90, 11, 55, 88, 42, 33, 31, 22, 88]\nExpected IDs: [4, 34, 12, 55, 6, 42, 78, 90, 11, 55, 6, 42, 33, 31, 22, 5]\nMatch: False"
+      },
+      {
+        "input": "Value = 2e-3",
+        "output": "Tokens: ['value', '=', '2', '##e', '-', '3']\nToken IDs: [65, 10, 21, 33, 19, 22]\nExpected IDs: [65, 10, 21, 33, 19, 22]\nMatch: True"
+      },
+      {
+        "input": "Temp is -273.15°C",
+        "output": "Tokens: ['temp', 'is', '-', '273', '.', '15', '°', 'c']\nToken IDs: [35, 12, 19, 94, 88, 95, 96, 67]\nExpected IDs: [35, 12, 19, 94, 88, 95, 96, 67]\nMatch: True"
+      },
+      {
+        "input": "Pi approx 3.14159",
+        "output": "Tokens: ['pi', 'approx', '3', '.', '14159']\nToken IDs: [13, 36, 22, 88, 97]\nExpected IDs: [13, 36, 22, 88, 97]\nMatch: True"
+      },
+      {
+        "input": "1,000,000 or 1e6",
+        "output": "Tokens: ['1', ',', '000', ',', '000', 'or', '1', '##e', '6']\nToken IDs: [55, 89, 98, 89, 98, 11, 55, 33, -1]\nExpected IDs: [55, 89, 98, 89, 98, 11, 55, 33, 31]\nMatch: False"
+      }
+    ],
+    "id": "23"
+  },
+  {
+    "title": "Small Vocabulary Size Impact",
+    "description": "When the vocabulary size is very small, tokenizers often fall back to character-level subword units.  This leads to tokens being split into small parts with prefixes like ## to mark continuation.  You are asked to tokenize words into minimal character-level units and assign token IDs.\n\nvocab = {\n    'the': 12, 'q': 5, '##u': 11, '##ick': 23,\n    'b': 7, '##rown': 56, 'f': 8, '##ox': 99, '.': 4,\n    'h': 2, '##e': 3, '##l': 3, '##o': 4, '!': 1,\n    'd': 6, '##a': 7, '##t': 8,\n    'a': 5, '##i': 23,\n    'm': 9, '##o': 10, '##d': 11, '##el': 12\n}\n",
+    "test_cases": [
+      {
+        "input": "The quick brown fox.",
+        "output": "Tokens: ['the', 'q', '##u', '##ick', 'b', '##rown', 'f', '##ox', '.']\nToken IDs: [12, 5, 11, 23, 7, 56, 8, 99, 4]\nExpected IDs: [12, 5, 11, 23, 7, 56, 8, 99, 4]\nMatch: True"
+      },
+      {
+        "input": "Hello!",
+        "output": "Tokens: ['h', '##e', '##l', '##l', '##o', '!']\nToken IDs: [2, 3, 3, 3, 10, 1]\nExpected IDs: [2, 3, 3, 3, 4, 1]\nMatch: False"
+      },
+      {
+        "input": "data",
+        "output": "Tokens: ['d', '##a', '##t', '##a']\nToken IDs: [6, 7, 8, 7]\nExpected IDs: [6, 7, 8, 7]\nMatch: True"
+      },
+      {
+        "input": "ai",
+        "output": "Tokens: ['a', '##i']\nToken IDs: [5, 23]\nExpected IDs: [5, 23]\nMatch: True"
+      },
+      {
+        "input": "model",
+        "output": "Tokens: ['m', '##o', '##d', '##el']\nToken IDs: [9, 10, 11, 12]\nExpected IDs: [9, 10, 11, 12]\nMatch: True"
+      }
+    ],
+    "id": "24"
+  },
+  {
+    "title": "Tokenizing Contractions and Possessives",
+    "description": "In natural language, contractions (like don't, isn't) and possessives (like John's) are common.  A tokenizer must split them properly into the base word plus suffix ('t, 's, 'll, etc.).  You are asked to tokenize contractions and possessives while assigning token IDs.\nvocab = {\n    'i': 1, 'don': 2, \"'t\": 3, 'know': 4, 'who': 5, \"'s\": 6, 'there': 7, '.': 8,\n    'it': 9, 'mary': 11, \"'s_mary\": 12, # handling repeated 's'\n    'she': 21, 'gone': 22, ',': 12, 'isn': 23, '?': 1,\n    'we': 24, \"'ll\": 15, 'meet': 25,\n    'they': 26, \"'ve\": 27, 'been': 28,\n    'john': 30, 'book': 31\n}\n",
+    "test_cases": [
+      {
+        "input": "I don't know who's there. It's Mary's.",
+        "output": "Tokens: ['i', 'don', \"'t\", 'know', 'who', \"'s\", 'there', '.', 'it', \"'s\", 'mary', 's', '.']\nToken IDs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 6, 11, -1, 8]\nExpected IDs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]\nMatch: False"
+      },
+      {
+        "input": "She's gone, isn't she?",
+        "output": "Tokens: ['she', \"'s\", 'gone', ',', 'isn', \"'t\", 'she', '?']\nToken IDs: [21, 6, 22, 12, 23, 3, 21, 1]\nExpected IDs: [21, 16, 22, 12, 23, 3, 21, 1]\nMatch: False"
+      },
+      {
+        "input": "we'll meet",
+        "output": "Tokens: ['we', \"'ll\", 'meet']\nToken IDs: [24, 15, 25]\nExpected IDs: [24, 15, 25]\nMatch: True"
+      },
+      {
+        "input": "they've been there",
+        "output": "Tokens: ['they', \"'ve\", 'been', 'there']\nToken IDs: [26, 27, 28, 7]\nExpected IDs: [26, 27, 28, 29]\nMatch: False"
+      },
+      {
+        "input": "John's book",
+        "output": "Tokens: ['john', \"'s\", 'book']\nToken IDs: [30, 6, 31]\nExpected IDs: [30, 16, 31]\nMatch: False"
+      }
+    ],
+    "id": "25"
+  },
+  {
+    "title": "WordPiece Tokenization in Sentiment Analysis",
+    "description": "A company is building a sentiment analysis system to analyze customer reviews.\n Since customers may use complex words like \"unhappiness\" or \"predictability\", the model must break them into smaller subwords for better understanding.\n WordPiece tokenization helps the system handle rare or unseen words while keeping vocabulary size manageable.",
+    "test_cases": [
+      {
+        "input": "The product caused unhappiness.",
+        "output": "Output: ['the', 'product', 'caused', 'un', '##ha', '##pp', '##iness', '.']"
+      },
+      {
+        "input": "This app supports internationalization.",
+        "output": "Output: ['this', 'app', 'supports', 'international', '##ization', '.']"
+      },
+      {
+        "input": "I dislike the reorganization of menus.",
+        "output": "Output: ['i', 'dislike', 'the', 'reorganization', 'of', 'menu', '##s', '.']"
+      },
+      {
+        "input": "The predictability of service is poor.",
+        "output": "Output: ['the', 'predict', '##ability', 'of', 'service', 'is', 'poor', '.']"
+      },
+      {
+        "input": "Microorganisms were found in the sample.",
+        "output": "Output: ['micro', '##org', '##ani', '##sms', 'were', 'found', 'in', 'the', 'sample', '.']"
+      }
+    ],
+    "id": "26"
+  },
+  {
+    "title": "SentencePiece Tokenization in Multilingual Chat Apps",
+    "description": "A multilingual chat application needs to support users typing in English, Spanish, and Japanese.  Instead of relying on spaces, SentencePiece tokenization can directly work on raw text.  This ensures consistent subword segmentation for different languages and scripts without custom rules.",
+    "test_cases": [
+      {
+        "input": "Hello world!",
+        "output": "['▁Hello','▁world','!']"
+      },
+      {
+        "input": "¿Cómo estás?",
+        "output": "['▁¿','Cómo','▁estás','?']"
+      },
+      {
+        "input": "今日は晴れです。",
+        "output": "['▁今日','は','晴','れ','です','。']"
+      },
+      {
+        "input": "I love tacos 🌮",
+        "output": "['▁I','▁love','▁tacos','▁🌮']"
+      },
+      {
+        "input": "メールを送ってください。",
+        "output": "['▁メール','を','送','って','ください','。']"
+      }
+    ],
+    "id": "27"
+  },
+  {
+    "title": "Tokenizing Conversational Fillers & Interjections in Voice Assistants",
+    "description": "A voice assistant (like Alexa, Siri, or Google Assistant) must understand informal conversations.  Users often use fillers, interjections, and hesitations like \"uh\", \"um\", \"oh\", \"wow\".  Correct tokenization ensures the assistant interprets meaning while ignoring unnecessary noise.",
+    "test_cases": [
+      {
+        "input": "Oh, wow, that's so cool, right?",
+        "output": "['oh', ',', 'wow', ',', \"that's\", 'so', 'cool', ',', 'right', '?']"
+      },
+      {
+        "input": "Um... I guess.",
+        "output": "['um', '.', '.', '.', 'i', 'guess', '.']"
+      },
+      {
+        "input": "Erm, maybe.",
+        "output": "['erm', ',', 'maybe', '.']"
+      },
+      {
+        "input": "Ah! That's it.",
+        "output": "['ah', '!', \"that's\", 'it', '.']"
+      },
+      {
+        "input": "Yikes, oops.",
+        "output": "['yikes', ',', 'oops', '.']"
+      }
+    ],
+    "id": "28"
+  },
+  {
+    "title": "Tokenizing URLs & Email Addresses in Cybersecurity Logs",
+    "description": "Cybersecurity analysts often process logs containing URLs, email addresses, and IPs.\n A tokenizer must preserve these as single meaningful tokens to detect phishing, malware links, or suspicious emails.  Improper tokenization could break URLs/emails, reducing detection accuracy.",
+    "test_cases": [
+      {
+        "input": "Visit https://example.com for details.",
+        "output": "['Visit', 'https://example.com', 'for', 'details', '.']"
+      },
+      {
+        "input": "Email sent to john.doe@example.org successfully.",
+        "output": "['Email', 'sent', 'to', 'john.doe@example.org', 'successfully', '.']"
+      },
+      {
+        "input": "Check http://malicious.site/path",
+        "output": "['Check', 'http://malicious.site/path']"
+      },
+      {
+        "input": "User login from 192.168.1.1 failed.",
+        "output": "['User', 'login', 'from', '192.168.1.1', 'failed', '.']"
+      },
+      {
+        "input": "FTP upload: ftp://server.com/file.txt completed.",
+        "output": "['FTP', 'upload', 'ftp://server.com/file.txt', 'completed', '.']"
+      }
+    ],
+    "id": "29"
+  },
+  {
+    "title": "Tokenizing Social Media Text with Hashtags, Mentions, Emojis, and Slang",
+    "description": "Social media posts often contain hashtags (#), mentions (@), emojis, abbreviations, and slang.  A tokenizer must preserve the semantic meaning of these elements while splitting text into meaningful subwords.  This is crucial for sentiment analysis, trend detection, and social media monitoring.",
+    "test_cases": [
+      {
+        "input": "They sound amaaazing and feel super light.",
+        "output": "Tokens: ['[CLS]', 'they', 'sound', 'amaaazing', 'and', 'feel', 'super', 'light', '.', '[SEP]']\nIDs: [1, 80, 46, 109, 38, 87, 102, 99, 6, 2]"
+      }
+    ],
+    "id": "30"
+  }
+]

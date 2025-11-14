@@ -1,0 +1,21 @@
+Event,Record,Athlete,Country,Year
+100 metres,9.63,Usain Bolt,Jamaica(JAM),2012 London
+200 metres,19.30,Usain Bolt,Jamaica(JAM),2008 Beijing
+400 metres,♦43.03,Wayde van Niekerk,South Africa(RSA),2016 Rio de Janeiro
+800 metres,♦1:40.91,David Rudisha,Kenya(KEN),2012 London
+"1,500 metres",3:28.32,Jakob Ingebrigtsen,Norway(NOR),2020 Tokyo
+"5,000 metres",12:57.82,Kenenisa Bekele,Ethiopia(ETH),2008 Beijing
+"10,000 metres",27:01.17,Kenenisa Bekele,Ethiopia(ETH),2008 Beijing
+Marathon,2:06:32,Samuel Wanjiru,Kenya(KEN),2008 Beijing
+110 metres hurdles,12.91,Liu Xiang,China(CHN),2004 Athens
+400 metres hurdles,♦45.94,Karsten Warholm,Norway(NOR),2020 Tokyo
+"3,000 m steeplechase",8:03.28,Conseslus Kipruto,Kenya(KEN),2016 Rio de Janeiro
+4×100 m relay,♦36.84,Nesta CarterMichael FraterYohan BlakeUsain Bolt,Jamaica(JAM),2012 London
+4×400 m relay,2:55.39,LaShawn MerrittAngelo TaylorDavid NevilleJeremy Wariner,United States(USA),2008 Beijing
+20 km walk,1:18:46,Chen Ding,China(CHN),2012 London
+50 km walk,3:36:53,Jared Tallent,Australia(AUS),2012 London
+High jump,2.39 m,Charles Austin,United States(USA),1996 Atlanta
+Long jump,8.90 m,Bob Beamon,United States(USA),1968 Mexico City
+Pole vault,6.03 m,Thiago Braz,Brazil(BRA),2016 Rio de Janeiro
+Triple jump,18.09 m,Kenny Harrison,United States(USA),1996 Atlanta
+Shot put,23.30 m,Ryan Crouser,United States(USA),2020 Tokyo
