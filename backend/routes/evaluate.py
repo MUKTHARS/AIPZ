@@ -604,7 +604,8 @@ def validate_cell():
                 return jsonify({"test_results": [False], "stdout": "", "stderr": error_message})
 
         # Logic for subjects with simple, singular test cases (like DS, etc.)
-        if subject_lower in ['ds', 'deeplearning', 'nlp','llm']:
+        # if subject_lower in ['ds', 'deeplearning', 'nlp','llm']:
+        if subject_lower in ['deeplearning', 'nlp','llm'] or (subject_lower == 'ds' and level == '1'):    
             test_cases = part_data.get("test_cases", [])
             if not test_cases:
                 print(f"[VALIDATION {validation_mode}] ERROR: No test cases found for question {q_id}")
@@ -646,7 +647,8 @@ def validate_cell():
 
         # --- FIX IS HERE: 'generativeai' is added to this block ---
         # Logic for subjects with file-based or output-parsing validation (like ML)
-        elif subject_lower in ['ml', 'speechrecognition', 'generativeai']:
+        # elif subject_lower in ['ml', 'speechrecognition', 'generativeai']:
+        elif subject_lower in ['ml', 'speechrecognition', 'generativeai'] or (subject_lower == 'ds' and level != '1'):
             print(f"[VALIDATION {validation_mode}] File/output-based validation")
             print(f"Executing student code...")
             
